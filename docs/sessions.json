@@ -181,9 +181,10 @@
     "url": "https://ignite.microsoft.com/en-US/sessions/1787856639139001E7vh-1791588117221001Cuk3",
     "track": "ネットワーク",
     "priority": true,
+    "mustAttend": true,
     "format": "Breakout",
     "checked": "2026-11-15",
-    "note": "AIワークロードに向けた接続・性能・セキュリティ・自動化を確認します。"
+    "note": "必ず参加。AIワークロードに向けた接続・性能・セキュリティ・自動化を確認します。"
   },
   {
     "id": "1787856876896001h3Av-1791588128683001ClOM",
@@ -725,9 +726,10 @@
     "url": "https://ignite.microsoft.com/en-US/sessions/1787856581551001ERGj-1791588331232001CPVT",
     "track": "FinOps",
     "priority": true,
+    "mustAttend": true,
     "format": "Theater",
     "checked": "2026-11-15",
-    "note": "AIを使った継続的なコスト最適化を確認。終了10分後にBRK417が別会場で始まるため、移動に注意してください。"
+    "note": "必ず参加。AIを使った継続的なコスト最適化を確認。終了10分後にBRK417が別会場で始まるため、移動に注意してください。"
   },
   {
     "id": "1787856692370001EF2V-1791588334435001C2ap",

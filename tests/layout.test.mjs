@@ -44,6 +44,8 @@ test("published participant draft matches the checked schedule and shows its con
   const candidates = items.filter(item => !item.priority && item.code !== "LAB725");
   assert.equal(candidates.filter(item => item.availability === "add").length, 18);
   assert.equal(candidates.filter(item => item.availability === "standby").length, 12);
+  assert.deepEqual(items.filter(item => item.mustAttend).map(item => item.code).sort(), ["BRK433", "THR895"]);
+  assert.ok(items.filter(item => item.mustAttend).every(item => item.priority && item.note.includes("必ず参加")));
   for (const day of [17, 18, 19, 20]) {
     const placed = layoutDay(items.filter(item => item.day === day));
     for (const [a, b] of conflictPairs(placed)) assert.notEqual(a.lane, b.lane);
