@@ -17,15 +17,17 @@
       <h1>Microsoft Ignite <span>2026</span></h1>
       <p class="intro">AI基盤と、これからのクラウド運用を見に行く。</p>
       <div class="header-meta"><span>11.17 TUE — 11.20 FRI</span><span>非公式・個人の参加案</span></div>
+      <nav class="site-nav" aria-label="ページ"><a href="./" aria-current="page">スケジュール</a><a href="./map.html">会場マップ ↗</a></nav>
     </div>
   </header>
   <main class="page">
     <section class="overview" aria-label="公開情報について">
       <p><strong>公開セッションだけをまとめた参加案です。</strong>実際の登録・座席予約を示すものではありません。日時・会場の公式確認：<time datetime="2026-11-15">2026/11/15</time>。</p>
       <p>表示はサンフランシスコ時間 <strong>PST（UTC−8）</strong>。日本時間は＋17時間です。カードをタップすると詳細を開けます。</p>
+      <p>比較候補の公式表示は11/15 23時台（日本時間）に確認。<strong>「予定に追加」は座席確保を意味しません。</strong>満席・待機表示や参加条件は変わるため、公式ページで再確認してください。</p>
     </section>
     <section class="planner" aria-labelledby="planner-title">
-      <div class="section-heading"><h2 id="planner-title">Session planner</h2><span class="edition">52 PUBLIC SESSIONS</span></div>
+      <div class="section-heading"><h2 id="planner-title">Session planner</h2><span class="edition">55 PUBLIC SESSIONS</span></div>
       <div class="controls">
         <nav class="days" aria-label="表示する日付">
           <button type="button" data-day="17" aria-pressed="true"><small>DAY 01</small>11/17 <span>火</span></button>
@@ -39,7 +41,7 @@
           <label class="track-label">分野<select id="track"><option value="">すべての分野</option></select></label>
         </div>
       </div>
-      <div class="legend"><span class="key priority">参加案</span><span class="key alternative">比較候補</span><span class="key conflict">時間重複</span><span>高さ＝所要時間</span></div>
+      <div class="legend"><span class="key priority">参加案</span><span class="key general">全体セッション</span><span class="key alternative">比較候補</span><span class="key standby">満席・待機のみ</span><span class="key conflict">時間重複</span><span>高さ＝所要時間</span></div>
       <div id="summary" class="summary" role="status" aria-live="polite"></div>
       <div id="warnings" class="warnings"></div>
       <p class="calendar-help">PST / UTC−8 · 短い枠・省略された文字はタップで確認。4日表示は横にスクロールできます。</p>
@@ -53,11 +55,11 @@
       <p class="eyebrow">WHAT TO BRING BACK</p>
       <h2 id="focus-title">Infraの視点で、優先したいテーマ</h2>
       <div class="reading-grid">
-        <article><span>01 / OPERATIONS</span><h3>AIOps・SRE Agent</h3><p>BRK415 → BRK417を軸に、調査・修復の自動化と人による制御を確認。BRK314は本番運用の設計を補う比較候補です。</p></article>
-        <article><span>02 / FOUNDATION</span><h3>AIを支えるインフラ</h3><p>11/17のBRK429とBRK439は同時刻。AI基盤を優先するならBRK429、主権要件を深掘りするならBRK439を選びます。</p></article>
+        <article><span>01 / OPERATIONS</span><h3>AIOps・SRE Agent</h3><p>BRK415・BRK417・BRK314を軸に、調査・修復の自動化、人による制御、本番運用の設計を確認します。</p></article>
+        <article><span>02 / FOUNDATION</span><h3>AIを支えるインフラ</h3><p>11/17のBRK429と比較候補のBRK439は同時刻。AI基盤を優先するならBRK429、主権要件を深掘りするならBRK439を選びます。</p></article>
         <article><span>03 / RELIABILITY</span><h3>ネットワークと回復性</h3><p>BRK433・BRK437・BRK445で接続と可用性を横断。移行、Azure Local、IaC、FinOpsも比較候補から確認できます。</p></article>
       </div>
-      <p class="fineprint">推奨は公開された内容に基づく編集上の判断です。11/19はBRK417とLTG1378も重複します。SRE重視ならBRK417を優先する案です。公式サイトの予定変更やキャンセルは行いません。</p>
+      <p class="fineprint">推奨は公開された内容に基づく編集上の判断です。11/19はBRK417と比較候補のLTG1378が重複します。公式サイトの予定変更やキャンセルは行いません。</p>
     </section>
     <footer>
       <p>出典：各カードの<a href="https://ignite.microsoft.com/en-US/sessions">Microsoft Ignite公式セッションページ</a>。タイトルは読みやすく要約しています。</p>
@@ -72,6 +74,7 @@
     <p id="detail-time"></p><p id="detail-jst" class="muted"></p>
     <p id="detail-place"></p><p id="detail-track" class="muted"></p>
     <p id="detail-conflicts" class="detail-warning"></p>
+    <p id="detail-availability" class="detail-availability"></p>
     <p id="detail-reason"></p>
     <a id="detail-link" class="official" target="_blank" rel="noopener noreferrer">公式セッションページ ↗</a>
     <p class="fineprint">公式確認：2026/11/15。登録・予約状況は掲載していません。</p>

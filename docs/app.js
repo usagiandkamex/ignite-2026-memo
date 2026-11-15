@@ -15,10 +15,14 @@ const element = (tag, className, text) => {
   return node;
 };
 const label = item => `${item.code} ${item.start}–${item.end}`;
+const isGeneral = item => item.priority && (item.format === "Keynote" || item.format === "Innovation Session");
+const category = item => !item.priority ? "比較候補" : isGeneral(item) ? "全体セッション" : "参加案";
+const availability = item => item.availability === "standby" ? "満席・待機のみ" :
+  item.availability === "add" ? "予定に追加の表示あり（座席確保ではありません）" : "";
 const selectedDays = () => week.getAttribute("aria-pressed") === "true" ? [17, 18, 19, 20] : [day];
 const comparisonPool = () => sessions.filter(item => alternatives.checked || item.priority);
 function openDetail(item) {
-  document.getElementById("detail-code").textContent = `${item.code} / ${item.priority ? "参加案" : "比較候補"}`;
+  document.getElementById("detail-code").textContent = `${item.code} / ${category(item)}`;
   document.getElementById("detail-title").textContent = item.title;
   document.getElementById("detail-time").textContent = `11/${item.day}（${dayNames[item.day]}）${item.start}–${item.end} PST`;
   const jst = value => new Intl.DateTimeFormat("ja-JP", {
@@ -31,6 +35,9 @@ function openDetail(item) {
   document.getElementById("detail-conflicts").textContent = conflicts.length
     ? `時間重複：${conflicts.map(label).join("、")}（分野フィルターで非表示の枠を含む）`
     : "現在の比較範囲に時間重複はありません。会場間の移動は別途確認してください。";
+  document.getElementById("detail-availability").textContent = availability(item)
+    ? `公式表示：${availability(item)}。11/15 23時台（日本時間）確認。最新状況は公式ページへ。`
+    : "";
   document.getElementById("detail-reason").textContent = item.note;
   document.getElementById("detail-link").href = item.url;
   dialog.showModal();
@@ -62,16 +69,16 @@ function render() {
     for (const item of items) {
       const duration = minutes(item.end) - minutes(item.start);
       const conflicts = pool.filter(other => overlaps(item, other));
-      const card = element("button", `event${item.priority ? "" : " alternative"}${conflicts.length ? " conflict" : ""}${duration <= 15 ? " short" : duration <= 25 ? " medium" : ""}`);
+      const card = element("button", `event${!item.priority ? " alternative" : isGeneral(item) ? " general" : ""}${item.availability === "standby" ? " standby" : ""}${conflicts.length ? " conflict" : ""}${duration <= 15 ? " short" : duration <= 25 ? " medium" : ""}`);
       card.type = "button";
       card.dataset.id = item.id;
       card.style.top = `calc(${minutes(item.start) - firstMinute} * var(--scale))`;
       card.style.height = `calc(${duration} * var(--scale) - 3px)`;
       card.style.left = `calc(${item.lane * 100 / item.lanes}% + 2px)`;
       card.style.width = `calc(${100 / item.lanes}% - 4px)`;
-      card.setAttribute("aria-label", `${label(item)} ${item.title} ${item.priority ? "参加案" : "比較候補"}${conflicts.length ? "、時間重複あり" : ""}。詳細を開く`);
+      card.setAttribute("aria-label", `${label(item)} ${item.title} ${category(item)}${availability(item) ? `、${availability(item)}` : ""}${conflicts.length ? "、時間重複あり" : ""}。詳細を開く`);
       card.append(element("span", "event-time", `${item.start}–${item.end}`));
-      card.append(element("span", "event-code", `${conflicts.length ? "⚠ " : ""}${item.code}${item.priority ? "" : " · 比較"}`));
+      card.append(element("span", "event-code", `${conflicts.length ? "⚠ " : ""}${item.code}${isGeneral(item) ? " · 全体" : item.priority ? "" : item.availability === "standby" ? " · 待機" : " · 比較"}`));
       card.append(element("span", "event-title", item.title));
       card.append(element("span", "event-venue", item.place));
       if (conflicts.length) card.append(element("span", "conflict-label", `重複 ${conflicts.length}件`));

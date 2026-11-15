@@ -9,7 +9,7 @@
     "place": "Chase Center",
     "url": "https://ignite.microsoft.com/en-US/sessions/1787856726055001EpP1-1789751960282001d6eI",
     "track": "全体",
-    "priority": false,
+    "priority": true,
     "format": "Keynote",
     "checked": "2026-11-15",
     "note": "イベント全体の方向性と発表内容を確認します。"
@@ -39,7 +39,7 @@
     "place": "Moscone West | Level 1, Exhibit Hall",
     "url": "https://ignite.microsoft.com/en-US/sessions/1787856658187001Etji-1789751959279001dn4k",
     "track": "AI基盤",
-    "priority": false,
+    "priority": true,
     "format": "Innovation Session",
     "checked": "2026-11-15",
     "note": "AIを支える計算資源とプラットフォーム設計を比較します。"
@@ -57,7 +57,8 @@
     "priority": false,
     "format": "Lightning Talk",
     "checked": "2026-11-15",
-    "note": "運用の可観測性・自動化と障害対応への適用を比較します。"
+    "note": "運用の可観測性・自動化と障害対応への適用を比較します。",
+    "availability": "standby"
   },
   {
     "id": "1787856692370001EF2V-1791933310065001kpgU",
@@ -72,7 +73,8 @@
     "priority": false,
     "format": "Lightning Talk",
     "checked": "2026-11-15",
-    "note": "基盤の標準化とガードレールの設計を比較します。"
+    "note": "基盤の標準化とガードレールの設計を比較します。",
+    "availability": "standby"
   },
   {
     "id": "1787856692827001E6us-1791933313105001p1k4",
@@ -87,7 +89,8 @@
     "priority": false,
     "format": "Lightning Talk",
     "checked": "2026-11-15",
-    "note": "AIを支える計算資源とプラットフォーム設計を比較します。"
+    "note": "AIを支える計算資源とプラットフォーム設計を比較します。",
+    "availability": "standby"
   },
   {
     "id": "1787856638536001E9Fm-1791588157716001C6AV",
@@ -114,10 +117,26 @@
     "place": "Moscone West | Level 3, Room 3014",
     "url": "https://ignite.microsoft.com/en-US/sessions/1787856640049001EoQy-1791588100457001Ctmo",
     "track": "ハイブリッド・BCDR",
-    "priority": true,
+    "priority": false,
     "format": "Breakout",
     "checked": "2026-11-15",
-    "note": "主権要件とクラウド設計のトレードオフを確認。BRK429の代わりに選ぶ枠です。"
+    "note": "主権要件とクラウド設計のトレードオフを確認。BRK429の代わりに選ぶ枠です。",
+    "availability": "add"
+  },
+  {
+    "id": "1787856657745001EewR-1789751958676001dVT9",
+    "code": "INV640",
+    "title": "AIによる働き方の再設計",
+    "day": 17,
+    "start": "16:00",
+    "end": "17:00",
+    "place": "Moscone West | Level 1, Exhibit Hall",
+    "url": "https://ignite.microsoft.com/en-US/sessions/1787856657745001EewR-1789751958676001dVT9",
+    "track": "全体",
+    "priority": true,
+    "format": "Innovation Session",
+    "checked": "2026-11-15",
+    "note": "AIによる業務の変化を扱う全体セッション。BRK433と時間が重なります。"
   },
   {
     "id": "1787856692677001EeNv-1791933315501001MR3Q",
@@ -132,7 +151,8 @@
     "priority": false,
     "format": "Lightning Talk",
     "checked": "2026-11-15",
-    "note": "基盤の標準化とガードレールの設計を比較します。"
+    "note": "基盤の標準化とガードレールの設計を比較します。",
+    "availability": "standby"
   },
   {
     "id": "1787856636548001EE1w-1791588336280001CyKk",
@@ -147,7 +167,8 @@
     "priority": false,
     "format": "Breakout",
     "checked": "2026-11-15",
-    "note": "運用の可観測性・自動化と障害対応への適用を比較します。"
+    "note": "運用の可観測性・自動化と障害対応への適用を比較します。",
+    "availability": "add"
   },
   {
     "id": "1787856639139001E7vh-1791588117221001Cuk3",
@@ -174,10 +195,10 @@
     "place": "Moscone West | Level 2, Room 2016",
     "url": "https://ignite.microsoft.com/en-US/sessions/1787856876896001h3Av-1791588128683001ClOM",
     "track": "ネットワーク",
-    "priority": true,
+    "priority": false,
     "format": "Lab",
     "checked": "2026-11-15",
-    "note": "ネットワーク監視と障害調査の実習。参加条件と予約方法は公式案内で確認してください。"
+    "note": "ネットワーク監視と障害調査の実習。11/15時点では満席・スタンバイのみと表示。参加条件と空き状況は公式案内で確認してください。"
   },
   {
     "id": "1787856635948001E9jR-1791588116977001CUXt",
@@ -204,7 +225,7 @@
     "place": "Moscone West | Level 1, Exhibit Hall",
     "url": "https://ignite.microsoft.com/en-US/sessions/1787856726366001EV17-1789751960677001d6j0",
     "track": "全体",
-    "priority": false,
+    "priority": true,
     "format": "Keynote",
     "checked": "2026-11-15",
     "note": "イベント全体の方向性と発表内容を確認します。"
@@ -222,7 +243,8 @@
     "priority": false,
     "format": "Lightning Talk",
     "checked": "2026-11-15",
-    "note": "ハイブリッド環境や事業継続性の設計を比較します。"
+    "note": "ハイブリッド環境や事業継続性の設計を比較します。",
+    "availability": "standby"
   },
   {
     "id": "1787856602251001Er15-1791588151762001Ck4k",
@@ -237,7 +259,8 @@
     "priority": false,
     "format": "Theater",
     "checked": "2026-11-15",
-    "note": "AIを支える計算資源とプラットフォーム設計を比較します。"
+    "note": "AIを支える計算資源とプラットフォーム設計を比較します。",
+    "availability": "add"
   },
   {
     "id": "1787856708179001Egmq-1791588147284001CjpZ",
@@ -252,7 +275,8 @@
     "priority": false,
     "format": "Lightning Talk",
     "checked": "2026-11-15",
-    "note": "接続・ネットワーク管理と障害対応の設計を比較します。"
+    "note": "接続・ネットワーク管理と障害対応の設計を比較します。",
+    "availability": "standby"
   },
   {
     "id": "1787856899340001hHDc-1791588148601001CPnC",
@@ -267,7 +291,8 @@
     "priority": false,
     "format": "Table Talk",
     "checked": "2026-11-15",
-    "note": "Table Talk。 接続・ネットワーク管理と障害対応の設計を比較します。"
+    "note": "Table Talk。 接続・ネットワーク管理と障害対応の設計を比較します。",
+    "availability": "standby"
   },
   {
     "id": "1787856637312001EsdU-1791588336733001CAme",
@@ -300,6 +325,21 @@
     "note": "運用エージェントの調査・コスト最適化・是正と、実行を制御する仕組みを確認します。"
   },
   {
+    "id": "1787856657893001Euld-1789751958877001dRyn",
+    "code": "INV641",
+    "title": "継続的に改善されるエージェントプラットフォーム",
+    "day": 18,
+    "start": "11:30",
+    "end": "12:30",
+    "place": "Moscone West | Level 1, Exhibit Hall",
+    "url": "https://ignite.microsoft.com/en-US/sessions/1787856657893001Euld-1789751958877001dRyn",
+    "track": "全体",
+    "priority": true,
+    "format": "Innovation Session",
+    "checked": "2026-11-15",
+    "note": "エージェントプラットフォームを扱う全体セッション。BRK415と時間が重なります。"
+  },
+  {
     "id": "1787856708643001EQZr-1791588274057001CyVc",
     "code": "LTG1465",
     "title": "ヘルスモデルで可観測性を再定義",
@@ -327,7 +367,23 @@
     "priority": false,
     "format": "Breakout",
     "checked": "2026-11-15",
-    "note": "AIを支える計算資源とプラットフォーム設計を比較します。"
+    "note": "AIを支える計算資源とプラットフォーム設計を比較します。",
+    "availability": "add"
+  },
+  {
+    "id": "1787856658039001EnZx-1789751959080001dCHE",
+    "code": "INV642",
+    "title": "あらゆるレイヤー・役割にわたる可観測性",
+    "day": 18,
+    "start": "14:00",
+    "end": "15:30",
+    "place": "Moscone West | Level 1, Exhibit Hall",
+    "url": "https://ignite.microsoft.com/en-US/sessions/1787856658039001EnZx-1789751959080001dCHE",
+    "track": "AIOps・SRE",
+    "priority": true,
+    "format": "Innovation Session",
+    "checked": "2026-11-15",
+    "note": "可観測性を横断的に扱う全体セッション。LTG1283とBRK437に重なります。"
   },
   {
     "id": "1787856680507001EWll-1791588204638001CvWS",
@@ -357,7 +413,8 @@
     "priority": false,
     "format": "Theater",
     "checked": "2026-11-15",
-    "note": "スポンサーセッション。 運用の可観測性・自動化と障害対応への適用を比較します。"
+    "note": "スポンサーセッション。 運用の可観測性・自動化と障害対応への適用を比較します。",
+    "availability": "add"
   },
   {
     "id": "1787856639748001EzEE-1791588218408001C2OD",
@@ -387,7 +444,8 @@
     "priority": false,
     "format": "Breakout",
     "checked": "2026-11-15",
-    "note": "計算資源とデータ基盤の選択・移行・運用を比較します。"
+    "note": "計算資源とデータ基盤の選択・移行・運用を比較します。",
+    "availability": "add"
   },
   {
     "id": "1787856680204001EJpr-1791588204409001CRUv",
@@ -402,7 +460,8 @@
     "priority": false,
     "format": "Lightning Talk",
     "checked": "2026-11-15",
-    "note": "運用の可観測性・自動化と障害対応への適用を比較します。"
+    "note": "運用の可観測性・自動化と障害対応への適用を比較します。",
+    "availability": "add"
   },
   {
     "id": "1787856905146001hLuY-1791588225006001Cotk",
@@ -417,7 +476,8 @@
     "priority": false,
     "format": "Table Talk",
     "checked": "2026-11-15",
-    "note": "Table Talk。 接続・ネットワーク管理と障害対応の設計を比較します。"
+    "note": "Table Talk。 接続・ネットワーク管理と障害対応の設計を比較します。",
+    "availability": "standby"
   },
   {
     "id": "1787856929538001hie6-1791588227490001CNAI",
@@ -432,7 +492,8 @@
     "priority": false,
     "format": "Table Talk",
     "checked": "2026-11-15",
-    "note": "Table Talk。 接続・ネットワーク管理と障害対応の設計を比較します。"
+    "note": "Table Talk。 接続・ネットワーク管理と障害対応の設計を比較します。",
+    "availability": "add"
   },
   {
     "id": "1787856639900001E6cl-1791588218637001CGLI",
@@ -447,7 +508,8 @@
     "priority": false,
     "format": "Breakout",
     "checked": "2026-11-15",
-    "note": "ハイブリッド環境や事業継続性の設計を比較します。"
+    "note": "ハイブリッド環境や事業継続性の設計を比較します。",
+    "availability": "add"
   },
   {
     "id": "1787856640517001EIKl-1791588245037001C6mG",
@@ -459,10 +521,11 @@
     "place": "Moscone West | Level 2, Room 2001",
     "url": "https://ignite.microsoft.com/en-US/sessions/1787856640517001EIKl-1791588245037001C6mG",
     "track": "ハイブリッド・BCDR",
-    "priority": true,
+    "priority": false,
     "format": "Breakout",
     "checked": "2026-11-15",
-    "note": "ハイブリッド環境や事業継続性の設計を比較します。"
+    "note": "ハイブリッド環境や事業継続性の設計を比較します。",
+    "availability": "add"
   },
   {
     "id": "1787858594736001SLBb-1791588331687001Clb0",
@@ -474,7 +537,7 @@
     "place": "Moscone West | Level 3, Theater A",
     "url": "https://ignite.microsoft.com/en-US/sessions/1787858594736001SLBb-1791588331687001Clb0",
     "track": "AIOps・SRE",
-    "priority": false,
+    "priority": true,
     "format": "Theater",
     "checked": "2026-11-15",
     "note": "スポンサーセッション。 運用の可観測性・自動化と障害対応への適用を比較します。"
@@ -492,7 +555,8 @@
     "priority": false,
     "format": "Lightning Talk",
     "checked": "2026-11-15",
-    "note": "接続・ネットワーク管理と障害対応の設計を比較します。"
+    "note": "接続・ネットワーク管理と障害対応の設計を比較します。",
+    "availability": "standby"
   },
   {
     "id": "1787856635492001EG3n-1791588132441001CAt3",
@@ -537,7 +601,8 @@
     "priority": false,
     "format": "Lightning Talk",
     "checked": "2026-11-15",
-    "note": "ハイブリッド環境や事業継続性の設計を比較します。"
+    "note": "ハイブリッド環境や事業継続性の設計を比較します。",
+    "availability": "add"
   },
   {
     "id": "1787856636094001EKJc-1791588309857001CQXL",
@@ -552,7 +617,8 @@
     "priority": false,
     "format": "Breakout",
     "checked": "2026-11-15",
-    "note": "ハイブリッド環境や事業継続性の設計を比較します。"
+    "note": "ハイブリッド環境や事業継続性の設計を比較します。",
+    "availability": "add"
   },
   {
     "id": "1787856636998001ES6L-1791588310080001CIft",
@@ -567,7 +633,8 @@
     "priority": false,
     "format": "Breakout",
     "checked": "2026-11-15",
-    "note": "計算資源とデータ基盤の選択・移行・運用を比較します。"
+    "note": "計算資源とデータ基盤の選択・移行・運用を比較します。",
+    "availability": "add"
   },
   {
     "id": "1787856638224001Ejm6-1791588310311001CoWQ",
@@ -597,7 +664,8 @@
     "priority": false,
     "format": "Lightning Talk",
     "checked": "2026-11-15",
-    "note": "運用の可観測性・自動化と障害対応への適用を比較します。"
+    "note": "運用の可観測性・自動化と障害対応への適用を比較します。",
+    "availability": "standby"
   },
   {
     "id": "1787856581700001EulX-1791588274511001CDJr",
@@ -609,7 +677,7 @@
     "place": "Moscone South | The Hub, Theater H",
     "url": "https://ignite.microsoft.com/en-US/sessions/1787856581700001EulX-1791588274511001CDJr",
     "track": "コンピュート・ストレージ",
-    "priority": false,
+    "priority": true,
     "format": "Theater",
     "checked": "2026-11-15",
     "note": "計算資源とデータ基盤の選択・移行・運用を比較します。"
@@ -627,7 +695,8 @@
     "priority": false,
     "format": "Breakout",
     "checked": "2026-11-15",
-    "note": "計算資源とデータ基盤の選択・移行・運用を比較します。"
+    "note": "計算資源とデータ基盤の選択・移行・運用を比較します。",
+    "availability": "add"
   },
   {
     "id": "1787856582154001EA3N-1791588300382001CDxh",
@@ -642,7 +711,8 @@
     "priority": false,
     "format": "Theater",
     "checked": "2026-11-15",
-    "note": "AIを支える計算資源とプラットフォーム設計を比較します。"
+    "note": "AIを支える計算資源とプラットフォーム設計を比較します。",
+    "availability": "add"
   },
   {
     "id": "1787856581551001ERGj-1791588331232001CPVT",
@@ -672,7 +742,8 @@
     "priority": false,
     "format": "Lightning Talk",
     "checked": "2026-11-15",
-    "note": "基盤の標準化とガードレールの設計を比較します。"
+    "note": "基盤の標準化とガードレールの設計を比較します。",
+    "availability": "standby"
   },
   {
     "id": "1787856636701001ERm4-1791588336506001CinE",
@@ -702,7 +773,8 @@
     "priority": false,
     "format": "Breakout",
     "checked": "2026-11-15",
-    "note": "AIを支える計算資源とプラットフォーム設計を比較します。"
+    "note": "AIを支える計算資源とプラットフォーム設計を比較します。",
+    "availability": "add"
   },
   {
     "id": "1787856695133001E8tJ-1791588341918001CFwI",
@@ -714,10 +786,11 @@
     "place": "Moscone South | The Hub, Lightning Talk 2",
     "url": "https://ignite.microsoft.com/en-US/sessions/1787856695133001E8tJ-1791588341918001CFwI",
     "track": "セキュリティ",
-    "priority": true,
+    "priority": false,
     "format": "Lightning Talk",
     "checked": "2026-11-15",
-    "note": "インフラのセキュリティ設計を確認します。"
+    "note": "インフラのセキュリティ設計を確認します。",
+    "availability": "standby"
   },
   {
     "id": "1787856616168001EPp9-1791588352303001Cj36",
@@ -729,10 +802,11 @@
     "place": "Marriott Marquis | Lower B2, Yerba Buena Salon 7",
     "url": "https://ignite.microsoft.com/en-US/sessions/1787856616168001EPp9-1791588352303001Cj36",
     "track": "IaC・ガバナンス",
-    "priority": true,
+    "priority": false,
     "format": "Breakout",
     "checked": "2026-11-15",
-    "note": "基盤の標準化とガードレールの設計を比較します。"
+    "note": "基盤の標準化とガードレールの設計を比較します。",
+    "availability": "add"
   },
   {
     "id": "1787856620707001EyJO-1791588352983001C0oQ",
@@ -744,7 +818,7 @@
     "place": "Moscone West | Level 3, Room 3004",
     "url": "https://ignite.microsoft.com/en-US/sessions/1787856620707001EyJO-1791588352983001C0oQ",
     "track": "AIOps・SRE",
-    "priority": false,
+    "priority": true,
     "format": "Breakout",
     "checked": "2026-11-15",
     "note": "本番AIOpsでの調査連携と人による判断の設計を確認。BRK284と同時刻なので、SREを深掘りする場合の代替です。"
@@ -762,7 +836,8 @@
     "priority": false,
     "format": "Breakout",
     "checked": "2026-11-15",
-    "note": "インフラのセキュリティ設計を確認します。"
+    "note": "インフラのセキュリティ設計を確認します。",
+    "availability": "add"
   },
   {
     "id": "1787856655493001Eeqv-1791814922444001C4tb",
