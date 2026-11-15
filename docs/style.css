@@ -85,9 +85,8 @@ input { width: 18px; height: 18px; accent-color: var(--green); }
 .event .event-code { font-size: .65rem; font-weight: 750; }
 .event .event-title { font-size: .76rem; font-weight: 650; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .event .event-venue { font-size: .62rem; color: var(--muted); overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
-.event .conflict-label { color: var(--danger); font-size: .61rem; font-weight: 750; }
 .event.short { padding: 3px 5px; gap: 1px; }
-.event.short .event-title, .event.short .event-venue, .event.short .conflict-label { display: none; }
+.event.short .event-title, .event.short .event-venue { display: none; }
 .event.medium .event-venue { display: none; }
 .reading { margin-top: 36px; border-top: 1px solid var(--line); padding-top: 28px; }
 .reading > .eyebrow { color: var(--green); }

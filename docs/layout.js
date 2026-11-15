@@ -43,6 +43,11 @@ export function layoutDay(sessions) {
   return result;
 }
 
+export function dayColumnMinWidth(layout, week) {
+  const lanes = Math.max(1, ...layout.map(item => item.lanes));
+  return Math.max(week ? 260 : 0, lanes * 100);
+}
+
 export function transferWarnings(sessions) {
   const sorted = [...sessions].sort((a, b) => a.day - b.day || minutes(a.start) - minutes(b.start));
   return sorted.flatMap((session, index) => {
@@ -50,7 +55,8 @@ export function transferWarnings(sessions) {
     if (!next || next.day !== session.day) return [];
     const gap = minutes(next.start) - minutes(session.end);
     const building = value => value.split(" | ")[0];
-    return gap >= 0 && gap < 20 && building(session.place) !== building(next.place)
-      ? [{from: session, to: next, gap}] : [];
+    const sameBuilding = building(session.place) === building(next.place);
+    const needsTransfer = sameBuilding ? gap === 0 && session.place !== next.place : gap < 20;
+    return gap >= 0 && needsTransfer ? [{from: session, to: next, gap, sameBuilding}] : [];
   });
 }

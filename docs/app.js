@@ -1,10 +1,11 @@
-import {minutes, overlaps, relevantConflictPairs, layoutDay, transferWarnings} from "./layout.js";
+import {minutes, overlaps, relevantConflictPairs, layoutDay, dayColumnMinWidth, transferWarnings} from "./layout.js";
 
 const calendar = document.getElementById("calendar");
 const alternatives = document.getElementById("alternatives");
 const track = document.getElementById("track");
 const week = document.getElementById("week");
 const dialog = document.getElementById("detail");
+const calendarScroll = document.querySelector(".calendar-scroll");
 const dayNames = {17: "火", 18: "水", 19: "木", 20: "金"};
 let day = 17;
 let sessions = [];
@@ -15,6 +16,7 @@ const element = (tag, className, text) => {
   return node;
 };
 const label = item => `${item.code} ${item.start}–${item.end}`;
+const isSponsored = item => item.code.startsWith("THRSP");
 const isGeneral = item => item.priority && (item.format === "Keynote" || item.format === "Innovation Session");
 const category = item => !item.priority ? "未追加候補（11/15時点）" : isGeneral(item) ? "全体セッション・予定表に表示（11/15時点）" : "予定表に表示（11/15時点）";
 const availability = item => item.availability === "standby" ? "満席・待機のみ" :
@@ -30,7 +32,7 @@ function openDetail(item) {
   }).format(new Date(`2026-11-${item.day}T${value}:00-08:00`));
   document.getElementById("detail-jst").textContent = `日本時間：${jst(item.start)} 〜 ${jst(item.end)}`;
   document.getElementById("detail-place").textContent = item.place;
-  document.getElementById("detail-track").textContent = `${item.track} / ${item.format}`;
+  document.getElementById("detail-track").textContent = `${item.track} / ${item.format}${isSponsored(item) ? " / スポンサー枠" : ""}`;
   const conflicts = comparisonPool().filter(other => overlaps(item, other));
   document.getElementById("detail-conflicts").textContent = conflicts.length
     ? `時間重複：${conflicts.map(label).join("、")}（分野フィルターで非表示の枠を含む）`
@@ -46,10 +48,14 @@ function render() {
   const days = selectedDays();
   const pool = comparisonPool();
   const visible = pool.filter(item => days.includes(item.day) && (!track.value || item.track === track.value));
+  const layouts = new Map(days.map(value => [value, layoutDay(visible.filter(item => item.day === value))]));
+  const minimumWidths = days.map(value => dayColumnMinWidth(layouts.get(value), days.length === 4));
   const firstMinute = visible.length ? Math.floor(Math.min(...visible.map(item => minutes(item.start))) / 60) * 60 : 9 * 60;
   const lastMinute = visible.length ? Math.ceil(Math.max(...visible.map(item => minutes(item.end))) / 60) * 60 : 18 * 60;
   calendar.replaceChildren();
   calendar.classList.toggle("week", days.length === 4);
+  calendar.style.gridTemplateColumns = `49px ${minimumWidths.map(width => `minmax(${width}px, 1fr)`).join(" ")}`;
+  calendar.style.minWidth = `${49 + minimumWidths.reduce((sum, width) => sum + width, 0)}px`;
   calendar.append(element("div", "corner", "PST"));
   for (const value of days) calendar.append(element("div", "day-heading", `11/${value}（${dayNames[value]}）`));
   const axis = element("div", "time-axis");
@@ -64,7 +70,7 @@ function render() {
     const column = element("div", "day-column");
     column.setAttribute("aria-label", `11月${value}日`);
     column.style.height = axis.style.height;
-    const items = layoutDay(visible.filter(item => item.day === value));
+    const items = layouts.get(value);
     if (!items.length) column.append(element("p", "empty", "この条件のセッションはありません。"));
     for (const item of items) {
       const duration = minutes(item.end) - minutes(item.start);
@@ -76,12 +82,18 @@ function render() {
       card.style.height = `calc(${duration} * var(--scale) - 3px)`;
       card.style.left = `calc(${item.lane * 100 / item.lanes}% + 2px)`;
       card.style.width = `calc(${100 / item.lanes}% - 4px)`;
-      card.setAttribute("aria-label", `${label(item)} ${item.title} ${category(item)}${item.mustAttend ? "、必ず参加" : ""}${availability(item) ? `、${availability(item)}` : ""}${conflicts.length ? "、時間重複あり" : ""}。詳細を開く`);
+      card.setAttribute("aria-label", `${label(item)} ${item.title} ${category(item)}${item.mustAttend ? "、必ず参加" : ""}${isSponsored(item) ? "、スポンサー枠" : ""}${availability(item) ? `、${availability(item)}` : ""}${conflicts.length ? "、時間重複あり" : ""}。詳細を開く`);
       card.append(element("span", "event-time", `${item.start}–${item.end}`));
-      card.append(element("span", "event-code", `${conflicts.length ? "⚠ " : ""}${item.code}${item.mustAttend ? " · 必ず参加" : isGeneral(item) ? " · 全体" : item.priority ? "" : item.availability === "standby" ? " · 待機" : " · 比較"}`));
+      const tags = [];
+      if (item.mustAttend) tags.push("必ず参加");
+      else if (isGeneral(item)) tags.push("全体");
+      else if (item.availability === "standby") tags.push("待機");
+      else if (!item.priority && !isSponsored(item)) tags.push("比較");
+      if (isSponsored(item)) tags.push("協賛");
+      const suffix = tags.map(tag => ` · ${tag}`).join("");
+      card.append(element("span", "event-code", `${conflicts.length ? "⚠ " : ""}${item.code}${suffix}`));
       card.append(element("span", "event-title", item.title));
       card.append(element("span", "event-venue", item.place));
-      if (conflicts.length) card.append(element("span", "conflict-label", `重複 ${conflicts.length}件`));
       card.addEventListener("click", () => openDetail(item));
       column.append(card);
     }
@@ -96,7 +108,10 @@ function render() {
     const description = item => `${item.start}–${item.end} ${item.code}（${item.priority ? "予定" : "候補"}）`;
     warnings.append(element("div", "warning", `11/${a.day} · ${description(a)} と ${description(b)} が重複。両方を通して聴講することはできません。`));
   }
-  for (const {from, to, gap} of transferWarnings(selected)) warnings.append(element("div", "warning travel", `11/${from.day} · ${from.code} → ${to.code}：会場が異なり、間隔は${gap}分です。移動可能か要確認（所要時間の保証ではありません）。`));
+  for (const {from, to, gap, sameBuilding} of transferWarnings(selected)) {
+    const location = sameBuilding ? "同じ建物内で場所が異なり" : "会場が異なり";
+    warnings.append(element("div", "warning travel", `11/${from.day} · ${from.code} → ${to.code}：${location}、間隔は${gap}分です。移動可能か要確認（所要時間の保証ではありません）。`));
+  }
   if (alternatives.checked) warnings.append(element("p", "notes-help", "重複は分野フィルターで非表示の枠も含めて判定しています。候補の表示は予定の追加ではありません。"));
   if (!warnings.childElementCount) warnings.append(element("p", "notes-help", "表示中の範囲に時間重複や短い会場間移動はありません。"));
 }
@@ -105,6 +120,7 @@ document.querySelectorAll("[data-day]").forEach(button => button.addEventListene
   week.setAttribute("aria-pressed", "false");
   document.querySelectorAll("[data-day]").forEach(node => node.setAttribute("aria-pressed", String(node === button)));
   render();
+  calendarScroll.scrollLeft = 0;
 }));
 alternatives.addEventListener("change", render);
 track.addEventListener("change", render);
@@ -113,6 +129,7 @@ week.addEventListener("click", () => {
   week.setAttribute("aria-pressed", String(showWeek));
   document.querySelectorAll("[data-day]").forEach(node => node.setAttribute("aria-pressed", String(!showWeek && Number(node.dataset.day) === day)));
   render();
+  calendarScroll.scrollLeft = 0;
 });
 document.getElementById("close-detail").addEventListener("click", () => dialog.close());
 dialog.addEventListener("click", event => { if (event.target === dialog) {
