@@ -110,6 +110,10 @@ dialog p { font-size: .84rem; }
 .official { display: block; margin: 18px 0 0; padding: 12px; border-radius: 7px; background: var(--green); color: white; text-decoration: none; text-align: center; }
 .error { padding: 15px; color: #a02218; background: #ffebe5; }
 .venue-page { max-width: 1000px; }
+.event-map { margin-top: 24px; }
+.event-map .eyebrow { color: var(--green); }
+.event-map h2 { margin: 6px 0 12px; }
+.event-map > p { font-size: .83rem; }
 .official-map { margin: 24px 0; padding: 22px; background: #e8f0df; border: 1px solid #c5d7bd; border-radius: 12px; }
 .official-map .eyebrow, .venue-section .eyebrow { color: var(--green); }
 .official-map h2, .venue-section h2 { margin: 6px 0 12px; }
@@ -118,21 +122,25 @@ dialog p { font-size: .84rem; }
 .map-actions .official { display: inline-block; margin: 0; padding: 12px 18px; }
 .venue-section { border-top: 1px solid var(--line); padding-top: 28px; margin-top: 28px; }
 .schematic { margin: 18px 0 0; }
-.schematic svg { display: block; width: 100%; height: auto; }
+.schematic svg { display: block; width: 100%; max-width: 520px; height: auto; }
+.campus-map a { cursor: pointer; }
+.campus-map a:focus-visible { outline: 3px solid #d27d18; outline-offset: -3px; }
 .schematic figcaption, .map-credit { font-size: .7rem; color: var(--muted); margin: 8px 0; }
+.chase-note { max-width: 520px; margin-top: 17px; padding: 14px 16px; background: #e9eff7; border: 1px solid #c5d5e5; border-radius: 9px; font-size: .8rem; }
+.chase-note h3 { margin: 3px 0 5px; }
+.chase-note p:last-child { margin-bottom: 0; }
+.transit-note { max-width: 520px; margin: 12px 0 0; padding: 11px 14px; border-left: 3px solid #b17a24; background: #fff3d4; color: #574320; border-radius: 5px; }
 .venue-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
 .venue-card { padding: 17px; border: 1px solid var(--line); background: white; border-radius: 9px; font-size: .8rem; }
 .venue-card h3 { margin: 4px 0 8px; }
 .venue-card p:last-child { margin-bottom: 0; }
 .venue-number { font-weight: 750; color: var(--green); font-size: .75rem; }
-.street-map { display: block; width: 100%; height: 420px; border: 1px solid var(--line); border-radius: 9px; }
 @media (max-width: 600px) {
   .page { padding: 0 14px; }
   .masthead { padding-top: 29px; }
   .intro { font-size: .8rem; }
   .reading-grid { grid-template-columns: 1fr; gap: 0; }
   .venue-grid { grid-template-columns: 1fr; }
-  .street-map { height: 340px; }
   .track-label { width: 100%; }
   .track-label select { flex: 1; min-width: 0; }
   .event .event-title { font-size: .7rem; }
