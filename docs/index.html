@@ -22,9 +22,9 @@
   </header>
   <main class="page">
     <section class="overview" aria-label="公開情報について">
-      <p><strong>公開セッションだけをまとめた参加案です。</strong>実線は11/15 23:50頃（日本時間）の確認時に予定表に表示されていた枠、破線はその時点で未追加の候補です。自動同期されないため、最新の登録状況・座席予約は公式サイトで確認してください。</p>
+      <p><strong>公開セッションだけをまとめた参加案です。</strong>実線は11/16 07:40台（日本時間）の確認時に予定表に表示されていた枠、破線はその時点で未追加の候補です。自動同期されないため、最新の登録状況・座席予約は公式サイトで確認してください。</p>
       <p>表示はサンフランシスコ時間 <strong>PST（UTC−8）</strong>。日本時間は＋17時間です。カードをタップすると詳細を開けます。</p>
-      <p>比較候補には空き状況が未確認の枠があります。確認済みの追加・満席表示は11/15 23時台（日本時間）の記録です。<strong>「予定に追加」は座席確保を意味しません。</strong>最新状況は公式ページで確認してください。</p>
+      <p>候補の追加・満席表示は各カードに記載した確認時点の記録です。<strong>「予定に追加」は座席確保を意味しません。</strong>最新状況は公式ページで確認してください。</p>
     </section>
     <section class="planner" aria-labelledby="planner-title">
       <div class="section-heading"><h2 id="planner-title">Session planner</h2><span id="session-count" class="edition">PUBLIC SESSIONS</span></div>
@@ -51,6 +51,11 @@
         <h3 id="schedule-notes-title">重複・移動の注意</h3>
         <div id="warnings" class="warnings"></div>
       </section>
+      <details class="gap-notes">
+        <summary>予定セッション間の空き時間（15分以上）</summary>
+        <p>予定セッション同士の間隔です。移動・食事・共通プログラム・その他の予定は含まず、参加できる時間を保証しません。最初の前と最後の後は表示しません。時刻はPSTです。</p>
+        <ul id="session-gaps"></ul>
+      </details>
       <noscript><p class="error">カレンダーにはJavaScriptが必要です。<a href="https://ignite.microsoft.com/en-US/sessions">公式カタログ</a>をご利用ください。</p></noscript>
       <p id="load-error" class="error" hidden></p>
     </section>
@@ -80,7 +85,7 @@
     <p id="detail-availability" class="detail-availability"></p>
     <p id="detail-reason"></p>
     <a id="detail-link" class="official" target="_blank" rel="noopener noreferrer">公式セッションページ ↗</a>
-    <p class="fineprint">表示状態は2026/11/15時点の記録で、自動同期されません。最新の登録・予約状況は公式サイトで確認してください。</p>
+    <p class="fineprint">表示状態は2026/11/16時点の記録で、自動同期されません。最新の登録・予約状況は公式サイトで確認してください。</p>
   </dialog>
 </body>
 </html>

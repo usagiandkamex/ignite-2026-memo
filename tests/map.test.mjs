@@ -10,6 +10,8 @@ test("simplified event map links each marked venue to its details", async () => 
   const targets = [...svg.matchAll(/<a href="#(venue-[^"]+)"/g)].map(match => match[1]);
   assert.deepEqual(targets.sort(), ["venue-clancy", "venue-marriott", "venue-metreon", "venue-south", "venue-west"]);
   for (const target of targets) assert.ok(html.includes(`id="${target}"`), `missing target ${target}`);
+  assert.match(svg, /id="clancy-marker" cx="343" cy="416"/);
+  assert.match(html, /点線はラベルと場所を結ぶ目印/);
   assert.match(html, /https:\/\/www\.openstreetmap\.org\/copyright/);
   assert.doesNotMatch(html, /<iframe\b/);
 });

@@ -11,7 +11,7 @@
     "track": "全体",
     "priority": true,
     "format": "Keynote",
-    "checked": "2026-11-15",
+    "checked": "2026-11-16",
     "note": "イベント全体の方向性と発表内容を確認します。"
   },
   {
@@ -28,7 +28,8 @@
     "note": "Customer Zeroの構成・運用・ガバナンス。INV643と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "unknown"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:39:00Z"
   },
   {
     "id": "1787856639452001EQey-1791814913867001C2Bx",
@@ -44,7 +45,8 @@
     "format": "Breakout",
     "checked": "2026-11-15",
     "note": "運用の可観測性・自動化と障害対応への適用を比較します。",
-    "availability": "add"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:39:00Z"
   },
   {
     "id": "1787856641742001EXqJ-1791588100685001CG03",
@@ -60,7 +62,8 @@
     "note": "切断・規制環境でのローカルAI基盤。INV643と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "unknown"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:39:00Z"
   },
   {
     "id": "1787856658187001Etji-1789751959279001dn4k",
@@ -74,7 +77,7 @@
     "track": "AI基盤",
     "priority": true,
     "format": "Innovation Session",
-    "checked": "2026-11-15",
+    "checked": "2026-11-16",
     "note": "AIを支える計算資源とプラットフォーム設計を比較します。"
   },
   {
@@ -91,7 +94,8 @@
     "note": "障害のあるLinux環境でのエージェント運用。INV643と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "unknown"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:39:00Z"
   },
   {
     "id": "1787856683760001EtBz-1791588115849001C7gi",
@@ -107,7 +111,8 @@
     "format": "Lightning Talk",
     "checked": "2026-11-15",
     "note": "運用の可観測性・自動化と障害対応への適用を比較します。",
-    "availability": "standby"
+    "availability": "standby",
+    "availabilityChecked": "2026-11-15T22:39:00Z"
   },
   {
     "id": "1787856692370001EF2V-1791933310065001kpgU",
@@ -123,7 +128,8 @@
     "format": "Lightning Talk",
     "checked": "2026-11-15",
     "note": "基盤の標準化とガードレールの設計を比較します。",
-    "availability": "standby"
+    "availability": "standby",
+    "availabilityChecked": "2026-11-15T22:39:00Z"
   },
   {
     "id": "1787856692827001E6us-1791933313105001p1k4",
@@ -139,7 +145,8 @@
     "format": "Lightning Talk",
     "checked": "2026-11-15",
     "note": "AIを支える計算資源とプラットフォーム設計を比較します。",
-    "availability": "standby"
+    "availability": "standby",
+    "availabilityChecked": "2026-11-15T22:39:00Z"
   },
   {
     "id": "1787856637610001E284-1791587922010001F67f",
@@ -155,7 +162,8 @@
     "note": "App Service・Container Apps・Functions。BRK429と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "unknown"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:39:00Z"
   },
   {
     "id": "1787856638536001E9Fm-1791588157716001C6AV",
@@ -169,7 +177,7 @@
     "track": "AI基盤",
     "priority": true,
     "format": "Breakout",
-    "checked": "2026-11-15",
+    "checked": "2026-11-16",
     "note": "CPU・GPU・ネットワーク・ストレージを横断してAI基盤を考える枠。BRK439と同時刻のため、AI基盤重視ならこちらを優先する案です。"
   },
   {
@@ -186,7 +194,8 @@
     "format": "Breakout",
     "checked": "2026-11-15",
     "note": "主権要件とクラウド設計のトレードオフを確認。BRK429の代わりに選ぶ枠です。",
-    "availability": "add"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:39:00Z"
   },
   {
     "id": "1787854985876001tT18-1791588339892001ChGq",
@@ -202,7 +211,8 @@
     "note": "スポンサー：NVIDIA GPU基盤。BRK429と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "unknown"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:39:00Z"
   },
   {
     "id": "1787856708798001EkEu-1791588104147001C8Ga",
@@ -218,7 +228,8 @@
     "note": "切断環境のオンボーディング・IDプロバイダー。BRK429と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "unknown"
+    "availability": "standby",
+    "availabilityChecked": "2026-11-15T22:39:00Z"
   },
   {
     "id": "1787856657745001EewR-1789751958676001dVT9",
@@ -234,7 +245,8 @@
     "format": "Innovation Session",
     "checked": "2026-11-15",
     "note": "AIによる業務の変化を扱う全体セッション。BRK433と時間が重なります。",
-    "availability": "add"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:39:00Z"
   },
   {
     "id": "1787856692677001EeNv-1791933315501001MR3Q",
@@ -250,7 +262,8 @@
     "format": "Lightning Talk",
     "checked": "2026-11-15",
     "note": "基盤の標準化とガードレールの設計を比較します。",
-    "availability": "standby"
+    "availability": "standby",
+    "availabilityChecked": "2026-11-15T22:39:00Z"
   },
   {
     "id": "1787856681114001EjQl-1791588085862001Cgkt",
@@ -266,7 +279,8 @@
     "note": "VM・コンテナー・KubernetesのLinux基盤。INV640・BRK433と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "unknown"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:39:00Z"
   },
   {
     "id": "1787856636548001EE1w-1791588336280001CyKk",
@@ -282,7 +296,8 @@
     "format": "Breakout",
     "checked": "2026-11-15",
     "note": "運用の可観測性・自動化と障害対応への適用を比較します。",
-    "availability": "add"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:39:00Z"
   },
   {
     "id": "1787856637165001EL2e-1791588324684001CZEV",
@@ -298,7 +313,8 @@
     "note": "GPU・ID・ポリシー・可観測性。INV640・BRK433と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "unknown"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:39:00Z"
   },
   {
     "id": "1787856639139001E7vh-1791588117221001Cuk3",
@@ -313,7 +329,7 @@
     "priority": true,
     "mustAttend": true,
     "format": "Breakout",
-    "checked": "2026-11-15",
+    "checked": "2026-11-16",
     "note": "必ず参加。AIワークロードに向けた接続・性能・セキュリティ・自動化を確認します。"
   },
   {
@@ -330,7 +346,8 @@
     "note": "シリコン・システム・ネットワークを深掘り。INV640・BRK433と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "unknown"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:40:00Z"
   },
   {
     "id": "1787856594520001EBik-1791588088397001C7vB",
@@ -346,7 +363,8 @@
     "note": "Azure Monitorによるモデル別コスト分析。INV640・BRK433と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "add"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:40:00Z"
   },
   {
     "id": "1787856635948001E9jR-1791588116977001CUXt",
@@ -360,7 +378,7 @@
     "track": "移行・モダナイゼーション",
     "priority": true,
     "format": "Breakout",
-    "checked": "2026-11-15",
+    "checked": "2026-11-16",
     "note": "移行計画とモダナイゼーションへの適用を確認します。"
   },
   {
@@ -377,7 +395,8 @@
     "note": "シリコン・ネットワーク・電力・冷却の共同設計。BRK412と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "unknown"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:40:00Z"
   },
   {
     "id": "1787856726366001EV17-1789751960677001d6j0",
@@ -393,7 +412,8 @@
     "format": "Keynote",
     "checked": "2026-11-15",
     "note": "イベント全体の方向性と発表内容を確認します。",
-    "availability": "add"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:40:00Z"
   },
   {
     "id": "1787856680658001EyPa-1791588163144001CLOq",
@@ -409,7 +429,8 @@
     "format": "Lightning Talk",
     "checked": "2026-11-15",
     "note": "ハイブリッド環境や事業継続性の設計を比較します。",
-    "availability": "standby"
+    "availability": "standby",
+    "availabilityChecked": "2026-11-15T22:40:00Z"
   },
   {
     "id": "1787856602251001Er15-1791588151762001Ck4k",
@@ -425,7 +446,8 @@
     "format": "Theater",
     "checked": "2026-11-15",
     "note": "AIを支える計算資源とプラットフォーム設計を比較します。",
-    "availability": "add"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:40:00Z"
   },
   {
     "id": "1787856674206001EULz-1791588146814001CtB7",
@@ -441,7 +463,8 @@
     "note": "接続先の可視化・統制。前後の別会場への移動に注意。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "unknown"
+    "availability": "standby",
+    "availabilityChecked": "2026-11-15T22:40:00Z"
   },
   {
     "id": "1787856708179001Egmq-1791588147284001CjpZ",
@@ -457,7 +480,8 @@
     "format": "Lightning Talk",
     "checked": "2026-11-15",
     "note": "接続・ネットワーク管理と障害対応の設計を比較します。",
-    "availability": "standby"
+    "availability": "standby",
+    "availabilityChecked": "2026-11-15T22:40:00Z"
   },
   {
     "id": "1787856899340001hHDc-1791588148601001CPnC",
@@ -473,7 +497,8 @@
     "format": "Table Talk",
     "checked": "2026-11-15",
     "note": "Table Talk。 接続・ネットワーク管理と障害対応の設計を比較します。",
-    "availability": "standby"
+    "availability": "standby",
+    "availabilityChecked": "2026-11-15T22:40:00Z"
   },
   {
     "id": "1787856927611001hKi7-1791588150119001CjeZ",
@@ -489,7 +514,8 @@
     "note": "Table Talk：OpenTelemetry・トレース・評価。先着順。BRK542と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "unknown"
+    "availability": "standby",
+    "availabilityChecked": "2026-11-15T22:40:00Z"
   },
   {
     "id": "1787856637312001EsdU-1791588336733001CAme",
@@ -505,7 +531,8 @@
     "format": "Breakout",
     "checked": "2026-11-15",
     "note": "AIを支える計算資源とプラットフォーム設計を比較します。",
-    "availability": "add"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:40:00Z"
   },
   {
     "id": "1787856655787001EJgY-1791588153885001CH9N",
@@ -520,7 +547,7 @@
     "format": "Breakout",
     "note": "AI基盤・ネットワーク・ストレージ・機密コンピューティング。",
     "priority": true,
-    "checked": "2026-11-15"
+    "checked": "2026-11-16"
   },
   {
     "id": "1787854982135001twbi-1791588271585001C9WT",
@@ -536,7 +563,8 @@
     "note": "スポンサー：AMD GPUと推論・学習基盤。BRK542と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "unknown"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:40:00Z"
   },
   {
     "id": "1787858589207001So7i-1791588110837001C0a3",
@@ -552,7 +580,8 @@
     "note": "スポンサー：AI基盤のセキュリティと信頼性。BRK415開始と同時に別会場で終了。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "unknown"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:40:00Z"
   },
   {
     "id": "1787856689522001EMWe-1791588240241001CmT7",
@@ -568,7 +597,8 @@
     "note": "AI支出の予測・可視化・最適化。BRK415と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "unknown"
+    "availability": "standby",
+    "availabilityChecked": "2026-11-15T22:40:00Z"
   },
   {
     "id": "1787854989607001t7tr-1791588302416001CFag",
@@ -584,7 +614,8 @@
     "note": "スポンサー：Wipro・Intel・DellのAzure Local。BRK415と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "unknown"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:40:00Z"
   },
   {
     "id": "1787856636396001ETO1-1791588269572001Cvn5",
@@ -598,7 +629,7 @@
     "track": "AIOps・SRE",
     "priority": true,
     "format": "Breakout",
-    "checked": "2026-11-15",
+    "checked": "2026-11-16",
     "note": "運用エージェントの調査・コスト最適化・是正と、実行を制御する仕組みを確認します。"
   },
   {
@@ -615,7 +646,8 @@
     "format": "Innovation Session",
     "checked": "2026-11-15",
     "note": "エージェントプラットフォームを扱う全体セッション。BRK415と時間が重なります。",
-    "availability": "add"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:40:00Z"
   },
   {
     "id": "1787856930193001hJO6-1791588263996001C58Q",
@@ -631,7 +663,8 @@
     "note": "Table Talk：容量・性能・回復性・コスト・運用。先着順。BRK415終了と同時に別会場で開始。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "unknown"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:40:00Z"
   },
   {
     "id": "1787856582459001E9pN-1791588180404001CLC9",
@@ -647,7 +680,8 @@
     "note": "エージェントによるコンテナー化・移行。LTG1465と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "add"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:40:00Z"
   },
   {
     "id": "1787856708643001EQZr-1791588274057001CyVc",
@@ -661,7 +695,7 @@
     "track": "AIOps・SRE",
     "priority": true,
     "format": "Lightning Talk",
-    "checked": "2026-11-15",
+    "checked": "2026-11-16",
     "note": "運用の可観測性・自動化と障害対応への適用を比較します。"
   },
   {
@@ -678,7 +712,8 @@
     "format": "Breakout",
     "checked": "2026-11-15",
     "note": "AIを支える計算資源とプラットフォーム設計を比較します。",
-    "availability": "add"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:40:00Z"
   },
   {
     "id": "1787856642045001EaOL-1791588199256001Ce5y",
@@ -694,7 +729,8 @@
     "note": "依存関係・復旧・事業継続。INV642・LTG1283と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "unknown"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:40:00Z"
   },
   {
     "id": "1787854984385001tpdF-1791588200901001CCnX",
@@ -710,7 +746,8 @@
     "note": "スポンサー：LenovoとMicrosoftのAzure Local。INV642・LTG1283と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "unknown"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:40:00Z"
   },
   {
     "id": "1787856658039001EnZx-1789751959080001dCHE",
@@ -724,7 +761,7 @@
     "track": "AIOps・SRE",
     "priority": true,
     "format": "Innovation Session",
-    "checked": "2026-11-15",
+    "checked": "2026-11-16",
     "note": "可観測性を横断的に扱う全体セッション。LTG1283とBRK437に重なります。"
   },
   {
@@ -739,7 +776,7 @@
     "track": "AIOps・SRE",
     "priority": true,
     "format": "Lightning Talk",
-    "checked": "2026-11-15",
+    "checked": "2026-11-16",
     "note": "運用の可観測性・自動化と障害対応への適用を比較します。"
   },
   {
@@ -756,7 +793,8 @@
     "note": "スポンサー：Nutanix Cloud Clusters on AzureのDR実演。INV642と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "add"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:40:00Z"
   },
   {
     "id": "1787856709114001EHXU-1791933744052001zwDS",
@@ -772,7 +810,8 @@
     "note": "VMのセキュリティ基準・段階的展開・ドリフト対策。INV642と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "unknown"
+    "availability": "standby",
+    "availabilityChecked": "2026-11-15T22:40:00Z"
   },
   {
     "id": "1787856601712001ErNY-1791588264657001CQB9",
@@ -788,7 +827,8 @@
     "note": "ソブリンクラウドに関する対話。INV642・BRK437と重複。CSVから日時変更。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "add"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:40:00Z"
   },
   {
     "id": "1787858591906001S2pK-1791588188918001CueR",
@@ -804,7 +844,8 @@
     "note": "スポンサー：QumuloとAzure AI compute。INV642・BRK437と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "add"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:40:00Z"
   },
   {
     "id": "1787858594275001SnEg-1791588300833001Cmqi",
@@ -820,7 +861,8 @@
     "format": "Theater",
     "checked": "2026-11-15",
     "note": "スポンサーセッション。 運用の可観測性・自動化と障害対応への適用を比較します。",
-    "availability": "add"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:40:00Z"
   },
   {
     "id": "1787856611240001E5kl-1791588219313001COjb",
@@ -836,7 +878,8 @@
     "note": "Foundryのトレース・品質・信頼性。INV642・BRK437と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "unknown"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:40:00Z"
   },
   {
     "id": "1787856639748001EzEE-1791588218408001C2OD",
@@ -850,7 +893,7 @@
     "track": "ハイブリッド・BCDR",
     "priority": true,
     "format": "Breakout",
-    "checked": "2026-11-15",
+    "checked": "2026-11-16",
     "note": "ハイブリッド環境や事業継続性の設計を比較します。"
   },
   {
@@ -867,7 +910,8 @@
     "note": "Azure CPUとVMの価格性能。INV642・BRK437と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "unknown"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:40:00Z"
   },
   {
     "id": "1787856642196001E70E-1791588100918001CIYP",
@@ -883,7 +927,8 @@
     "format": "Breakout",
     "checked": "2026-11-15",
     "note": "計算資源とデータ基盤の選択・移行・運用を比較します。",
-    "availability": "add"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:40:00Z"
   },
   {
     "id": "1787856680204001EJpr-1791588204409001CRUv",
@@ -899,7 +944,8 @@
     "format": "Lightning Talk",
     "checked": "2026-11-15",
     "note": "運用の可観測性・自動化と障害対応への適用を比較します。",
-    "availability": "add"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:40:00Z"
   },
   {
     "id": "1787856905146001hLuY-1791588225006001Cotk",
@@ -915,7 +961,8 @@
     "format": "Table Talk",
     "checked": "2026-11-15",
     "note": "Table Talk。 接続・ネットワーク管理と障害対応の設計を比較します。",
-    "availability": "standby"
+    "availability": "standby",
+    "availabilityChecked": "2026-11-15T22:40:00Z"
   },
   {
     "id": "1787856929538001hie6-1791588227490001CNAI",
@@ -931,7 +978,8 @@
     "format": "Table Talk",
     "checked": "2026-11-15",
     "note": "Table Talk。 接続・ネットワーク管理と障害対応の設計を比較します。",
-    "availability": "add"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:40:00Z"
   },
   {
     "id": "1787856583350001Eojv-1791846356649001bg0t",
@@ -947,7 +995,8 @@
     "note": "Duke HealthのAzure災害復旧事例。BRK437終了と同時に開始、THR967まで10分。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "unknown"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:40:00Z"
   },
   {
     "id": "1787856639900001E6cl-1791588218637001CGLI",
@@ -963,7 +1012,8 @@
     "format": "Breakout",
     "checked": "2026-11-15",
     "note": "ハイブリッド環境や事業継続性の設計を比較します。",
-    "availability": "add"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:40:00Z"
   },
   {
     "id": "1787856592677001Eu4q-1791588313010001C6kJ",
@@ -978,7 +1028,7 @@
     "format": "Theater",
     "note": "トークン費用・モデル選択・配置を予算と結び付ける。",
     "priority": true,
-    "checked": "2026-11-15"
+    "checked": "2026-11-16"
   },
   {
     "id": "1787856640517001EIKl-1791588245037001C6mG",
@@ -994,7 +1044,8 @@
     "format": "Breakout",
     "checked": "2026-11-15",
     "note": "ハイブリッド環境や事業継続性の設計を比較します。",
-    "availability": "add"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:40:00Z"
   },
   {
     "id": "1787858593527001STqP-1791588230018001CYI1",
@@ -1010,7 +1061,8 @@
     "note": "スポンサー：Commvault Cloudを使った復旧。THRSP1109まで10分で別会場への移動が必要。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "add"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:40:00Z"
   },
   {
     "id": "1787858594120001SZiv-1791588294418001C5be",
@@ -1026,7 +1078,8 @@
     "note": "スポンサー：Equinix Fabric OneによるAzure・マルチクラウド接続。THRSP1109まで10分。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "add"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:40:00Z"
   },
   {
     "id": "1787856916969001hiZm-1791588253387001Ck6l",
@@ -1042,7 +1095,8 @@
     "note": "Table Talk：ガバナンスと例外管理。先着順。THRSP1109と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "unknown"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:40:00Z"
   },
   {
     "id": "1787856929707001hilj-1791588254475001Cm5D",
@@ -1058,7 +1112,8 @@
     "note": "Table Talk：Front Door・Application Gateway・AKSネットワーク。先着順。THRSP1109と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "unknown"
+    "availability": "standby",
+    "availabilityChecked": "2026-11-15T22:40:00Z"
   },
   {
     "id": "1787856602081001EWLd-1791588258004001C6u0",
@@ -1074,7 +1129,8 @@
     "note": "Zero Trust・分離・マルチクラウド。THRSP1109と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "add"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:40:00Z"
   },
   {
     "id": "1787858594736001SLBb-1791588331687001Clb0",
@@ -1088,7 +1144,7 @@
     "track": "AIOps・SRE",
     "priority": true,
     "format": "Theater",
-    "checked": "2026-11-15",
+    "checked": "2026-11-16",
     "note": "スポンサーセッション。 運用の可観測性・自動化と障害対応への適用を比較します。"
   },
   {
@@ -1105,7 +1161,8 @@
     "format": "Lightning Talk",
     "checked": "2026-11-15",
     "note": "接続・ネットワーク管理と障害対応の設計を比較します。",
-    "availability": "standby"
+    "availability": "standby",
+    "availabilityChecked": "2026-11-15T22:40:00Z"
   },
   {
     "id": "1787856917128001hvPQ-1791588253603001CIAk",
@@ -1121,7 +1178,8 @@
     "note": "Table Talk：ネットワーク・ID・ガバナンスの責任分界。先着順。BRK409と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "unknown"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:40:00Z"
   },
   {
     "id": "1787856929384001hluS-1791588211030001CxnE",
@@ -1137,7 +1195,8 @@
     "note": "Table Talk：ヘルスモデルの運用とロードマップ。先着順。BRK409と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "unknown"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:40:00Z"
   },
   {
     "id": "1787856602420001EGgA-1791588144696001Cv8p",
@@ -1153,7 +1212,8 @@
     "note": "Drasiを用いた障害・SLO検知と自己修復。BRK409と重複。CSVから日時変更。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "add"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:40:00Z"
   },
   {
     "id": "1787858595620001Sbng-1791588342813001CvQE",
@@ -1169,7 +1229,8 @@
     "note": "スポンサー：AI向けネットワークのセキュリティ・性能。BRK409と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "add"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:41:00Z"
   },
   {
     "id": "1787856605632001EFai-1791588269349001CPgM",
@@ -1185,7 +1246,8 @@
     "note": "移行準備と残置サーバーの保護。BRK409と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "unknown"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:41:00Z"
   },
   {
     "id": "1787856633344001EnYU-1791814911975001CWpv",
@@ -1201,7 +1263,8 @@
     "note": "WSLコンテナーの性能・セキュリティ・管理。BRK409と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "unknown"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:41:00Z"
   },
   {
     "id": "1787856635492001EG3n-1791588132441001CAt3",
@@ -1215,7 +1278,7 @@
     "track": "移行・モダナイゼーション",
     "priority": true,
     "format": "Breakout",
-    "checked": "2026-11-15",
+    "checked": "2026-11-16",
     "note": "移行計画とモダナイゼーションへの適用を確認します。"
   },
   {
@@ -1232,7 +1295,8 @@
     "note": "Hyper-V・AD・ストレージ・ネットワーク。BRK409と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "unknown"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:41:00Z"
   },
   {
     "id": "1787856638383001ER6o-1791588270019001CjPZ",
@@ -1248,7 +1312,8 @@
     "note": "Azure Linux・Kubernetes・GitHubを活用する構成。BRK409と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "unknown"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:41:00Z"
   },
   {
     "id": "1787856708953001EO2u-1791588191040001CkjK",
@@ -1264,7 +1329,8 @@
     "note": "Resiliency ManagerとBackupのサイバー復旧。BRK409と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "unknown"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:41:00Z"
   },
   {
     "id": "1787856581861001Eq3k-1791588293328001Cvlg",
@@ -1280,7 +1346,8 @@
     "note": "分散環境の管理、ESU、Hotpatch。BRK409と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "add"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:41:00Z"
   },
   {
     "id": "1787856905617001hghz-1791588279043001Cf3b",
@@ -1296,7 +1363,8 @@
     "note": "Table Talk：Network Watcher・AKSの可観測性。先着順。BRK445と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "unknown"
+    "availability": "standby",
+    "availabilityChecked": "2026-11-15T22:41:00Z"
   },
   {
     "id": "1787856905776001hVU0-1791588279262001Cu9U",
@@ -1312,7 +1380,8 @@
     "note": "Table Talk：Azure Copilot・ARM MCPによる調査と最適化。先着順。BRK445と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "unknown"
+    "availability": "standby",
+    "availabilityChecked": "2026-11-15T22:41:00Z"
   },
   {
     "id": "1787856640975001Eumd-1791588234558001Co4y",
@@ -1326,7 +1395,7 @@
     "track": "ハイブリッド・BCDR",
     "priority": true,
     "format": "Breakout",
-    "checked": "2026-11-15",
+    "checked": "2026-11-16",
     "note": "ハイブリッド環境や事業継続性の設計を比較します。"
   },
   {
@@ -1343,7 +1412,8 @@
     "note": "スポンサー：Everpure Cloudの性能・容量・コスト最適化。BRK445と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "add"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:41:00Z"
   },
   {
     "id": "1787858597554001S13J-1791588354319001Cfm8",
@@ -1359,7 +1429,8 @@
     "note": "スポンサー：ProsperOpsの予約・Savings Plans最適化。BRK445終了と同時に別会場で開始。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "add"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:41:00Z"
   },
   {
     "id": "1787856686660001EATU-1791588302856001CHVo",
@@ -1375,7 +1446,8 @@
     "format": "Lightning Talk",
     "checked": "2026-11-15",
     "note": "ハイブリッド環境や事業継続性の設計を比較します。",
-    "availability": "add"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:41:00Z"
   },
   {
     "id": "1787856636094001EKJc-1791588309857001CQXL",
@@ -1391,7 +1463,8 @@
     "format": "Breakout",
     "checked": "2026-11-15",
     "note": "ハイブリッド環境や事業継続性の設計を比較します。",
-    "availability": "add"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:41:00Z"
   },
   {
     "id": "1787856636998001ES6L-1791588310080001CIft",
@@ -1407,7 +1480,8 @@
     "format": "Breakout",
     "checked": "2026-11-15",
     "note": "計算資源とデータ基盤の選択・移行・運用を比較します。",
-    "availability": "add"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:41:00Z"
   },
   {
     "id": "1787856638224001Ejm6-1791588310311001CoWQ",
@@ -1421,7 +1495,7 @@
     "track": "移行・モダナイゼーション",
     "priority": true,
     "format": "Breakout",
-    "checked": "2026-11-15",
+    "checked": "2026-11-16",
     "note": "移行計画とモダナイゼーションへの適用を確認します。"
   },
   {
@@ -1438,7 +1512,8 @@
     "note": "AI向けデータ配置・性能・回復性。BRK427と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "unknown"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:41:00Z"
   },
   {
     "id": "1787854984164001t0t5-1791588200649001Caph",
@@ -1454,7 +1529,8 @@
     "note": "スポンサー：接続・切断環境の自動化。BRK427と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "unknown"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:41:00Z"
   },
   {
     "id": "1787858598306001SSO4-1791588346861001CzHJ",
@@ -1470,7 +1546,8 @@
     "note": "スポンサー：Red Hat OpenShiftと仮想化。BRK427と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "add"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:41:00Z"
   },
   {
     "id": "1787856683462001Eb8s-1791588315247001CkQL",
@@ -1486,7 +1563,8 @@
     "format": "Lightning Talk",
     "checked": "2026-11-15",
     "note": "運用の可観測性・自動化と障害対応への適用を比較します。",
-    "availability": "standby"
+    "availability": "standby",
+    "availabilityChecked": "2026-11-15T22:41:00Z"
   },
   {
     "id": "1787856581700001EulX-1791588274511001CDJr",
@@ -1500,7 +1578,7 @@
     "track": "コンピュート・ストレージ",
     "priority": true,
     "format": "Theater",
-    "checked": "2026-11-15",
+    "checked": "2026-11-16",
     "note": "計算資源とデータ基盤の選択・移行・運用を比較します。"
   },
   {
@@ -1517,7 +1595,8 @@
     "note": "Table Talk：保護・復旧・オーケストレーションを議論。先着順。THR896・THRSP1142と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "unknown"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:41:00Z"
   },
   {
     "id": "1787856611535001Ejk2-1791588235003001CQhT",
@@ -1533,7 +1612,8 @@
     "note": "AI Gateway・ID・FinOps・ガバナンス。THRSP1142・THR895と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "unknown"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:41:00Z"
   },
   {
     "id": "1787856638686001EsPu-1791588322196001Cv6Z",
@@ -1549,7 +1629,8 @@
     "format": "Breakout",
     "checked": "2026-11-15",
     "note": "計算資源とデータ基盤の選択・移行・運用を比較します。",
-    "availability": "add"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:41:00Z"
   },
   {
     "id": "1787856582154001EA3N-1791588300382001CDxh",
@@ -1565,7 +1646,8 @@
     "format": "Theater",
     "checked": "2026-11-15",
     "note": "AIを支える計算資源とプラットフォーム設計を比較します。",
-    "availability": "add"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:41:00Z"
   },
   {
     "id": "1787858599632001ShlA-1791588301277001CQxb",
@@ -1580,7 +1662,7 @@
     "format": "Theater",
     "note": "スポンサー：Azureと企業全体のネットワークセキュリティ。THR895まで別会場へ10分。",
     "priority": true,
-    "checked": "2026-11-15"
+    "checked": "2026-11-16"
   },
   {
     "id": "1787856581551001ERGj-1791588331232001CPVT",
@@ -1595,7 +1677,7 @@
     "priority": true,
     "mustAttend": true,
     "format": "Theater",
-    "checked": "2026-11-15",
+    "checked": "2026-11-16",
     "note": "必ず参加。AIを使った継続的なコスト最適化を確認。終了10分後にBRK417が別会場で始まるため、移動に注意してください。"
   },
   {
@@ -1612,7 +1694,8 @@
     "note": "ガバナンスを組み込む基盤構築。THR895・BRK417と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "add"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:41:00Z"
   },
   {
     "id": "1787856582007001EDno-1791588290449001CWk6",
@@ -1628,7 +1711,8 @@
     "note": "AKSやエージェント活用を含む継続的な回復性検証。THR895・BRK417と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "add"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:41:00Z"
   },
   {
     "id": "1787856592525001ENZL-1791588293767001Ckrm",
@@ -1644,7 +1728,8 @@
     "note": "VM・NW・ディスクの知識をAKSに対応付け。THR895・BRK417と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "add"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:41:00Z"
   },
   {
     "id": "1787856692370001EF2V-1791588334435001C2ap",
@@ -1660,7 +1745,8 @@
     "format": "Lightning Talk",
     "checked": "2026-11-15",
     "note": "基盤の標準化とガードレールの設計を比較します。",
-    "availability": "standby"
+    "availability": "standby",
+    "availabilityChecked": "2026-11-15T22:41:00Z"
   },
   {
     "id": "1787856612609001ExWS-1791588098847001C5fK",
@@ -1676,7 +1762,8 @@
     "note": "AI投資の可視化・最適化。BRK417と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "unknown"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:41:00Z"
   },
   {
     "id": "1787856636701001ERm4-1791588336506001CinE",
@@ -1690,7 +1777,7 @@
     "track": "AIOps・SRE",
     "priority": true,
     "format": "Breakout",
-    "checked": "2026-11-15",
+    "checked": "2026-11-16",
     "note": "Azure SRE Agentによる調査・運用自動化と信頼性を確認。LTG1378と重複するため、SRE重視ならこちらを優先する案です。"
   },
   {
@@ -1707,7 +1794,8 @@
     "format": "Breakout",
     "checked": "2026-11-15",
     "note": "AIを支える計算資源とプラットフォーム設計を比較します。",
-    "availability": "add"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:41:00Z"
   },
   {
     "id": "1787856695133001E8tJ-1791588341918001CFwI",
@@ -1723,7 +1811,8 @@
     "format": "Lightning Talk",
     "checked": "2026-11-15",
     "note": "インフラのセキュリティ設計を確認します。",
-    "availability": "standby"
+    "availability": "standby",
+    "availabilityChecked": "2026-11-15T22:41:00Z"
   },
   {
     "id": "1787856616168001EPp9-1791588352303001Cj36",
@@ -1739,7 +1828,8 @@
     "format": "Breakout",
     "checked": "2026-11-15",
     "note": "基盤の標準化とガードレールの設計を比較します。",
-    "availability": "add"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:41:00Z"
   },
   {
     "id": "1787856620707001EyJO-1791588352983001C0oQ",
@@ -1753,7 +1843,7 @@
     "track": "AIOps・SRE",
     "priority": true,
     "format": "Breakout",
-    "checked": "2026-11-15",
+    "checked": "2026-11-16",
     "note": "本番AIOpsでの調査連携と人による判断の設計を確認。BRK284と同時刻なので、SREを深掘りする場合の代替です。"
   },
   {
@@ -1770,7 +1860,8 @@
     "note": "BRK314と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "unknown"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:41:00Z"
   },
   {
     "id": "1787856638839001EFeZ-1791588352078001C1sh",
@@ -1786,7 +1877,8 @@
     "format": "Breakout",
     "checked": "2026-11-15",
     "note": "インフラのセキュリティ設計を確認します。",
-    "availability": "add"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:41:00Z"
   },
   {
     "id": "1787856582609001E7gr-1791588180641001C7VP",
@@ -1802,7 +1894,8 @@
     "note": "トークン制限、キャッシュ、ルーティングによるFinOps。BRK314と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "add"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:41:00Z"
   },
   {
     "id": "1787856640669001EqlK-1791814917579001CtBK",
@@ -1818,7 +1911,8 @@
     "note": "機密VMによるAIモデル・データ保護。BRK540と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "unknown"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:41:00Z"
   },
   {
     "id": "1787856655493001Eeqv-1791814922444001C4tb",
@@ -1832,7 +1926,7 @@
     "track": "全体",
     "priority": true,
     "format": "Breakout",
-    "checked": "2026-11-15",
+    "checked": "2026-11-16",
     "note": "Igniteの発表を日本語で振り返り、持ち帰る論点を整理する枠です。"
   },
   {
@@ -1849,7 +1943,8 @@
     "note": "AIリクエストを通して基盤全体を俯瞰。BRK540と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "unknown"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:41:00Z"
   },
   {
     "id": "1787856641125001Eql1-1791814921285001Cbjg",
@@ -1865,6 +1960,7 @@
     "note": "Arc・Radius・Kubernetesでクラウドからエッジまで一貫運用。BRK540と重複。",
     "priority": false,
     "checked": "2026-11-15",
-    "availability": "unknown"
+    "availability": "add",
+    "availabilityChecked": "2026-11-15T22:41:00Z"
   }
 ]

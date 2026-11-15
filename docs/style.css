@@ -61,6 +61,10 @@ input { width: 18px; height: 18px; accent-color: var(--green); }
 .schedule-notes { margin-top: 20px; }
 .schedule-notes h3 { margin: 0 0 10px; }
 .notes-help { color: var(--muted); font-size: .73rem; margin: 2px 0 0; }
+.gap-notes { margin-top: 16px; border: 1px solid var(--line); background: white; border-radius: 8px; padding: 10px 12px; font-size: .76rem; }
+.gap-notes summary { cursor: pointer; font-weight: 700; }
+.gap-notes p { color: var(--muted); margin: 10px 0 4px; }
+.gap-notes ul { margin: 6px 0 0; padding-left: 20px; }
 .warning { background: #fff1e9; border: 1px solid #e8c1ad; border-left: 3px solid var(--danger); border-radius: 5px; font-size: .73rem; padding: 9px 11px; }
 .warning.travel { background: #f7f1df; border-color: #e0d1a5; }
 .calendar-help { font-size: .66rem; color: var(--muted); margin: 12px 0 8px; }
@@ -113,6 +117,7 @@ dialog p { font-size: .84rem; }
 .event-map .eyebrow { color: var(--green); }
 .event-map h2 { margin: 6px 0 12px; }
 .event-map > p { font-size: .83rem; }
+.map-key { color: #69491f; }
 .official-map { margin: 24px 0; padding: 22px; background: #e8f0df; border: 1px solid #c5d7bd; border-radius: 12px; }
 .official-map .eyebrow, .venue-section .eyebrow { color: var(--green); }
 .official-map h2, .venue-section h2 { margin: 6px 0 12px; }

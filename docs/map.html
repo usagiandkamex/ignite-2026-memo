@@ -23,10 +23,11 @@
       <p class="eyebrow">IGNITE 2026 / VENUE MAP</p>
       <h2 id="area-title">会場周辺のシンプルマップ</h2>
       <p class="muted">主要な会場・周辺施設と道路だけを表示。番号をタップすると、所在地や会場別のフロア情報へ移動します。</p>
+      <p class="map-key"><strong>6 The Clancy</strong> は、2nd StとFolsom St付近の<strong>オレンジ色の点</strong>です。</p>
       <figure class="schematic">
         <svg class="campus-map" viewBox="0 0 390 505" role="img" aria-labelledby="area-map-title area-map-desc" xmlns="http://www.w3.org/2000/svg">
           <title id="area-map-title">Ignite主要会場の周辺マップ</title>
-          <desc id="area-map-desc">4th、3rd、2nd Streetが上下、Market、Mission、Howard、Folsom Streetが左右に並ぶ回転・変形した簡略地図。Moscone Westは4th Streetの西側、MetreonとMarriott Marquisは東側。Moscone SouthはHoward Streetを挟んでNorthの向かい。The Clancyは2nd StreetとFolsom Street付近。Chase Centerは別の場所。</desc>
+          <desc id="area-map-desc">4th、3rd、2nd Streetが上下、Market、Mission、Howard、Folsom Streetが左右に並ぶ回転・変形した簡略地図。Moscone Westは4th Streetの西側、MetreonとMarriott Marquisは東側。Moscone SouthはHoward Streetを挟んでNorthの向かい。The Clancyは2nd StreetとFolsom Street付近のオレンジ色の点。点線はラベルと位置を結び、経路ではない。Chase Centerは別の場所。</desc>
           <rect width="390" height="505" rx="16" fill="#eef2e9"/>
           <path d="M0 103H390 M0 220H390 M0 333H390 M0 443H390 M101 0V505 M217 0V505 M333 0V505" fill="none" stroke="#cad6c9" stroke-width="20"/>
           <path d="M0 103H390 M0 220H390 M0 333H390 M0 443H390 M101 0V505 M217 0V505 M333 0V505" fill="none" stroke="#fff" stroke-width="15"/>
@@ -86,14 +87,17 @@
             <text x="147" y="379" fill="#5b7063" font-family="Segoe UI, sans-serif" font-size="10">The Hub · THR895 ほか</text>
           </a>
           <a href="#venue-clancy" aria-label="6 The Clancyの所在地へ">
-            <rect x="244" y="396" width="141" height="39" rx="9" fill="#fff2db" stroke="#d4b37b"/>
-            <circle cx="259" cy="410" r="10" fill="#9a6423"/><text x="259" y="414" text-anchor="middle" fill="#fff" font-family="sans-serif" font-size="11" font-weight="700">6</text>
-            <text x="275" y="414" fill="#62441d" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700">The Clancy</text>
-            <text x="275" y="429" fill="#7c694c" font-family="Segoe UI, sans-serif" font-size="10">2nd / Folsom · hotel</text>
+            <path d="M343 416H365V325" fill="none" stroke="#9a6423" stroke-width="2" stroke-dasharray="4 3"/>
+            <circle id="clancy-marker" cx="343" cy="416" r="9" fill="#b46b18" stroke="#fff" stroke-width="3"/>
+            <circle cx="343" cy="416" r="2" fill="#fff"/>
+            <rect x="244" y="282" width="141" height="43" rx="9" fill="#fff2db" stroke="#d4b37b"/>
+            <circle cx="259" cy="297" r="10" fill="#9a6423"/><text x="259" y="301" text-anchor="middle" fill="#fff" font-family="sans-serif" font-size="11" font-weight="700">6</text>
+            <text x="275" y="301" fill="#62441d" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700">The Clancy</text>
+            <text x="275" y="317" fill="#7c694c" font-family="Segoe UI, sans-serif" font-size="10">299 2nd St</text>
           </a>
           <text x="15" y="485" fill="#65766a" font-family="Segoe UI, sans-serif" font-size="10">道路は位置関係を示す略図です。経路・入口は公式Mapへ。</text>
         </svg>
-        <figcaption>街路と会場の位置を基に回転・変形して簡略化しています。建物や駅の入口・徒歩経路を示すものではありません。位置データ © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>（ODbL）。</figcaption>
+        <figcaption>街路と会場の位置を基に回転・変形して簡略化しています。The Clancyの点線はラベルと場所を結ぶ目印で、徒歩経路ではありません。位置データ © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>（ODbL）。</figcaption>
       </figure>
       <div class="chase-note">
         <span class="venue-number">5 / 別エリア</span>

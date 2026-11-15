@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import {readFile} from "node:fs/promises";
-import {minutes, overlaps, conflictPairs, relevantConflictPairs, layoutDay, dayColumnMinWidth, transferWarnings} from "../docs/layout.js";
+import {minutes, overlaps, conflictPairs, relevantConflictPairs, layoutDay, dayColumnMinWidth, sessionGaps, transferWarnings} from "../docs/layout.js";
 
 const session = (id, start, end, extra = {}) => ({id, day: 17, start, end, place: "Moscone West | Room 1", ...extra});
 
@@ -22,6 +22,24 @@ test("nested and chained intervals use reusable lanes without colliding", () => 
   assert.equal(layoutDay([]).length, 0);
 });
 
+test("planned sessions stay left of candidates even when they start later", () => {
+  const items = [
+    session("candidate-early", "09:00", "10:00", {priority: false}),
+    session("planned-a", "09:15", "09:45", {priority: true}),
+    session("planned-b", "09:30", "10:15", {priority: true}),
+    session("candidate-late", "09:45", "10:30", {priority: false})
+  ];
+  const placed = layoutDay(items);
+  assert.equal(placed.find(item => item.id === "planned-a").lane, 0);
+  assert.equal(placed.find(item => item.id === "planned-b").lane, 1);
+  for (const [a, b] of conflictPairs(placed)) {
+    assert.notEqual(a.lane, b.lane);
+    if (a.priority !== b.priority) {
+      assert.ok((a.priority ? a : b).lane < (a.priority ? b : a).lane);
+    }
+  }
+});
+
 test("conflict notes retain planned conflicts and include visible candidates", () => {
   const a = session("a", "10:00", "11:00", {priority: true});
   const b = session("b", "10:00", "11:00", {priority: true});
@@ -37,6 +55,18 @@ test("dense days reserve readable width for each overlapping lane", () => {
   assert.equal(dayColumnMinWidth(layoutDay(dense), false), 600);
   assert.equal(dayColumnMinWidth(layoutDay(dense), true), 600);
   assert.equal(dayColumnMinWidth(layoutDay(dense.slice(0, 1)), true), 260);
+});
+
+test("session gaps merge overlaps, include 15 minutes, and never cross days", () => {
+  const items = [
+    session("a", "10:00", "10:45"),
+    session("b", "10:30", "11:15"),
+    session("c", "11:30", "12:00"),
+    session("d", "12:14", "12:45"),
+    session("e", "09:00", "09:45", {day: 18})
+  ];
+  assert.deepEqual(sessionGaps(items), [{day: 17, start: "11:15", end: "11:30", minutes: 15}]);
+  assert.deepEqual(sessionGaps([]), []);
 });
 
 test("published participant draft matches the checked schedule and shows its conflicts", async () => {
@@ -57,9 +87,9 @@ test("published participant draft matches the checked schedule and shows its con
   const pairs = conflictPairs(selected).map(pair => pair.map(item => item.code).sort().join("/")).sort();
   assert.deepEqual(pairs, ["BRK437/INV642", "INV642/LTG1283"].sort());
   const candidates = items.filter(item => !item.priority);
-  assert.equal(candidates.filter(item => item.availability === "add").length, 41);
-  assert.equal(candidates.filter(item => item.availability === "standby").length, 12);
-  assert.equal(candidates.filter(item => item.availability === "unknown").length, 43);
+  assert.equal(candidates.filter(item => item.availability === "add").length, 76);
+  assert.equal(candidates.filter(item => item.availability === "standby").length, 20);
+  assert.ok(candidates.every(item => item.availabilityChecked && !Number.isNaN(Date.parse(item.availabilityChecked))));
   for (const code of ["BRK421", "INV640"]) {
     assert.ok(candidates.some(item => item.code === code && item.availability === "add"));
   }
@@ -84,12 +114,15 @@ test("published participant draft matches the checked schedule and shows its con
   const newlyResearched = items.filter(item => recent.has(item.code));
   assert.equal(newlyResearched.length, 44);
   assert.deepEqual(newlyResearched.filter(item => item.priority).map(item => item.code), ["BRK542"]);
-  assert.ok(newlyResearched.filter(item => !item.priority).every(item => item.availability === "unknown"));
+  assert.ok(newlyResearched.filter(item => !item.priority).every(item => ["add", "standby"].includes(item.availability)));
   assert.deepEqual(items.filter(item => item.mustAttend).map(item => item.code).sort(), ["BRK433", "THR895"]);
   assert.ok(items.filter(item => item.mustAttend).every(item => item.priority && item.note.includes("必ず参加")));
   for (const day of [17, 18, 19, 20]) {
     const placed = layoutDay(items.filter(item => item.day === day));
-    for (const [a, b] of conflictPairs(placed)) assert.notEqual(a.lane, b.lane);
+    for (const [a, b] of conflictPairs(placed)) {
+      assert.notEqual(a.lane, b.lane);
+      if (a.priority !== b.priority) assert.ok((a.priority ? a : b).lane < (a.priority ? b : a).lane);
+    }
     assert.ok(placed.every(item => item.lane < item.lanes));
   }
 });
