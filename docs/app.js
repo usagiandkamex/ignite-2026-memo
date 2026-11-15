@@ -16,11 +16,12 @@ const element = (tag, className, text) => {
   return node;
 };
 const label = item => `${item.code} ${item.start}–${item.end}`;
-const isSponsored = item => item.code.startsWith("THRSP");
+const isSponsored = item => /^(?:BRK|LTG|THR)SP/.test(item.code);
 const isGeneral = item => item.priority && (item.format === "Keynote" || item.format === "Innovation Session");
 const category = item => !item.priority ? "未追加候補（11/15時点）" : isGeneral(item) ? "全体セッション・予定表に表示（11/15時点）" : "予定表に表示（11/15時点）";
 const availability = item => item.availability === "standby" ? "満席・待機のみ" :
-  item.availability === "add" ? "予定に追加の表示あり（座席確保ではありません）" : "";
+  item.availability === "add" ? "予定に追加の表示あり（座席確保ではありません）" :
+  item.availability === "unknown" ? "空き状況未確認" : "";
 const selectedDays = () => week.getAttribute("aria-pressed") === "true" ? [17, 18, 19, 20] : [day];
 const comparisonPool = () => sessions.filter(item => alternatives.checked || item.priority);
 function openDetail(item) {
@@ -37,9 +38,9 @@ function openDetail(item) {
   document.getElementById("detail-conflicts").textContent = conflicts.length
     ? `時間重複：${conflicts.map(label).join("、")}（分野フィルターで非表示の枠を含む）`
     : "現在の比較範囲に時間重複はありません。会場間の移動は別途確認してください。";
-  document.getElementById("detail-availability").textContent = availability(item)
-    ? `公式表示：${availability(item)}。11/15 23時台（日本時間）確認。最新状況は公式ページへ。`
-    : "";
+  document.getElementById("detail-availability").textContent = item.availability === "unknown"
+    ? "空き状況：未確認。公式ページで確認してください。"
+    : availability(item) ? `公式表示：${availability(item)}。11/15 23時台（日本時間）確認。最新状況は公式ページへ。` : "";
   document.getElementById("detail-reason").textContent = item.note;
   document.getElementById("detail-link").href = item.url;
   dialog.showModal();
@@ -85,11 +86,12 @@ function render() {
       card.setAttribute("aria-label", `${label(item)} ${item.title} ${category(item)}${item.mustAttend ? "、必ず参加" : ""}${isSponsored(item) ? "、スポンサー枠" : ""}${availability(item) ? `、${availability(item)}` : ""}${conflicts.length ? "、時間重複あり" : ""}。詳細を開く`);
       card.append(element("span", "event-time", `${item.start}–${item.end}`));
       const tags = [];
+      if (isSponsored(item)) tags.push("協賛");
       if (item.mustAttend) tags.push("必ず参加");
       else if (isGeneral(item)) tags.push("全体");
       else if (item.availability === "standby") tags.push("待機");
+      else if (item.availability === "unknown") tags.push("空き未確認");
       else if (!item.priority && !isSponsored(item)) tags.push("比較");
-      if (isSponsored(item)) tags.push("協賛");
       const suffix = tags.map(tag => ` · ${tag}`).join("");
       card.append(element("span", "event-code", `${conflicts.length ? "⚠ " : ""}${item.code}${suffix}`));
       card.append(element("span", "event-title", item.title));
@@ -140,6 +142,7 @@ try {
   const response = await fetch("./sessions.json");
   if (!response.ok) throw new Error(`セッション取得失敗：HTTP ${response.status}`);
   sessions = await response.json();
+  document.getElementById("session-count").textContent = `${sessions.length} PUBLIC SESSIONS`;
   for (const value of [...new Set(sessions.map(item => item.track))].sort()) {
     const option = element("option", "", value);
     option.value = value;

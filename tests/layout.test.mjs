@@ -41,7 +41,7 @@ test("dense days reserve readable width for each overlapping lane", () => {
 
 test("published participant draft matches the checked schedule and shows its conflicts", async () => {
   const items = JSON.parse(await readFile(new URL("../docs/sessions.json", import.meta.url), "utf8"));
-  assert.equal(items.length, 74);
+  assert.equal(items.length, 118);
   for (const item of items) {
     assert.ok(item.title && item.format && item.checked && item.note);
     assert.match(item.url, /^https:\/\/ignite\.microsoft\.com\/en-US\/sessions\/[\w-]+$/);
@@ -49,16 +49,20 @@ test("published participant draft matches the checked schedule and shows its con
   }
   const selected = items.filter(item => item.priority);
   assert.deepEqual(selected.map(item => item.code).sort(), [
-    "BRK314", "BRK409", "BRK412", "BRK415", "BRK417", "BRK421", "BRK427",
-    "BRK429", "BRK433", "BRK437", "BRK445", "BRK540",
-    "INV640", "INV642", "INV643", "KEY01", "LTG1283",
+    "BRK314", "BRK409", "BRK412", "BRK415", "BRK417", "BRK427",
+    "BRK429", "BRK433", "BRK437", "BRK445", "BRK540", "BRK542",
+    "INV642", "INV643", "KEY01", "LTG1283",
     "LTG1465", "THR895", "THR896", "THR967", "THRSP1109", "THRSP1142"
   ].sort());
   const pairs = conflictPairs(selected).map(pair => pair.map(item => item.code).sort().join("/")).sort();
-  assert.deepEqual(pairs, ["BRK433/INV640", "BRK437/INV642", "INV642/LTG1283"].sort());
+  assert.deepEqual(pairs, ["BRK437/INV642", "INV642/LTG1283"].sort());
   const candidates = items.filter(item => !item.priority);
-  assert.equal(candidates.filter(item => item.availability === "add").length, 39);
+  assert.equal(candidates.filter(item => item.availability === "add").length, 41);
   assert.equal(candidates.filter(item => item.availability === "standby").length, 12);
+  assert.equal(candidates.filter(item => item.availability === "unknown").length, 43);
+  for (const code of ["BRK421", "INV640"]) {
+    assert.ok(candidates.some(item => item.code === code && item.availability === "add"));
+  }
   const researched = new Set([
     "THR979", "THR901", "THRSP1088", "THR1025", "THRSP1055", "THR967",
     "THRSP1101", "THRSP1105", "THR1027", "THR1029", "THRSP1115", "THR897",
@@ -69,6 +73,18 @@ test("published participant draft matches the checked schedule and shows its con
   assert.equal(added.length, 20);
   assert.deepEqual(added.filter(item => item.priority).map(item => item.code).sort(), ["THR967", "THRSP1142"]);
   assert.ok(added.filter(item => !item.priority).every(item => item.availability === "add"));
+  const recent = new Set([
+    "BRK414", "BRK450", "LTG1286", "BRK423", "BRKSP630", "LTG1466", "LTG1287",
+    "BRK420", "BRK441", "BRK436", "LTG1242", "TT1838", "BRK542", "BRKSP614",
+    "THRSP1080", "LTG1342", "LTGSP1603", "TT1854", "BRK452", "BRKSP605", "LTG1468",
+    "BRK251", "BRK440", "THR907", "TT1773", "TT1851", "TT1774", "TT1849",
+    "BRK215", "BRK395", "BRK418", "BRK428", "LTG1467", "TT1703", "TT1704",
+    "BRK434", "BRKSP604", "TT1716", "BRK253", "BRK260", "BRK374", "BRK443", "BRK581", "BRK446"
+  ]);
+  const newlyResearched = items.filter(item => recent.has(item.code));
+  assert.equal(newlyResearched.length, 44);
+  assert.deepEqual(newlyResearched.filter(item => item.priority).map(item => item.code), ["BRK542"]);
+  assert.ok(newlyResearched.filter(item => !item.priority).every(item => item.availability === "unknown"));
   assert.deepEqual(items.filter(item => item.mustAttend).map(item => item.code).sort(), ["BRK433", "THR895"]);
   assert.ok(items.filter(item => item.mustAttend).every(item => item.priority && item.note.includes("必ず参加")));
   for (const day of [17, 18, 19, 20]) {
