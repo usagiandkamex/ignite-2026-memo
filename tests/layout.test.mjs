@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import {readFile} from "node:fs/promises";
-import {minutes, overlaps, conflictPairs, layoutDay, transferWarnings} from "../docs/layout.js";
+import {minutes, overlaps, conflictPairs, relevantConflictPairs, layoutDay, transferWarnings} from "../docs/layout.js";
 
 const session = (id, start, end, extra = {}) => ({id, day: 17, start, end, place: "Moscone West | Room 1", ...extra});
 
@@ -20,6 +20,16 @@ test("nested and chained intervals use reusable lanes without colliding", () => 
   assert.equal(placed.find(item => item.id === "e").lanes, 1);
   for (const [a, b] of conflictPairs(placed)) assert.notEqual(a.lane, b.lane);
   assert.equal(layoutDay([]).length, 0);
+});
+
+test("conflict notes retain planned conflicts and include visible candidates", () => {
+  const a = session("a", "10:00", "11:00", {priority: true});
+  const b = session("b", "10:00", "11:00", {priority: true});
+  const c = session("c", "10:15", "10:30", {priority: false});
+  const d = session("d", "10:30", "10:45", {priority: false});
+  const pairs = relevantConflictPairs([a, b, c, d], [c]).map(pair => pair.map(item => item.id).join(""));
+  assert.deepEqual(pairs, ["ab", "ac", "bc"]);
+  assert.deepEqual(relevantConflictPairs([a, b], []).map(pair => pair.map(item => item.id).join("")), ["ab"]);
 });
 
 test("published participant draft matches the checked schedule and shows its conflicts", async () => {

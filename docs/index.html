@@ -22,7 +22,7 @@
   </header>
   <main class="page">
     <section class="overview" aria-label="公開情報について">
-      <p><strong>公開セッションだけをまとめた参加案です。</strong>実際の登録・座席予約を示すものではありません。日時・会場の公式確認：<time datetime="2026-11-15">2026/11/15</time>。</p>
+      <p><strong>公開セッションだけをまとめた参加案です。</strong>実線は11/15 23時台（日本時間）の確認時に予定表に表示されていた枠、破線はその時点で未追加の候補です。自動同期されないため、最新の登録状況・座席予約は公式サイトで確認してください。</p>
       <p>表示はサンフランシスコ時間 <strong>PST（UTC−8）</strong>。日本時間は＋17時間です。カードをタップすると詳細を開けます。</p>
       <p>比較候補の公式表示は11/15 23時台（日本時間）に確認。<strong>「予定に追加」は座席確保を意味しません。</strong>満席・待機表示や参加条件は変わるため、公式ページで再確認してください。</p>
     </section>
@@ -41,13 +41,16 @@
           <label class="track-label">分野<select id="track"><option value="">すべての分野</option></select></label>
         </div>
       </div>
-      <div class="legend"><span class="key priority">参加案</span><span class="key must">必ず参加</span><span class="key general">全体セッション</span><span class="key alternative">比較候補</span><span class="key standby">満席・待機のみ</span><span class="key conflict">時間重複</span><span>高さ＝所要時間</span></div>
+      <div class="legend"><span class="key priority">実線：予定表に表示</span><span class="key alternative">破線：未追加候補</span><span class="key must">必ず参加</span><span class="key general">全体セッション</span><span class="key standby">満席・待機のみ</span><span class="key conflict">時間重複</span><span>高さ＝所要時間</span></div>
       <div id="summary" class="summary" role="status" aria-live="polite"></div>
-      <div id="warnings" class="warnings"></div>
-      <p class="calendar-help">PST / UTC−8 · 短い枠・省略された文字はタップで確認。4日表示は横にスクロールできます。</p>
+      <p class="calendar-help">PST / UTC−8 · 候補は「比較候補も表示」で表示。⚠は時間重複です。短い枠はタップで確認。4日表示は横スクロールできます。</p>
       <div class="calendar-scroll" tabindex="0" role="region" aria-label="時間軸カレンダー">
         <div id="calendar" class="calendar"></div>
       </div>
+      <section class="schedule-notes" aria-labelledby="schedule-notes-title">
+        <h3 id="schedule-notes-title">重複・移動の注意</h3>
+        <div id="warnings" class="warnings"></div>
+      </section>
       <noscript><p class="error">カレンダーにはJavaScriptが必要です。<a href="https://ignite.microsoft.com/en-US/sessions">公式カタログ</a>をご利用ください。</p></noscript>
       <p id="load-error" class="error" hidden></p>
     </section>
@@ -77,7 +80,7 @@
     <p id="detail-availability" class="detail-availability"></p>
     <p id="detail-reason"></p>
     <a id="detail-link" class="official" target="_blank" rel="noopener noreferrer">公式セッションページ ↗</a>
-    <p class="fineprint">公式確認：2026/11/15。登録・予約状況は掲載していません。</p>
+    <p class="fineprint">表示状態は2026/11/15時点の記録で、自動同期されません。最新の登録・予約状況は公式サイトで確認してください。</p>
   </dialog>
 </body>
 </html>

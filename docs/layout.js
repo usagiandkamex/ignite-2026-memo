@@ -10,6 +10,12 @@ export function conflictPairs(sessions) {
     sessions.slice(index + 1).filter(other => overlaps(session, other)).map(other => [session, other]));
 }
 
+export function relevantConflictPairs(sessions, visible) {
+  const visibleIds = new Set(visible.map(item => item.id));
+  return conflictPairs(sessions).filter(([a, b]) =>
+    (a.priority && b.priority) || visibleIds.has(a.id) || visibleIds.has(b.id));
+}
+
 // Connected overlap groups share a lane count, including chained overlaps.
 export function layoutDay(sessions) {
   const sorted = [...sessions].sort((a, b) =>

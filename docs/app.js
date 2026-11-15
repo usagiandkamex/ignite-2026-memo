@@ -1,4 +1,4 @@
-import {minutes, overlaps, conflictPairs, layoutDay, transferWarnings} from "./layout.js";
+import {minutes, overlaps, relevantConflictPairs, layoutDay, transferWarnings} from "./layout.js";
 
 const calendar = document.getElementById("calendar");
 const alternatives = document.getElementById("alternatives");
@@ -16,7 +16,7 @@ const element = (tag, className, text) => {
 };
 const label = item => `${item.code} ${item.start}–${item.end}`;
 const isGeneral = item => item.priority && (item.format === "Keynote" || item.format === "Innovation Session");
-const category = item => !item.priority ? "比較候補" : isGeneral(item) ? "全体セッション" : "参加案";
+const category = item => !item.priority ? "未追加候補（11/15時点）" : isGeneral(item) ? "全体セッション・予定表に表示（11/15時点）" : "予定表に表示（11/15時点）";
 const availability = item => item.availability === "standby" ? "満席・待機のみ" :
   item.availability === "add" ? "予定に追加の表示あり（座席確保ではありません）" : "";
 const selectedDays = () => week.getAttribute("aria-pressed") === "true" ? [17, 18, 19, 20] : [day];
@@ -88,13 +88,17 @@ function render() {
     calendar.append(column);
   }
   const selected = sessions.filter(item => item.priority && days.includes(item.day));
-  const pairs = conflictPairs(selected);
-  document.getElementById("summary").textContent = `表示 ${visible.length}件 / 参加案同士の時間重複 ${pairs.length}組`;
+  const pairs = relevantConflictPairs(pool.filter(item => days.includes(item.day)), visible);
+  document.getElementById("summary").textContent = `表示 ${visible.length}件`;
   const warnings = document.getElementById("warnings");
   warnings.replaceChildren();
-  for (const [a, b] of pairs) warnings.append(element("div", "warning", `11/${a.day} · ${a.start}–${a.end} ${a.code} と ${b.start}–${b.end} ${b.code} が重複。両方を通して聴講することはできません。`));
+  for (const [a, b] of pairs) {
+    const description = item => `${item.start}–${item.end} ${item.code}（${item.priority ? "予定" : "候補"}）`;
+    warnings.append(element("div", "warning", `11/${a.day} · ${description(a)} と ${description(b)} が重複。両方を通して聴講することはできません。`));
+  }
   for (const {from, to, gap} of transferWarnings(selected)) warnings.append(element("div", "warning travel", `11/${from.day} · ${from.code} → ${to.code}：会場が異なり、間隔は${gap}分です。移動可能か要確認（所要時間の保証ではありません）。`));
-  if (alternatives.checked) warnings.append(element("div", "warning travel", "比較候補は参加案への追加登録ではありません。重複マークは非表示の分野も含めて判定します。"));
+  if (alternatives.checked) warnings.append(element("p", "notes-help", "重複は分野フィルターで非表示の枠も含めて判定しています。候補の表示は予定の追加ではありません。"));
+  if (!warnings.childElementCount) warnings.append(element("p", "notes-help", "表示中の範囲に時間重複や短い会場間移動はありません。"));
 }
 document.querySelectorAll("[data-day]").forEach(button => button.addEventListener("click", () => {
   day = Number(button.dataset.day);
