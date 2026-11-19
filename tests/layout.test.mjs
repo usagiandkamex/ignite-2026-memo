@@ -69,6 +69,18 @@ test("session gaps merge overlaps, include 15 minutes, and never cross days", ()
   assert.deepEqual(sessionGaps([]), []);
 });
 
+test("rescheduled lightning talks match the official Nov 19 times", async () => {
+  const items = JSON.parse(await readFile(new URL("../docs/sessions.json", import.meta.url), "utf8"));
+  const rescheduled = items.filter(item => ["LTG1283", "LTG1465"].includes(item.code));
+  assert.deepEqual(
+    rescheduled.map(({code, day, start, end}) => ({code, day, start, end})),
+    [
+      {code: "LTG1465", day: 19, start: "18:20", end: "18:35"},
+      {code: "LTG1283", day: 19, start: "18:45", end: "19:00"}
+    ]
+  );
+});
+
 test("published participant draft matches the checked schedule and shows its conflicts", async () => {
   const items = JSON.parse(await readFile(new URL("../docs/sessions.json", import.meta.url), "utf8"));
   assert.equal(items.length, 118);
@@ -85,7 +97,7 @@ test("published participant draft matches the checked schedule and shows its con
     "LTG1465", "THR895", "THR896", "THR967", "THRSP1109", "THRSP1142"
   ].sort());
   const pairs = conflictPairs(selected).map(pair => pair.map(item => item.code).sort().join("/")).sort();
-  assert.deepEqual(pairs, ["BRK437/INV642", "INV642/LTG1283"].sort());
+  assert.deepEqual(pairs, ["BRK437/INV642"]);
   const candidates = items.filter(item => !item.priority);
   assert.equal(candidates.filter(item => item.availability === "add").length, 76);
   assert.equal(candidates.filter(item => item.availability === "standby").length, 20);
