@@ -83,7 +83,7 @@ test("rescheduled lightning talks match the official Nov 19 times", async () => 
 
 test("published participant draft matches the checked schedule and shows its conflicts", async () => {
   const items = JSON.parse(await readFile(new URL("../docs/sessions.json", import.meta.url), "utf8"));
-  assert.equal(items.length, 118);
+  assert.equal(items.length, 119);
   for (const item of items) {
     assert.ok(item.title && item.format && item.checked && item.note);
     assert.match(item.url, /^https:\/\/ignite\.microsoft\.com\/en-US\/sessions\/[\w-]+$/);
@@ -91,7 +91,7 @@ test("published participant draft matches the checked schedule and shows its con
   }
   const selected = items.filter(item => item.priority);
   assert.deepEqual(selected.map(item => item.code).sort(), [
-    "BRK314", "BRK409", "BRK412", "BRK415", "BRK417", "BRK427",
+    "BRK283", "BRK314", "BRK409", "BRK412", "BRK415", "BRK417", "BRK427",
     "BRK429", "BRK433", "BRK437", "BRK445", "BRK540", "BRK542",
     "INV642", "INV643", "KEY01", "LTG1283",
     "LTG1465", "THR895", "THR896", "THR967", "THRSP1109", "THRSP1142"
