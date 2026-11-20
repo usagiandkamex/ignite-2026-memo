@@ -84,6 +84,12 @@ test("rescheduled lightning talks match the official Nov 19 times", async () => 
 test("published participant draft matches the checked schedule and shows its conflicts", async () => {
   const items = JSON.parse(await readFile(new URL("../docs/sessions.json", import.meta.url), "utf8"));
   assert.equal(items.length, 119);
+  const brk283 = items.find(item => item.code === "BRK283");
+  assert.ok(brk283);
+  assert.deepEqual(
+    {day: brk283.day, start: brk283.start, end: brk283.end, place: brk283.place},
+    {day: 20, start: "09:00", end: "09:45", place: "Moscone West | Level 2, Room 2001"}
+  );
   for (const item of items) {
     assert.ok(item.title && item.format && item.checked && item.note);
     assert.match(item.url, /^https:\/\/ignite\.microsoft\.com\/en-US\/sessions\/[\w-]+$/);
