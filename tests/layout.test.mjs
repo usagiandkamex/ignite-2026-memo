@@ -84,6 +84,10 @@ test("rescheduled lightning talks match the official Nov 19 times", async () => 
 test("published participant draft matches the checked schedule and shows its conflicts", async () => {
   const items = JSON.parse(await readFile(new URL("../docs/sessions.json", import.meta.url), "utf8"));
   assert.equal(items.length, 119);
+  assert.equal(items.find(item => item.code === "KEY01").youtube, "https://www.youtube.com/watch?v=ZR4v1c4CClc");
+  assert.ok(items.filter(item => item.youtube).every(item => /^https:\/\/www\.youtube\.com\/watch\?v=[\w-]+$/.test(item.youtube)));
+  const styles = await readFile(new URL("../docs/style.css", import.meta.url), "utf8");
+  assert.match(styles, /\.official\[hidden\]\s*\{\s*display:\s*none;\s*\}/);
   const brk283 = items.find(item => item.code === "BRK283");
   assert.ok(brk283);
   assert.deepEqual(
@@ -93,6 +97,7 @@ test("published participant draft matches the checked schedule and shows its con
   for (const item of items) {
     assert.ok(item.title && item.format && item.checked && item.note);
     assert.match(item.url, /^https:\/\/ignite\.microsoft\.com\/en-US\/sessions\/[\w-]+$/);
+    assert.equal(new URL(item.url).pathname.split("/").at(-1), item.id);
     assert.ok(minutes(item.start) < minutes(item.end));
   }
   const selected = items.filter(item => item.priority);

@@ -46,6 +46,9 @@ function openDetail(item) {
     : availability(item) ? `公式表示：${availability(item)}。${checkedAt}最新状況は公式ページへ。` : "";
   document.getElementById("detail-reason").textContent = item.note;
   document.getElementById("detail-link").href = item.url;
+  const youtube = document.getElementById("detail-youtube");
+  youtube.hidden = !item.youtube;
+  youtube.href = item.youtube || "#";
   dialog.showModal();
 }
 function render() {
