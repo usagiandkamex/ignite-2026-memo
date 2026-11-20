@@ -1898,6 +1898,21 @@
     "availabilityChecked": "2026-11-15T22:41:00Z"
   },
   {
+    "id": "BRK283",
+    "code": "BRK283",
+    "title": "AI時代に悪化するセキュリティ負債の解消",
+    "day": 20,
+    "start": "09:00",
+    "end": "09:45",
+    "place": "Moscone West | Level 2, Room 2001",
+    "url": "https://ignite.microsoft.com/en-US/sessions/BRK283",
+    "track": "セキュリティ",
+    "priority": true,
+    "format": "Breakout",
+    "checked": "2026-11-20",
+    "note": "AI開発で増えるセキュリティ負債に対し、重要な脆弱性・依存関係・シークレットを優先して対処する方法を確認します。"
+  },
+  {
     "id": "1787856640669001EqlK-1791814917579001CtBK",
     "code": "BRK443",
     "title": "ハイパースケールのConfidential AI",
