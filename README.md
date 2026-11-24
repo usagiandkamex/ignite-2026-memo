@@ -20,6 +20,8 @@ GitHub Pagesで`main`ブランチの`docs`ディレクトリを公開します�
 
 別ページの[会場マップ](https://usagiandkamex.github.io/ignite-2026-memo/map.html)には主要会場・周辺施設・道路・駅の簡略地図と、Ignite公式インタラクティブMapや会場公式フロア図へのリンクがあります。地図は入口や徒歩経路を示しません。
 
+新発表ページは調査途中です。Book of Newsの見出しごとの日本語整理、状態別フィルターと公式出典を掲載しますが、個別機能とBook of News以外の追加発表の網羅性は未確認です。
+
 ## 情報の扱い
 
 - 公開するのは公式公開セッションの日時・会場・リンクと、公開内容に基づく短い要約・編集上の参加案のみです。
@@ -35,6 +37,10 @@ GitHub Pagesで`main`ブランチの`docs`ディレクトリを公開します�
 `docs/sessions.json`を編集し、各カードの公式URLで日付・時刻・会場を照合してください。`checked`に確認日、`note`に公開情報だけに基づく選定理由を記入します。公式説明文の全文転載は避け、短い要約にします。
 
 YouTubeの録画を追加する際は、同じセッションコードが別年にも存在するため、公式ページのタイトル・動画の開催年・Microsoft Eventsのチャンネルを確認し、`youtubeUrl`に動画URLを設定します。
+
+新発表は`docs/updates-editorial.json`で独自の日本語要約と機能ごとの状態を、`docs/updates-sources.json`でBook of Newsアンカーと公式出典を管理します。各機能の状態を一次資料と照合し、資料間の矛盾は「要確認」として両方にリンクします。収録範囲と確認日は`docs/updates.html`で明示します。提供地域、料金、ライセンス条件は推測しません。
+
+Microsoft Release Communications MCPはAzure Updatesの調査に利用しましたが、取得データの再配布に関する利用条件があるため、APIの出力一覧はこのリポジトリに含めません。
 
 ```powershell
 node --test

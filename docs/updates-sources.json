@@ -1,0 +1,421 @@
+{
+  "1.1.1": {
+    "topic": "Azure",
+    "anchor": "azure-chaos-studio-workspaces-aks-extension-now-generally-available",
+    "links": [
+      "https://aka.ms/chaosstudio/workspaces-ga",
+      "https://learn.microsoft.com/en-us/azure/chaos-studio/chaos-studio-workspaces-overview"
+    ]
+  },
+  "1.1.2": {
+    "topic": "Azure",
+    "anchor": "azure-expands-confidential-computing-for-protecting-highly-sensitive-data",
+    "links": [
+      "https://aka.ms/acc-ignite2026"
+    ]
+  },
+  "1.1.3": {
+    "topic": "Azure",
+    "anchor": "built-for-the-agentic-ai-era-azure-cobalt-200-virtual-machines-are-now-generally-available",
+    "links": [
+      "https://aka.ms/Cobalt200VMs-GA"
+    ]
+  },
+  "1.2.1": {
+    "topic": "Azure",
+    "anchor": "azure-expands-agentic-operations-with-new-monitoring-ai-capabilities",
+    "links": [
+      "https://aka.ms/ignite2026/agenticops"
+    ]
+  },
+  "1.2.2": {
+    "topic": "Azure",
+    "anchor": "azure-infrastructure-foundation-for-production-ai-applications-and-agents",
+    "links": [
+      "https://aka.ms/ai-infra-ignite26"
+    ]
+  },
+  "1.2.3": {
+    "topic": "Azure",
+    "anchor": "introducing-azure-catalyst",
+    "links": [
+      "https://aka.ms/modernization-ignite26"
+    ]
+  },
+  "1.2.4": {
+    "topic": "Azure",
+    "anchor": "introducing-windows-server-2028",
+    "links": [
+      "https://aka.ms/WindowsServer2028Announcement"
+    ]
+  },
+  "1.3.1": {
+    "topic": "Azure",
+    "anchor": "azure-cosmos-db-improves-development-retrieval-and-data-protection",
+    "links": [
+      "https://aka.ms/ignite26/cosmosdb"
+    ]
+  },
+  "1.3.2": {
+    "topic": "Azure",
+    "anchor": "azure-documentdb-expands-developer-tools-sovereignty-and-security",
+    "links": [
+      "https://aka.ms/ignite26/documentdb"
+    ]
+  },
+  "1.3.3": {
+    "topic": "Azure",
+    "anchor": "azure-horizondb-generally-available-for-mission-critical-applications",
+    "links": [
+      "https://aka.ms/ignite26/horizondb"
+    ]
+  },
+  "1.3.4": {
+    "topic": "Azure",
+    "anchor": "azure-managed-redis-previews-redis-8-and-an-agent-kit",
+    "links": [
+      "https://aka.ms/ignite26/AMR"
+    ]
+  },
+  "1.3.5": {
+    "topic": "Azure",
+    "anchor": "azure-sql-expands-modernization-resiliency-and-local-development-options",
+    "links": [
+      "https://aka.ms/ignite26/mssql"
+    ]
+  },
+  "1.3.6": {
+    "topic": "Azure",
+    "anchor": "database-hub-in-fabric-generally-available-sql-and-postgresql-database-agents-in-preview",
+    "links": [
+      "https://aka.ms/ignite26/databases"
+    ]
+  },
+  "1.3.7": {
+    "topic": "Azure",
+    "anchor": "microsoft-fabric-horizondb-brings-postgresql-to-fabric-in-preview",
+    "links": [
+      "https://aka.ms/AAncdv4"
+    ]
+  },
+  "1.3.8": {
+    "topic": "Azure",
+    "anchor": "postgresql-on-azure-simplifies-migration-and-expands-modernization-options",
+    "links": [
+      "https://aka.ms/Ignite26/Postgres_on_Azure"
+    ]
+  },
+  "1.3.9": {
+    "topic": "Azure",
+    "anchor": "power-bi-introduces-custom-data-app-creation-in-preview",
+    "links": [
+      "https://community.fabric.microsoft.com/blog/fbc_fabricupdatesblogs/microsoft-fabric-is-fueling-frontier-transformation/5422989"
+    ]
+  },
+  "1.3.10": {
+    "topic": "Azure",
+    "anchor": "rayfin-and-fabric-apps-reach-general-availability",
+    "links": [
+      "https://aka.ms/FabricApps-Ignite26"
+    ]
+  },
+  "2.1.1": {
+    "topic": "Microsoft Foundry",
+    "anchor": "turning-production-experience-into-better-agents",
+    "links": [
+      "https://aka.ms/miq-ignitelaunchblog"
+    ]
+  },
+  "2.2.1": {
+    "topic": "Microsoft Foundry",
+    "anchor": "microsoft-decision-1-1-now-generally-available",
+    "links": [
+      "https://aka.ms/decision-model-ga"
+    ]
+  },
+  "2.2.2": {
+    "topic": "Microsoft Foundry",
+    "anchor": "microsoft-foundry-adds-new-ai-models-for-coding-images-security",
+    "links": [
+      "https://aka.ms/foundrymodelsignite2026"
+    ]
+  },
+  "3.1.1": {
+    "topic": "GitHub",
+    "anchor": "microsoft-copilot-sdk-2-0-improves-security-and-scale-for-ai-apps",
+    "links": [
+      "https://aka.ms/copilot-sdk/blog-2.0"
+    ]
+  },
+  "4.1.1": {
+    "topic": "Microsoft Copilot",
+    "anchor": "agent-365-turns-ai-spend-into-business-value-with-finops-for-ai",
+    "links": [
+      "https://aka.ms/microsoftadmincenter",
+      "https://aka.ms/a365analytics",
+      "https://techcommunity.microsoft.com/blog/ai-finops-blog/introducing-microsoft-agent-365-business-analytics-turn-ai-investment-into-busin/4574149"
+    ]
+  },
+  "4.1.2": {
+    "topic": "Microsoft Copilot",
+    "anchor": "autopilot-is-rolling-out-to-frontier-customers",
+    "links": [
+      "https://aka.ms/MicrosoftIgnite26Blog",
+      "https://aka.ms/MicrosoftIgnite26Blog"
+    ]
+  },
+  "4.1.3": {
+    "topic": "Microsoft Copilot",
+    "anchor": "copilot-managed-runtime-is-now-generally-available-with-new-capabilities",
+    "links": [
+      "https://aka.ms/CopilotManagedRuntime-Ignite-Blog"
+    ]
+  },
+  "4.1.4": {
+    "topic": "Microsoft Copilot",
+    "anchor": "copilot-workspaces-helps-teams-work-together-with-copilot",
+    "links": [
+      "https://aka.ms/MicrosoftIgnite26Blog"
+    ]
+  },
+  "4.1.5": {
+    "topic": "Microsoft Copilot",
+    "anchor": "dynamics-365-crm-and-erp-plugins-now-available-in-copilot",
+    "links": [
+      "https://aka.ms/A365AnalyticsLearn"
+    ]
+  },
+  "4.1.6": {
+    "topic": "Microsoft Copilot",
+    "anchor": "easily-build-secure-apps-with-copilot-code",
+    "links": [
+      "https://aka.ms/MicrosoftIgnite26Blog"
+    ]
+  },
+  "4.1.7": {
+    "topic": "Microsoft Copilot",
+    "anchor": "home-in-the-microsoft-copilot-app",
+    "links": [
+      "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/",
+      "https://aka.ms/MicrosoftIgnite26Blog"
+    ]
+  },
+  "4.1.8": {
+    "topic": "Microsoft Copilot",
+    "anchor": "microsoft-expands-dynamics-365-activate-to-support-agentic-erp-migration",
+    "links": [
+      "https://aka.ms/D365Ignite2026"
+    ]
+  },
+  "4.1.9": {
+    "topic": "Microsoft Copilot",
+    "anchor": "microsoft-salesforce-announce-salesforce-in-copilot-teams-and-fabric",
+    "links": [
+      "https://aka.ms/AA1457n5"
+    ]
+  },
+  "4.1.10": {
+    "topic": "Microsoft Copilot",
+    "anchor": "today-helps-people-prioritize-and-act-on-what-matters",
+    "links": [
+      "https://aka.ms/MicrosoftIgnite26Blog"
+    ]
+  },
+  "5.1.1": {
+    "topic": "Microsoft Edge",
+    "anchor": "edge-for-business-adds-governed-ai-workflows-stronger-security",
+    "links": [
+      "https://news.microsoft.com/events/ignite/2026/book-of-news/#Footnote1",
+      "https://aka.ms/EdgeIgnite26"
+    ]
+  },
+  "6.1.1": {
+    "topic": "Microsoft IQ",
+    "anchor": "introducing-microsoft-iq-the-platform-for-enterprise-ai",
+    "links": [
+      "https://aka.ms/miq-ignitelaunchblog"
+    ]
+  },
+  "6.2.1": {
+    "topic": "Microsoft IQ",
+    "anchor": "microsoft-iq-connects-agents-to-the-expertise-of-your-business",
+    "links": [
+      "https://aka.ms/miq-ignitelaunchblog"
+    ]
+  },
+  "6.3.1": {
+    "topic": "Microsoft IQ",
+    "anchor": "foundry-iq-brings-unstructured-data-to-applications-and-agents",
+    "links": [
+      "https://aka.ms/miq-ignitelaunchblog"
+    ]
+  },
+  "6.4.1": {
+    "topic": "Microsoft IQ",
+    "anchor": "bring-trusted-business-context-to-more-experiences-with-fabric-iq",
+    "links": [
+      "https://aka.ms/miq-ignitelaunchblog"
+    ]
+  },
+  "6.5.1": {
+    "topic": "Microsoft IQ",
+    "anchor": "web-iq-now-generally-available-to-azure-customers",
+    "links": [
+      "https://aka.ms/webiqnews"
+    ]
+  },
+  "6.6.1": {
+    "topic": "Microsoft IQ",
+    "anchor": "work-iq-expands-context-actions-and-controls-for-copilot-and-agents",
+    "links": [
+      "https://aka.ms/miq-ignitelaunchblog"
+    ]
+  },
+  "6.7.1": {
+    "topic": "Microsoft IQ",
+    "anchor": "continuous-improvement-helps-agents-and-models-learn-in-production",
+    "links": [
+      "https://aka.ms/miq-ignitelaunchblog"
+    ]
+  },
+  "7.1.1": {
+    "topic": "Security",
+    "anchor": "dynamic-agent-risk-within-agent-365-in-preview",
+    "links": [
+      "https://aka.ms/secureAIannounce"
+    ]
+  },
+  "7.1.2": {
+    "topic": "Security",
+    "anchor": "management-insights-now-default-for-microsoft-agents",
+    "links": [
+      "https://techcommunity.microsoft.com/blog/agent-365-blog/whats-new-in-microsoft-agent-365-ignite-2026/4571753"
+    ]
+  },
+  "7.1.3": {
+    "topic": "Security",
+    "anchor": "microsoft-agent-365-expands-governance-for-agents-and-their-tools",
+    "links": [
+      "https://techcommunity.microsoft.com/blog/agent-365-blog/whats-new-in-microsoft-agent-365-ignite-2026/4571753"
+    ]
+  },
+  "7.1.4": {
+    "topic": "Security",
+    "anchor": "new-microsoft-agent-365-capabilities-help-maximize-value-of-ai-investments",
+    "links": [
+      "https://techcommunity.microsoft.com/blog/agent-365-blog/whats-new-in-microsoft-agent-365-ignite-2026/4571753"
+    ]
+  },
+  "7.2.1": {
+    "topic": "Security",
+    "anchor": "codename-mdash-a-new-agentic-code-security-system-available-in-preview",
+    "links": [
+      "https://aka.ms/perceptionignite"
+    ]
+  },
+  "7.3.1": {
+    "topic": "Security",
+    "anchor": "integrated-security-operations-center-now-generally-available-vulnerability-shielding-in-preview",
+    "links": [
+      "https://techcommunity.microsoft.com/blog/microsoftthreatprotectionblog/ignite-2026-whats-new-in-microsoft-defender--sentinel/4569975"
+    ]
+  },
+  "7.3.2": {
+    "topic": "Security",
+    "anchor": "microsoft-defender-extends-runtime-protection-for-local-ai-agents",
+    "links": [
+      "https://techcommunity.microsoft.com/blog/microsoftthreatprotectionblog/ignite-2026-whats-new-in-microsoft-defender--sentinel/4569975"
+    ]
+  },
+  "7.3.3": {
+    "topic": "Security",
+    "anchor": "microsoft-threat-intelligence-adds-zero-day-and-emerging-threat-insights",
+    "links": [
+      "https://www.microsoft.com/en-us/security/blog/2026/11/17/security-for-the-agentic-era-powered-by-microsoft-perception/"
+    ]
+  },
+  "7.3.4": {
+    "topic": "Security",
+    "anchor": "new-investments-to-reduce-on-premises-security-risk",
+    "links": [
+      "https://aka.ms/OnpremSecInitiativeBlog"
+    ]
+  },
+  "7.4.1": {
+    "topic": "Security",
+    "anchor": "microsoft-entra-expands-secure-identity-and-access-for-agentic-ai-era",
+    "links": [
+      "https://aka.ms/ignite/entra"
+    ]
+  },
+  "7.4.2": {
+    "topic": "Security",
+    "anchor": "ai-readiness-initiatives-to-strengthen-security-foundations",
+    "links": [
+      "https://aka.ms/exposurenewsignite"
+    ]
+  },
+  "7.5.1": {
+    "topic": "Security",
+    "anchor": "microsoft-intune-helps-secure-ai-adoption-and-reduce-endpoint-risk",
+    "links": [
+      "https://techcommunity.microsoft.com/blog/microsoftintuneblog/what%E2%80%99s-new-in-microsoft-intune-at-ignite/4570003"
+    ]
+  },
+  "7.6.1": {
+    "topic": "Security",
+    "anchor": "new-capabilities-now-available-for-microsoft-perception",
+    "links": [
+      "https://aka.ms/perceptionignite"
+    ]
+  },
+  "7.7.1": {
+    "topic": "Security",
+    "anchor": "microsoft-purview-helps-accelerate-copilot-deployment-and-secure-agent-interactions",
+    "links": [
+      "https://aka.ms/SecureData/Blog"
+    ]
+  },
+  "8.1.1": {
+    "topic": "Windows",
+    "anchor": "copilot-on-windows-improvements-across-file-operations-pc-diagnostics-and-in-search",
+    "links": [
+      "https://aka.ms/WindowsAtIgnite2026"
+    ]
+  },
+  "8.1.2": {
+    "topic": "Windows",
+    "anchor": "new-capabilities-in-windows-365-across-direct-stream-windows-365-admin-assistant-and-more",
+    "links": [
+      "https://aka.ms/W365Ignite26Blog"
+    ]
+  },
+  "8.1.3": {
+    "topic": "Windows",
+    "anchor": "new-windows-and-microsoft-intune-capabilities",
+    "links": [
+      "https://aka.ms/WindowsAtIgnite2026"
+    ]
+  },
+  "8.1.4": {
+    "topic": "Windows",
+    "anchor": "windows-365-for-agents-scales-to-microsoft-foundry-introduces-persistent-cloud-pcs",
+    "links": [
+      "https://aka.ms/W365Ignite26Blog"
+    ]
+  },
+  "8.1.5": {
+    "topic": "Windows",
+    "anchor": "windows-expands-local-and-hybrid-capabilities",
+    "links": [
+      "https://aka.ms/WindowsAtIgnite2026"
+    ]
+  },
+  "8.1.6": {
+    "topic": "Windows",
+    "anchor": "windows-introduces-controls-that-help-isolate-and-govern-ai-agents",
+    "links": [
+      "https://aka.ms/WindowsAtIgnite2026"
+    ]
+  }
+}
