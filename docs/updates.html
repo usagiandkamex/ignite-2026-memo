@@ -16,7 +16,7 @@
       <p class="eyebrow">IGNITE 2026 / PUBLIC ANNOUNCEMENTS</p>
       <h1>新発表を<span>読み解く</span></h1>
       <p class="intro">サービスと機能の変化を、全分野から。</p>
-      <nav class="site-nav" aria-label="ページ"><a href="./">スケジュール</a><a href="./map.html">会場マップ</a><a href="./updates.html" aria-current="page">新発表</a></nav>
+      <nav class="site-nav" aria-label="ページ"><a href="./">スケジュール</a><a href="./infra.html">Azure インフラ</a><a href="./map.html">会場マップ</a><a href="./updates.html" aria-current="page">新発表</a></nav>
     </div>
   </header>
   <main class="page updates-page">
@@ -31,7 +31,7 @@
       <div class="brief-grid">
         <article>
           <h3>01 / Azure の基盤と運用</h3>
-          <p>Azure Cobalt 200 VMは一般提供となり、AIモデルそのものの推論だけでなく、その周辺で動くエージェントの処理にも向けたArm基盤が広がります。Azure Chaos StudioではWorkspacesとAKS拡張が発表され、障害を制御下で起こす回復性テストを反復しやすくします。Workspacesの提供状態は公式資料間で記載が異なるため要確認です。<a href="#news-1-1-1">回復性</a>・<a href="#news-1-1-3">VM</a></p>
+          <p>Azure Cobalt 200 VMは一般提供となり、AIモデルそのものの推論だけでなく、その周辺で動くエージェントの処理にも向けたArm基盤が広がります。Azure Chaos Studio Workspacesは一般提供です。AKS拡張はBook of NewsではGAとされていますが、製品ドキュメントと公式ブログではプレビューと記載されています。<a href="#news-1-1-1">回復性</a>・<a href="#news-1-1-3">VM</a></p>
           <p>Azure Monitor health modelsは、個々のアラートだけでなく、依存関係と業務影響を含めた健全性の把握を狙います。SRE AgentにはTeams、複数クラウド、エージェントIDや管理キーなどのプレビューが追加されます。自動化の可否と、調査・変更の承認境界は分けて検討しましょう。<a href="#news-1-2-1">運用の発表</a></p>
           <p>AKSではAgent Sandboxによる実行分離、Azure外のサーバーを含むFlex nodes、Foundryから自組織のAKSへの展開がプレビューです。いずれも既存のネットワーク、ID、データ所在地、コストの要件と一緒に評価する必要があります。<a href="#news-1-2-2">AI基盤</a></p>
           <p>機密コンピューティングでは、複数GPUにまたがる処理や、データを共有する複数組織間の分析を対象としたプレビューも発表されました。暗号化の対象が保存時・転送時だけでなく処理中にも及ぶか、利用できるハードウェアや運用条件を確認することが出発点です。<a href="#news-1-1-2">機密コンピューティング</a></p>
@@ -60,7 +60,7 @@
         <article>
           <h3>06 / Security と Windows</h3>
           <p>Agent 365、Entra、Defender、Intune、Purviewにまたがり、エージェントのID、アクセス、端末上の実行、機密情報を管理する発表が並びます。Dynamic Agent RiskやMCP Firewallはプレビュー。ローカルAIエージェントのDefender保護は対応製品とライセンスの条件付きで一般提供です。<a href="#news-7-1-1">Agent Risk</a>・<a href="#news-7-4-1">Entra</a>・<a href="#news-7-3-2">Defender</a></p>
-          <p>Microsoft Perceptionのエージェントとプレイブックは一般提供、脆弱性を一時的に防ぐshieldingなどはプレビューです。一時的な保護はパッチの代替ではありません。Windows側でもエージェントのプロセス分離や、Windows 365 for Agentsの永続Cloud PCが拡張されますが、こちらもプレビュー条件を確認します。<a href="#news-7-6-1">Perception</a>・<a href="#news-8-1-4">Cloud PC</a>・<a href="#news-8-1-6">分離</a></p>
+          <p>Microsoft PerceptionはBook of Newsと公式ブログで一般提供とされていますが、製品ドキュメントには限定プレビュー表記が残っています。shieldingなどはプレビューで、一時的な保護はパッチの代替ではありません。Windowsのエージェント分離やWindows 365 for Agentsの永続Cloud PCもプレビュー条件を確認します。<a href="#news-7-6-1">Perception</a>・<a href="#news-8-1-4">Cloud PC</a>・<a href="#news-8-1-6">分離</a></p>
           <p>導入順序としては、まず実行主体を把握し、必要最小限のアクセスと監査を整え、その後に利用範囲を広げるのが現実的です。機密データや外部ツールへの接続がある場合は、利用者の権限を引き継ぐだけで安全と考えず、個別のポリシーと承認条件を確認します。</p>
         </article>
       </div>
@@ -83,7 +83,7 @@
       <div class="update-filters">
         <label>キーワード<input id="update-search" type="search" placeholder="製品名・機能名など" autocomplete="off"></label>
         <label>分野<select id="update-topic"><option value="">すべての分野</option></select></label>
-        <label>提供状態<select id="update-status"><option value="">すべての状態</option><option>GA</option><option>プレビュー</option><option>限定プレビュー</option><option>パイロット</option><option>Frontier</option><option>今後</option><option>未確認</option><option>要確認</option></select></label>
+        <label>提供状態<select id="update-status"><option value="">すべての状態</option><option>GA</option><option>提供中</option><option>プレビュー</option><option>限定プレビュー</option><option>パイロット</option><option>Frontier</option><option>今後</option><option>未確認</option><option>要確認</option></select></label>
       </div>
       <p id="update-count" role="status" aria-live="polite">発表一覧を読み込んでいます。</p>
       <p id="update-error" class="error" hidden></p>

@@ -10,7 +10,7 @@ const sources = await readJSON("updates-sources.json");
 test("each Book of News announcement has a source and individually labeled items", () => {
   assert.equal(Object.keys(editorial).length, 59);
   assert.deepEqual(Object.keys(editorial).sort(), Object.keys(sources).sort());
-  const statuses = new Set(["GA", "プレビュー", "限定プレビュー", "パイロット", "Frontier", "今後", "未確認", "要確認"]);
+  const statuses = new Set(["GA", "提供中", "プレビュー", "限定プレビュー", "パイロット", "Frontier", "今後", "未確認", "要確認"]);
   const anchors = new Set();
   for (const [number, entry] of Object.entries(editorial)) {
     const source = sources[number];
@@ -41,10 +41,23 @@ test("filters combine category, availability and all search terms at feature lev
   assert.deepEqual(filterAnnouncements(editorial, sources, {query: "not-an-announcement"}), []);
 });
 
-test("conflicting availability remains distinguishable from GA", () => {
-  const found = filterAnnouncements(editorial, sources, {query: "Workspaces", status: "要確認"});
-  assert.deepEqual(found.map(item => item.number), ["1.1.1"]);
-  assert.equal(filterAnnouncements(editorial, sources, {query: "Workspaces", status: "GA"}).length, 0);
+test("conflicting availability is documented without conflating Workspaces and the AKS extension", () => {
+  const workspace = filterAnnouncements(editorial, sources, {query: "Workspaces", status: "GA"});
+  const extension = filterAnnouncements(editorial, sources, {query: "AKS拡張", status: "プレビュー"});
+  assert.deepEqual(workspace.map(item => item.number), ["1.1.1"]);
+  assert.deepEqual(extension.map(item => item.number), ["1.1.1"]);
+  assert.match(extension[0].items[0][1], /Book of NewsはGA/);
+  assert.ok(sources["1.1.1"].links.some(link => link.endsWith("chaos-studio-aks-extension-overview")));
+});
+
+test("reviewed availability keeps separately sourced preview and unresolved states", () => {
+  const cli = filterAnnouncements(editorial, sources, {query: "CLI", topic: "Microsoft Copilot", status: "プレビュー"});
+  assert.ok(cli.some(item => item.number === "4.1.3"));
+  const perception = filterAnnouncements(editorial, sources, {query: "Perception", status: "要確認"});
+  assert.deepEqual(perception.map(item => item.number), ["7.6.1"]);
+  assert.ok(perception[0].items.some(([, text]) => text.includes("限定プレビュー")));
+  const detection = filterAnnouncements(editorial, sources, {query: "Detection Authoring", status: "未確認"});
+  assert.deepEqual(detection.map(item => item.number), ["7.6.1"]);
 });
 
 test("a missing announcement source fails explicitly", () => {

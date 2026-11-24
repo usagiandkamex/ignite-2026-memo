@@ -4,7 +4,8 @@
     "anchor": "azure-chaos-studio-workspaces-aks-extension-now-generally-available",
     "links": [
       "https://aka.ms/chaosstudio/workspaces-ga",
-      "https://learn.microsoft.com/en-us/azure/chaos-studio/chaos-studio-workspaces-overview"
+      "https://learn.microsoft.com/en-us/azure/chaos-studio/chaos-studio-workspaces-overview",
+      "https://learn.microsoft.com/en-us/azure/chaos-studio/chaos-studio-aks-extension-overview"
     ]
   },
   "1.1.2": {
@@ -137,7 +138,9 @@
     "topic": "Microsoft Foundry",
     "anchor": "microsoft-foundry-adds-new-ai-models-for-coding-images-security",
     "links": [
-      "https://aka.ms/foundrymodelsignite2026"
+      "https://aka.ms/foundrymodelsignite2026",
+      "https://learn.microsoft.com/en-us/azure/foundry/openai/how-to/model-router-ai-gateway",
+      "https://learn.microsoft.com/en-us/azure/foundry/foundry-models/whats-new-model-router"
     ]
   },
   "3.1.1": {
@@ -168,7 +171,8 @@
     "topic": "Microsoft Copilot",
     "anchor": "copilot-managed-runtime-is-now-generally-available-with-new-capabilities",
     "links": [
-      "https://aka.ms/CopilotManagedRuntime-Ignite-Blog"
+      "https://aka.ms/CopilotManagedRuntime-Ignite-Blog",
+      "https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/agents/cli/"
     ]
   },
   "4.1.4": {
@@ -338,7 +342,8 @@
     "topic": "Security",
     "anchor": "new-investments-to-reduce-on-premises-security-risk",
     "links": [
-      "https://aka.ms/OnpremSecInitiativeBlog"
+      "https://aka.ms/OnpremSecInitiativeBlog",
+      "https://techcommunity.microsoft.com/blog/microsoft-security-blog/new-investments-to-reduce-on-premises-security-risk/4570381"
     ]
   },
   "7.4.1": {
@@ -366,7 +371,12 @@
     "topic": "Security",
     "anchor": "new-capabilities-now-available-for-microsoft-perception",
     "links": [
-      "https://aka.ms/perceptionignite"
+      "https://aka.ms/perceptionignite",
+      "https://techcommunity.microsoft.com/blog/perception-blog/more-signals-stronger-defense-microsoft-perception-expands-to-third-party-data/4573037",
+      "https://learn.microsoft.com/en-us/security/agentic-security/triage-agent",
+      "https://learn.microsoft.com/en-us/security/agentic-security/detection-authoring-agent",
+      "https://learn.microsoft.com/en-us/security/agentic-security/posture-prioritization-agent",
+      "https://learn.microsoft.com/en-us/security/agentic-security/agentic-security-mcp"
     ]
   },
   "7.7.1": {

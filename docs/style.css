@@ -173,12 +173,25 @@ dialog p { font-size: .84rem; }
 .additional-update { padding: 14px 16px; margin: 14px 0; font-size: .83rem; }
 .additional-update h3 { margin: 4px 0 8px; }
 .video-links { font-size: .83rem; padding-left: 20px; }
+.infra-filters:not([hidden]) { display: flex; flex-wrap: wrap; align-items: start; gap: 10px 18px; margin-bottom: 12px; }
+.infra-filters label { display: grid; gap: 3px; font-size: .82rem; max-width: 100%; }
+.infra-filters label:first-child { flex: 1 1 260px; }
+.infra-filters input { width: 100%; min-width: 0; height: 44px; padding: 7px 10px; border: 1px solid #aebfb2; border-radius: 7px; background: white; color: var(--ink); }
+.infra-filters select { width: 100%; }
+.infra-group { border-top: 1px solid var(--line); margin-top: 20px; padding-top: 10px; }
+.infra-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 0; padding: 0; list-style: none; }
+.infra-card { padding: 14px 16px; border: 1px solid var(--line); border-radius: 9px; background: white; font-size: .82rem; overflow-wrap: anywhere; }
+.infra-card .eyebrow, .infra-card .infra-tags { margin: 0; letter-spacing: normal; }
+.infra-card .eyebrow { color: var(--green); }
+.infra-card h4 { margin: 3px 0 6px; font-size: .98rem; line-height: 1.4; }
+.infra-card > a { display: inline-block; margin-top: 6px; }
 @media (max-width: 600px) {
   .page { padding: 0 14px; }
   .masthead { padding-top: 29px; }
   .intro { font-size: .8rem; }
   .reading-grid { grid-template-columns: 1fr; gap: 0; }
   .venue-grid { grid-template-columns: 1fr; }
+  .infra-grid { grid-template-columns: 1fr; }
   .track-label { width: 100%; }
   .track-label select { flex: 1; min-width: 0; }
   .event .event-title { font-size: .7rem; }

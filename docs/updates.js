@@ -46,10 +46,10 @@ function renderAnnouncements(announcements, container) {
     const links = document.createElement("p");
     links.className = "update-sources";
     links.append(createLink("Book of News", `${BOOK_URL}#${source.anchor}`));
-    for (const url of source.links) {
+    for (const [index, url] of source.links.entries()) {
       const parsed = new URL(url);
       if (parsed.protocol !== "https:") throw new Error(`Invalid source URL for ${number}`);
-      links.append(document.createTextNode(" · "), createLink("関連する公式情報", url));
+      links.append(document.createTextNode(" · "), createLink(`公式情報 ${index + 1}（${parsed.hostname}）`, url));
     }
     details.append(summary, list, links);
     fragment.append(details);
