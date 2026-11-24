@@ -69,23 +69,24 @@ test("session gaps merge overlaps, include 15 minutes, and never cross days", ()
   assert.deepEqual(sessionGaps([]), []);
 });
 
-test("rescheduled lightning talks match the official Nov 19 times", async () => {
+test("rescheduled lightning talks match official Nov 19 times and venues", async () => {
   const items = JSON.parse(await readFile(new URL("../docs/sessions.json", import.meta.url), "utf8"));
   const rescheduled = items.filter(item => ["LTG1283", "LTG1465"].includes(item.code));
   assert.deepEqual(
-    rescheduled.map(({code, day, start, end}) => ({code, day, start, end})),
+    rescheduled.map(({code, day, start, end, place}) => ({code, day, start, end, place})),
     [
-      {code: "LTG1465", day: 19, start: "18:20", end: "18:35"},
-      {code: "LTG1283", day: 19, start: "18:45", end: "19:00"}
+      {code: "LTG1465", day: 19, start: "18:20", end: "18:35", place: "Moscone South | The Hub, Lightning Talk 7"},
+      {code: "LTG1283", day: 19, start: "18:45", end: "19:00", place: "Moscone South | The Hub, Lightning Talk 1"}
     ]
   );
 });
 
 test("published participant draft matches the checked schedule and shows its conflicts", async () => {
   const items = JSON.parse(await readFile(new URL("../docs/sessions.json", import.meta.url), "utf8"));
-  assert.equal(items.length, 119);
+  assert.equal(items.length, 130);
   const brk283 = items.find(item => item.code === "BRK283");
   assert.ok(brk283);
+  assert.equal(brk283.id, "1787856616021001ERrz-1791588337402001CGFe");
   assert.deepEqual(
     {day: brk283.day, start: brk283.start, end: brk283.end, place: brk283.place},
     {day: 20, start: "09:00", end: "09:45", place: "Moscone West | Level 2, Room 2001"}
@@ -107,7 +108,10 @@ test("published participant draft matches the checked schedule and shows its con
   const candidates = items.filter(item => !item.priority);
   assert.equal(candidates.filter(item => item.availability === "add").length, 76);
   assert.equal(candidates.filter(item => item.availability === "standby").length, 20);
-  assert.ok(candidates.every(item => item.availabilityChecked && !Number.isNaN(Date.parse(item.availabilityChecked))));
+  assert.ok(candidates.filter(item => item.availability).every(item => item.availabilityChecked && !Number.isNaN(Date.parse(item.availabilityChecked))));
+  for (const code of ["TT1752", "BRK482", "BRK410", "BRK449", "TT1770", "BRK411", "BRKSP606", "BRK424", "LTG1374", "BRK426", "BRK422"]) {
+    assert.ok(candidates.some(item => item.code === code));
+  }
   for (const code of ["BRK421", "INV640"]) {
     assert.ok(candidates.some(item => item.code === code && item.availability === "add"));
   }

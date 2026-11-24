@@ -111,6 +111,8 @@ dialog p { font-size: .84rem; }
 .detail-warning { color: var(--danger); font-weight: 650; }
 .detail-availability { color: #765317; font-weight: 650; }
 .official { display: block; margin: 18px 0 0; padding: 12px; border-radius: 7px; background: var(--green); color: white; text-decoration: none; text-align: center; }
+.recording { display: block; margin-top: 10px; padding: 12px; border: 1px solid #a13227; border-radius: 7px; color: #8d291f; font-weight: 700; text-decoration: none; text-align: center; }
+.recording[hidden] { display: none; }
 .error { padding: 15px; color: #a02218; background: #ffebe5; }
 .venue-page { max-width: 1000px; }
 .event-map { margin-top: 24px; }

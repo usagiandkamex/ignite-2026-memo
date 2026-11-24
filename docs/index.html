@@ -22,9 +22,9 @@
   </header>
   <main class="page">
     <section class="overview" aria-label="公開情報について">
-      <p><strong>公開セッションだけをまとめた参加案です。</strong>実線は11/16 07:40台（日本時間）の確認時に予定表に表示されていた枠、破線はその時点で未追加の候補です。自動同期されないため、最新の登録状況・座席予約は公式サイトで確認してください。</p>
+      <p><strong>公開セッションだけをまとめた参加案です。</strong>実線は11/24（日本時間）の確認時に予定表に表示されていた枠、破線はその時点で未追加の候補です。自動同期されないため、最新の登録状況は公式サイトで確認してください。</p>
       <p>表示はサンフランシスコ時間 <strong>PST（UTC−8）</strong>。日本時間は＋17時間です。カードをタップすると詳細を開けます。</p>
-      <p>候補の追加・満席表示は各カードに記載した確認時点の記録です。<strong>「予定に追加」は座席確保を意味しません。</strong>最新状況は公式ページで確認してください。</p>
+      <p>会期は終了しています。候補の追加・満席表示は開催前の記録です。<strong>「予定に追加」は座席確保を意味しません。</strong>録画が公開されているセッションは詳細から視聴できます。</p>
     </section>
     <section class="planner" aria-labelledby="planner-title">
       <div class="section-heading"><h2 id="planner-title">Session planner</h2><span id="session-count" class="edition">PUBLIC SESSIONS</span></div>
@@ -41,7 +41,7 @@
           <label class="track-label">分野<select id="track"><option value="">すべての分野</option></select></label>
         </div>
       </div>
-      <div class="legend"><span class="key priority">実線：予定表に表示</span><span class="key alternative">破線：未追加候補</span><span class="key must">必ず参加</span><span class="key general">全体セッション</span><span class="key standby">満席・待機のみ</span><span class="key conflict">時間重複</span><span>高さ＝所要時間</span></div>
+      <div class="legend"><span class="key priority">実線：予定表に表示</span><span class="key alternative">破線：未追加候補</span><span class="key must">必ず参加</span><span class="key general">全体セッション</span><span class="key standby">開催前は満席</span><span class="key conflict">時間重複</span><span>▶ YouTube録画あり</span><span>高さ＝所要時間</span></div>
       <div id="summary" class="summary" role="status" aria-live="polite"></div>
       <p class="calendar-help">PST / UTC−8 · 候補は「比較候補も表示」で表示。⚠は時間重複、協賛はスポンサー枠です。短い枠はタップで確認。候補が多い日や4日表示は横スクロールできます。</p>
       <div class="calendar-scroll" tabindex="0" role="region" aria-label="時間軸カレンダー">
@@ -71,6 +71,7 @@
     </section>
     <footer>
       <p>出典：各カードの<a href="https://ignite.microsoft.com/en-US/sessions">Microsoft Ignite公式セッションページ</a>。タイトルは読みやすく要約しています。</p>
+      <p>YouTube録画は<a href="https://www.youtube.com/@events_msft/videos">Microsoft Events公式チャンネル</a>の公開動画を11/24に照合しました。確認できない録画にはリンクを表示しません。</p>
       <p>社内情報・顧客情報・同行者の予定・認証情報は掲載しません。分析・トラッキングツール、外部フォントは使用していません。</p>
       <p>Microsoftの公式案内ではありません。会場、時刻、参加条件は公式情報で最終確認してください。</p>
     </footer>
@@ -85,7 +86,8 @@
     <p id="detail-availability" class="detail-availability"></p>
     <p id="detail-reason"></p>
     <a id="detail-link" class="official" target="_blank" rel="noopener noreferrer">公式セッションページ ↗</a>
-    <p class="fineprint">表示状態は2026/11/16時点の記録で、自動同期されません。最新の登録・予約状況は公式サイトで確認してください。</p>
+    <a id="detail-youtube" class="recording" target="_blank" rel="noopener noreferrer" hidden>YouTubeで録画を見る ↗</a>
+    <p class="fineprint">予定表の表示状態は2026/11/24時点の記録で、自動同期されません。</p>
   </dialog>
 </body>
 </html>
