@@ -21,6 +21,13 @@ function createLink(text, href) {
   return link;
 }
 
+function statusClass(status) {
+  if (["GA", "提供中"].includes(status)) return "ready";
+  if (status === "プレビュー") return "preview";
+  if (["限定プレビュー", "パイロット", "Frontier"].includes(status)) return "limited";
+  return "verify";
+}
+
 function renderAnnouncements(announcements, container) {
   const fragment = document.createDocumentFragment();
   for (const {number, title, source, items} of announcements) {
@@ -38,7 +45,7 @@ function renderAnnouncements(announcements, container) {
     for (const [status, text] of items) {
       const item = document.createElement("li");
       const badge = document.createElement("span");
-      badge.className = "update-badge";
+      badge.className = `update-badge ${statusClass(status)}`;
       badge.textContent = status;
       item.append(badge, document.createTextNode(` ${text}`));
       list.append(item);

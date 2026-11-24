@@ -7,6 +7,18 @@ const readJSON = async name => JSON.parse(await readFile(new URL(`../docs/${name
 const editorial = await readJSON("updates-editorial.json");
 const sources = await readJSON("updates-sources.json");
 
+test("announcement page explains the four-layer overview with accessible visual icons", async () => {
+  const page = await readFile(new URL("../docs/updates.html", import.meta.url), "utf8");
+  assert.match(page, /class="announcement-map"/);
+  assert.equal((page.match(/class="announcement-icon"/g) || []).length, 4);
+  assert.match(page, /aria-hidden="true"/);
+  assert.match(page, /基盤・データ/);
+  assert.match(page, /安全な実行/);
+  assert.match(page, /監視・評価/);
+  assert.match(page, /人の判断・改善/);
+  assert.match(page, /class="status-legend"/);
+});
+
 test("each Book of News announcement has a source and individually labeled items", () => {
   assert.equal(Object.keys(editorial).length, 59);
   assert.deepEqual(Object.keys(editorial).sort(), Object.keys(sources).sort());

@@ -24,6 +24,38 @@
       <p><strong>調査途中の非公式メモです。</strong>Book of Newsの全59発表を見出し単位で整理しましたが、各発表の全機能とBook of News以外の追加発表は照合中です。これが全更新の完全な一覧ではありません。</p>
       <p>2026年11月24日確認。状態は発表時点の記載であり、最新の提供地域、料金、ライセンス、利用条件を保証しません。特にプレビューは利用前に公式情報を確認してください。</p>
     </section>
+    <section class="announcement-map" aria-labelledby="announcement-map-title">
+      <p class="eyebrow">AT A GLANCE / 4 LAYERS</p>
+      <h2 id="announcement-map-title">発表の全体像</h2>
+      <p class="updates-lead">今回の発表は、AIを「つくる」だけでなく、「動かす・守る・改善する」までを一つの流れとして捉えると読みやすくなります。</p>
+      <div class="announcement-map-grid">
+        <article class="announcement-step">
+          <div class="announcement-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" focusable="false"><path d="M8 14h32v20H8zM14 39h20M18 34v5m12-5v5M14 20h20M14 26h12" /></svg>
+          </div>
+          <div><span class="step-number">01</span><h3>基盤・データ</h3><p>AIを置く計算資源と、使うデータを整える。</p></div>
+        </article>
+        <article class="announcement-step">
+          <div class="announcement-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" focusable="false"><path d="M24 7l15 6v10c0 9-6 15-15 18-9-3-15-9-15-18V13l15-6zM17 24l5 5 10-11" /></svg>
+          </div>
+          <div><span class="step-number">02</span><h3>安全な実行</h3><p>ID、権限、分離でエージェントを動かす。</p></div>
+        </article>
+        <article class="announcement-step">
+          <div class="announcement-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" focusable="false"><path d="M8 34V22m8 12V16m8 18V9m8 25V19m8 15H6M34 14l4-5 4 5" /></svg>
+          </div>
+          <div><span class="step-number">03</span><h3>監視・評価</h3><p>品質、健全性、コストを見える化する。</p></div>
+        </article>
+        <article class="announcement-step">
+          <div class="announcement-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" focusable="false"><path d="M15 36a16 16 0 1 1 18 0M24 24v-9m0 9l7 5M12 39h24" /></svg>
+          </div>
+          <div><span class="step-number">04</span><h3>人の判断・改善</h3><p>承認と振り返りで、次の変更につなげる。</p></div>
+        </article>
+      </div>
+      <p class="map-caption"><span aria-hidden="true">↻</span> 4つは一方向の手順ではなく、継続的に回すサイクルです。下の一覧から気になる発表を選べます。</p>
+    </section>
     <section class="updates-reading" aria-labelledby="brief-title">
       <p class="eyebrow">THE BRIEF / ABOUT 10 MINUTES</p>
       <h2 id="brief-title">まず押さえたい、今回の変化</h2>
@@ -84,6 +116,12 @@
         <label>キーワード<input id="update-search" type="search" placeholder="製品名・機能名など" autocomplete="off"></label>
         <label>分野<select id="update-topic"><option value="">すべての分野</option></select></label>
         <label>提供状態<select id="update-status"><option value="">すべての状態</option><option>GA</option><option>提供中</option><option>プレビュー</option><option>限定プレビュー</option><option>パイロット</option><option>Frontier</option><option>今後</option><option>未確認</option><option>要確認</option></select></label>
+      </div>
+      <div class="status-legend" aria-label="提供状態の見方">
+        <span><i class="status-dot ready" aria-hidden="true"></i>提供中</span>
+        <span><i class="status-dot preview" aria-hidden="true"></i>プレビュー</span>
+        <span><i class="status-dot limited" aria-hidden="true"></i>限定・試験</span>
+        <span><i class="status-dot verify" aria-hidden="true"></i>要確認</span>
       </div>
       <p id="update-count" role="status" aria-live="polite">発表一覧を読み込んでいます。</p>
       <p id="update-error" class="error" hidden></p>
