@@ -20,6 +20,8 @@ GitHub Pagesで`main`ブランチの`docs`ディレクトリを公開します�
 
 別ページの[会場マップ](https://usagiandkamex.github.io/ignite-2026-memo/map.html)には主要会場・周辺施設・道路・駅の簡略地図と、Ignite公式インタラクティブMapや会場公式フロア図へのリンクがあります。地図は入口や徒歩経路を示しません。
 
+[Azure インフラセッション一覧](https://usagiandkamex.github.io/ignite-2026-memo/infra.html)は参加案とは独立した一覧です。Ignite 2026 の公式公開カタログ全体から、コンピューティング・ネットワーク・ストレージ・移行・運用と、App Service、Functions、Container Apps、AKS などの実行基盤を分野別に探せます。
+
 ## 情報の扱い
 
 - 公開するのは公式公開セッションの日時・会場・リンクと、公開内容に基づく短い要約・編集上の参加案のみです。
@@ -33,6 +35,8 @@ GitHub Pagesで`main`ブランチの`docs`ディレクトリを公開します�
 ## 更新と確認
 
 `docs/sessions.json`を編集し、各カードの公式URLで日付・時刻・会場を照合してください。`checked`に確認日、`note`に公開情報だけに基づく選定理由を記入します。公式説明文の全文転載は避け、短い要約にします。
+
+インフラ一覧は `docs/infra-sessions.json` を更新します。[公式公開カタログ](https://ignite.microsoft.com/en-US/sessions)のタイトル・概要・トピック・タグを照合し、同一セッションの開催枠はまとめます。DB・AI はインフラの設計や運用が主題の場合だけ掲載します。出典の確認日とカタログ全体の件数を記録し、公式のセッションコード・詳細ページ ID に独自の短い日本語要約を添えます。参加ステータスは記録しません。
 
 YouTubeの録画を追加する際は、同じセッションコードが別年にも存在するため、公式ページのタイトル・動画の開催年・Microsoft Eventsのチャンネルを確認し、`youtubeUrl`に動画URLを設定します。
 

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#132c28">
+  <meta name="description" content="Microsoft Ignite 2026 の公式カタログから、Azure の基盤・運用・アプリ実行基盤のセッションを分野別に整理した非公式の一覧。">
+  <title>Azure インフラセッション | Ignite 2026</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./infra.js"></script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="page">
+      <p class="eyebrow">MICROSOFT IGNITE 2026 / SESSION CATALOG</p>
+      <h1>Azure <span>インフラセッション</span></h1>
+      <p class="intro">VM・ネットワークから App Service・AKS まで、Azure の基盤をテーマで探す。</p>
+      <nav class="site-nav" aria-label="ページ"><a href="./">スケジュール</a><a href="./infra.html" aria-current="page">Azure インフラ</a><a href="./map.html">会場マップ</a></nav>
+    </div>
+  </header>
+  <main class="page">
+    <section class="overview" aria-label="掲載範囲">
+      <p><strong>参加予定とは関係のない、Azure インフラのセッション一覧です。</strong> 公式公開カタログ全体を対象に、インフラの設計・移行・運用、アプリ実行基盤を主題とするセッションを選びました。DB・AI は基盤の設計や運用が主題の場合に掲載しています。</p>
+    </section>
+    <section aria-labelledby="infra-title">
+      <div class="section-heading"><h2 id="infra-title">セッション一覧</h2><span class="edition">AZURE INFRASTRUCTURE</span></div>
+      <div id="infra-filters" class="infra-filters" hidden>
+        <label for="infra-query">キーワード
+          <input id="infra-query" type="search" placeholder="例：App Service" aria-describedby="infra-query-help">
+          <small id="infra-query-help" class="muted">製品名・コード・要約を検索。複数の条件は読点「、」で区切れます。</small>
+        </label>
+        <label for="infra-category">分野
+          <select id="infra-category"><option value="">すべての分野</option></select>
+        </label>
+      </div>
+      <p id="infra-status" class="summary" role="status"></p>
+      <div id="infra-results"></div>
+      <noscript><p class="error">一覧の表示には JavaScript が必要です。本ページ下部の公式カタログをご利用ください。</p></noscript>
+    </section>
+    <footer>
+      <p id="infra-source">出典：<a href="https://ignite.microsoft.com/en-US/sessions">Microsoft Ignite 2026 公式セッションカタログ</a>。日本語の要約と分野分けは本サイト独自のものです。</p>
+      <p>同一セッションの複数開催枠や別会場での中継は重複掲載しません。別のセッションコードを持つデジタルラボは掲載対象です。YouTube リンクがなくても、公式詳細ページから録画を視聴できる場合があります。</p>
+    </footer>
+  </main>
+</body>
+</html>
