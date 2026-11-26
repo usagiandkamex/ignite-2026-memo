@@ -1,0 +1,274 @@
+{
+  "checked": "2026-11-26",
+  "groups": {
+    "app": [
+      {
+        "title": "Microsoft Foundry から自社管理の AKS に配備",
+        "status": "限定プレビュー",
+        "change": "Foundry からオープンウェイトモデルを既存の AKS に配備できる。ホステッドエージェントは Foundry の API を保ったまま、自社クラスターの Pod で実行する。",
+        "use": "開発チームは Foundry を使い続けながら、基盤チームは GPU、配置リージョン、ネットワーク、ID、ポリシーを自分たちで選べる。",
+        "check": "モデル配備とエージェント実行は別の機能。エージェントの公開プレビューは12月上旬が目標で、クラスターやノードプール、レジストリ、ストレージの運用は自社に残る。",
+        "sources": [{"label": "AKS の Ignite 発表", "url": "https://techcommunity.microsoft.com/blog/appsonazureblog/run-models-and-agents-on-your-own-kubernetes-clusters-aks-at-microsoft-ignite-20/4573912"}],
+        "sessions": ["BRK420", "BRK422"]
+      },
+      {
+        "title": "AKS のマネージド GPU ノードプール",
+        "status": "GA",
+        "change": "GPU ドライバー、Kubernetes デバイスプラグイン、メトリクスのエクスポーターを AKS が管理し、GPU メトリクスを Azure Monitor で確認できる。",
+        "use": "推論用ノードのイメージ更新やドライバー配布を自前で運用している場合に、保守作業を減らせる。",
+        "check": "マネージドノードプールの GA と、NVIDIA GB200・GB300 や異なる大きさの GPU インスタンスを混在させる mixed MIG のプレビューは別。対象 VM、OS、GPU クォータを照合する。",
+        "sources": [{"label": "AKS の Ignite 発表", "url": "https://techcommunity.microsoft.com/blog/appsonazureblog/run-models-and-agents-on-your-own-kubernetes-clusters-aks-at-microsoft-ignite-20/4573912"}],
+        "sessions": ["BRK422", "LAB723"]
+      },
+      {
+        "title": "Azure Container Apps Express",
+        "status": "GA",
+        "change": "HTTP ベースのコンテナーアプリを簡素な設定で公開し、リクエストがないときはゼロに縮退できる。",
+        "use": "Web API やダッシュボードなど、負荷の変動が大きく、クラスター管理や細かなネットワーク設定を必要としないアプリに向く。",
+        "check": "GPU、TCP、Dapr、ジョブ、カスタムドメインは対象外。必要なら通常の Container Apps と比較し、初回応答時間を実際のイメージで測る。",
+        "sources": [
+          {"label": "Container Apps の Ignite 発表", "url": "https://techcommunity.microsoft.com/blog/appsonazureblog/whats-new-in-azure-container-apps-at-ignite26/4573042"},
+          {"label": "Express の機能と制約", "url": "https://learn.microsoft.com/en-us/azure/container-apps/express-overview"}
+        ],
+        "sessions": ["LTG1279"]
+      },
+      {
+        "title": "Azure Container Apps Sandboxes",
+        "status": "GA",
+        "change": "コードの実行環境を microVM 単位で分離する。メモリとディスクの状態をスナップショットに保存し、中断した処理を再開できる。",
+        "use": "複数テナントの処理を同じ実行環境に載せず、作業単位に分けたいときに使える。Express がアプリを公開する機能なのに対し、Sandboxes は処理を隔離して実行するための機能。",
+        "check": "分離だけでは外部通信や秘密情報へのアクセスを制御できない。外向き通信の許可先と、実行環境に渡す認証情報やスナップショットの保持方針を決める。",
+        "sources": [{"label": "Container Apps の Ignite 発表", "url": "https://techcommunity.microsoft.com/blog/appsonazureblog/whats-new-in-azure-container-apps-at-ignite26/4573042"}],
+        "sessions": ["BRK448", "LAB722D"]
+      },
+      {
+        "title": "App Service Managed Instance の対応プラン拡大",
+        "status": "対応拡大",
+        "change": "8月に GA となった Windows Web アプリ向けの Managed Instance を Azure Catalyst の移行評価に追加。対応リージョンでは Premium v3 系が順次使えるようになり、App Service Environment v3 の Isolated v4 も選択肢に加わる。",
+        "use": "レジストリや Windows コンポーネントなどに依存して標準 App Service に移せなかった Web アプリを再評価できる。",
+        "check": "Linux、コンテナー、任意の OS 管理が必要な Windows VM の代替ではない。代表アプリでインストール、ファイル共有、認証、起動後の動作を確かめる。",
+        "sources": [{"label": "App Service 製品チームの発表", "url": "https://techcommunity.microsoft.com/blog/AppsonAzureBlog/modernize-more-windows-applications-with-managed-instance-on-azure-app-service/4573885"}],
+        "sessions": ["BRK449"]
+      },
+      {
+        "title": "Azure Functions の Managed Connectors",
+        "status": "GA",
+        "change": "SaaS のイベントを受け取る Connector Trigger に、Webhook に加えて、マネージド ID を使って Azure Connector Namespace へ外向きに取りに行くポーリング方式が加わった。",
+        "use": "公開コールバックを設けられないイベント連携でも、Function App から接続して処理できる。",
+        "check": "Webhook とポーリングで検知遅延やスケールの条件が異なる。対象コネクターとランタイム（.NET isolated、Python、Node.js）、マネージド ID の権限を確認する。",
+        "sources": [{"label": "Azure Functions の Ignite 発表", "url": "https://techcommunity.microsoft.com/blog/AppsonAzureBlog/whats-new-in-azure-functions-and-durable-task-scheduler-at-microsoft-ignite-2026/4573933"}],
+        "sessions": ["LTG1294", "BRK423"]
+      }
+    ],
+    "compute": [
+      {
+        "title": "Azure Cobalt 200 VM",
+        "status": "GA",
+        "change": "第2世代の Arm ベース VM。一定の 3.2 GHz で動くモードと最大 3.6 GHz にブーストするモードがあり、大容量メモリ向け Mpsv4 やローカルストレージの大きい Lpsv5 も選べる。",
+        "use": "検索やツール実行など、GPU 推論の前後で CPU が詰まる処理を切り分けて評価する。分散処理でノード間の速度のばらつきを抑えたい場合は一定速度モードを比較する。",
+        "check": "Cobalt 100 比で最大50%の性能向上は Microsoft の測定例で、アプリ全体の改善を保証しない。Arm64 対応の依存ライブラリを確認し、同じ負荷で p95 応答時間と処理当たりの費用を比較する。",
+        "sources": [{"label": "Cobalt 200 の GA 発表", "url": "https://azure.microsoft.com/en-us/blog/azure-cobalt-200-vms-now-available-proven-on-real-workloads-and-built-for-the-agentic-era/"}],
+        "sessions": ["BRK440", "BRK432"]
+      },
+      {
+        "title": "AMD EPYC ベースの v7 機密 VM",
+        "status": "限定プレビュー",
+        "change": "AMD EPYC Turin と SEV-SNP を採用し、処理中のデータを保護できる汎用・メモリ最適化の機密 VM を追加する。",
+        "use": "顧客データを扱うアプリで、保存時・転送時だけでなく処理中の保護も必要な場合に、メモリ量やローカルディスクの有無を選べる。",
+        "check": "対象サイズ、ゲスト OS、アテステーション（実行環境の検証）と鍵の解放条件を確認する。既存環境の移行やバックアップ対応を新しい VM シリーズでも使えるとは仮定しない。",
+        "sources": [{"label": "機密コンピューティング製品ブログ", "url": "https://techcommunity.microsoft.com/blog/AzureConfidentialComputingBlog/what%E2%80%99s-new-in-azure-confidential-computing-%E2%80%94-ignite-2026/4573909"}],
+        "sessions": ["BRK443"]
+      },
+      {
+        "title": "NVIDIA Vera Rubin NVL72 の複数 GPU 機密推論",
+        "status": "要確認",
+        "change": "製品ブログは、ベアメタルで複数の Rubin GPU を用い、CPU と GPU の実行環境を検証してから推論する技術デモを紹介した。",
+        "use": "1基の GPU に収まらないモデルと機密データを扱う場合に、CPU・GPU とホスト OS のどこまでを信頼境界とするか整理する材料になる。",
+        "check": "Book of News はプレビューと記載するが、製品ブログは機密 VM や Foundry 統合を開発中としている。利用可能な構成を探す場合は、既存の H100 機密 GPU VM も候補にする。",
+        "sources": [
+          {"label": "機密コンピューティング製品ブログ", "url": "https://techcommunity.microsoft.com/blog/AzureConfidentialComputingBlog/what%E2%80%99s-new-in-azure-confidential-computing-%E2%80%94-ignite-2026/4573909"},
+          {"label": "Book of News 1.1.2", "url": "https://news.microsoft.com/events/ignite/2026/book-of-news/#azure-expands-confidential-computing-for-protecting-highly-sensitive-data"}
+        ],
+        "sessions": ["BRK443"]
+      },
+      {
+        "title": "Windows Server 2028",
+        "status": "プレビュー",
+        "change": "Insider Program で公開プレビューを開始。強化した Server Core の既定構成や、ネイティブ NVMe、NVMe over TCP・RDMA、ReFS からの起動を紹介した。",
+        "use": "Windows Server の更新を計画している組織が、既存のセキュリティ基準やストレージ構成を見直す材料になる。",
+        "check": "既存のイメージ、ドライバー、バックアップ製品、復旧手順を検証環境で試す。ローカル推論や特定のアクセラレーターの提供時期を OS 本体のプレビューと混同しない。",
+        "sources": [{"label": "Windows Server チームの発表", "url": "https://techcommunity.microsoft.com/blog/WindowsServerNewsandBestPractices/windows-server-2028-a-trusted-foundation-for-an-evolving-enterprise/4574112"}],
+        "sessions": ["BRK418"]
+      }
+    ],
+    "network": [
+      {
+        "title": "Agent Grid：エージェント通信の制御",
+        "status": "限定プレビュー",
+        "change": "実行環境の外でワークロード ID に基づく通信制御を適用し、対応通信では宛先や MCP のツール単位で許可・拒否を設定できる。",
+        "use": "エージェントが同じ業務サービスへ接続する場合でも、検索は許可し、変更操作は許可しない、といったネットワーク側の制御を加えられる。",
+        "check": "発表時の対象は ACI Agent Groups、AKS Agent Sandbox、Agent Grid に登録した通常の AKS ワークロード。接続先サービスの権限管理は別途維持し、拒否ログと想定どおりの到達性を確認する。",
+        "sources": [{"label": "Azure Networking の発表", "url": "https://techcommunity.microsoft.com/blog/AzureNetworkingBlog/introducing-agent-grid/4573407"}],
+        "sessions": ["LTG1242", "BRK433"]
+      },
+      {
+        "title": "AKS のマネージド StandardV2 NAT Gateway",
+        "status": "GA",
+        "change": "対応リージョンで、マネージド NAT を指定する新規 AKS クラスターの既定 SKU が StandardV2 になる。ゾーン冗長と外向き IPv6 接続を利用できる。",
+        "use": "クラスターから外部の依存サービスへ出る経路を設計するとき、単一ゾーンへの依存を減らせる。",
+        "check": "既存環境は自動移行しない。既定値は API バージョンとリージョンに依存し、持ち込み VNet ではユーザー割り当て NAT を検討する。外向き IP の SKU と接続先の許可リストも確認する。",
+        "sources": [
+          {"label": "AKS の Ignite 発表", "url": "https://techcommunity.microsoft.com/blog/appsonazureblog/run-models-and-agents-on-your-own-kubernetes-clusters-aks-at-microsoft-ignite-20/4573912"},
+          {"label": "AKS の NAT Gateway 構成", "url": "https://learn.microsoft.com/en-us/azure/aks/nat-gateway"}
+        ],
+        "sessions": ["BRK421"]
+      },
+      {
+        "title": "ExpressRoute Direct のリンクグループ",
+        "status": "プレビュー",
+        "change": "複数の物理リンクを LACP で一つの論理リソースにまとめる。公表された構成では 400 Gbps ポート2組で最大800 Gbps の集約容量を持てる。",
+        "use": "オンプレミスと Azure 間の大規模なデータ転送で、物理ポートを個別に管理せず帯域を増やせる。",
+        "check": "新規展開のみで、同じ速度・ピアリング拠点・ルーターペアが必要。既存ポートは変換できず、回線やゲートウェイの上限は変わらない。リンクを1本失ったときの容量も設計に含める。",
+        "sources": [{"label": "リンクグループの仕様と制約", "url": "https://learn.microsoft.com/en-us/azure/expressroute/expressroute-direct-link-groups"}],
+        "sessions": ["LAB725D"]
+      }
+    ],
+    "storage": [
+      {
+        "title": "Azure Blob Storage の Turbo アクセス層",
+        "status": "プレビュー",
+        "change": "同じストレージアカウントと Blob API のまま、頻繁に使うデータを SSD ベースの Turbo に置き、残りを Hot、Cool、Cold に置ける。対象データの階層移動を Smart placement に任せることもできる。",
+        "use": "モデル起動時の読み込みや学習のチェックポイント復元で、データ待ちのため GPU が止まっている場合に検討する。",
+        "check": "対象は選択されたリージョンの LRS を使う GPv2 アカウント。ストレージ単体のベンチマークとアプリ全体の改善は別なので、実測で GPU の待ち時間、転送と階層変更を含む費用を比較する。",
+        "sources": [{"label": "Azure Storage の Turbo 発表", "url": "https://techcommunity.microsoft.com/blog/AzureStorageBlog/blob-storage-turbo-tier-high-performance-with-object-storage-scale-and-economics/4573491"}],
+        "sessions": ["BRK453", "BRK434"]
+      },
+      {
+        "title": "Azure Infrastructure Resiliency Manager",
+        "status": "GA",
+        "change": "ゾーン回復性の評価対象が41の Azure サービスに拡大。Azure portal でアプリのゾーン構成、復旧訓練、Azure Backup による保護範囲を並べて確認できる。",
+        "use": "アプリ単位で未保護の依存先を見つけ、ゾーン冗長化・バックアップ・復旧訓練のどれを優先するか判断できる。",
+        "check": "対象サービスと障害シナリオは機能ごとに異なり、リージョンをまたぐ回復性評価は別の限定プレビュー。対象構成を照合し、要求した復旧時間と許容データ損失を実際の訓練で検証する。",
+        "sources": [{"label": "Resiliency Manager の GA 発表", "url": "https://techcommunity.microsoft.com/blog/reliability-and-resiliency-in-azure/azure-infrastructure-resiliency-manager-is-now-generally-available-with-ai-power/4573791"}],
+        "sessions": ["LTG1467", "BRK452"]
+      },
+      {
+        "title": "Azure Chaos Studio Workspaces",
+        "status": "GA",
+        "change": "対象リソースをまとめ、ゾーン停止、DNS 障害、DB フェールオーバーなどのシナリオを実行できる。実行結果はレポートとして残る。",
+        "use": "冗長化の設定があるかだけでなく、障害時に利用者のリクエストが成功するか、復旧目標を満たすかまで調べられる。",
+        "check": "本物の Azure ゾーン停止ではなく、対応リソースに障害の一部を再現する。まず非本番で対象と中止条件を決め、アプリ側の成功率と復旧時間を測る。",
+        "sources": [{"label": "Chaos Studio 製品チームの発表", "url": "https://techcommunity.microsoft.com/blog/reliability-and-resiliency-in-azure/introducing-the-next-chapter-of-azure-chaos-studio/4574151"}],
+        "sessions": ["BRK452"]
+      },
+      {
+        "title": "Chaos Studio の AKS 拡張",
+        "status": "プレビュー",
+        "change": "Workspaces から、選択した Pod に削除、CPU・メモリ負荷、通信遅延などを模擬できる。",
+        "use": "Pod が再作成されるかだけでなく、再作成中のリクエスト、タイムアウト、再試行時の動作を検証できる。",
+        "check": "Book of News は GA と記載するが、製品ブログと Microsoft Learn は拡張を公開プレビューとし、Learn は本番利用を想定していないと明記。Workspaces 本体の GA と区別する。",
+        "sources": [
+          {"label": "AKS 拡張の要件と注意点", "url": "https://learn.microsoft.com/en-us/azure/chaos-studio/chaos-studio-aks-extension-overview"},
+          {"label": "Book of News 1.1.1", "url": "https://news.microsoft.com/events/ignite/2026/book-of-news/#azure-chaos-studio-workspaces-aks-extension-now-generally-available"}
+        ],
+        "sessions": ["BRK445"]
+      }
+    ],
+    "hybrid": [
+      {
+        "title": "Azure Catalyst：アプリ単位で移行を計画",
+        "status": "GA",
+        "change": "Azure Copilot の移行エージェントを Azure Catalyst agent として提供し、Azure Migrate の資産評価と GitHub Copilot modernization のコード側の作業をつなぐ。",
+        "use": "VM の台数だけで移行順を決めず、アプリ、DB、ファイル共有などの依存関係を一緒に調べ、切り替えの単位を決められる。",
+        "check": "自動検出や移行方式の比較、SQL の波次移行や NAS から Blob への移行支援など、追加機能にはプレビューがある。代表アプリで依存関係、停止時間、切り戻しを検証する。",
+        "sources": [
+          {"label": "Azure Catalyst の移行先・提供状況", "url": "https://techcommunity.microsoft.com/blog/azuremigrationblog/azure-catalyst-one-connected-agent-led-modernization-experience-across-apps-data/4573988"},
+          {"label": "Book of News 1.2.3", "url": "https://news.microsoft.com/events/ignite/2026/book-of-news/#introducing-azure-catalyst"}
+        ],
+        "sessions": ["BRK409", "BRK412"]
+      },
+      {
+        "title": "Foundry Local on Azure Local",
+        "status": "GA",
+        "change": "Azure Local 上で Foundry Local のモデル推論が GA。クラウド接続あり・なしの両方に対応する。対応する AMD ホスト上の SEV-SNP 機密 VM も GA になった。",
+        "use": "データを拠点外に移せない工場などで、データの近くに推論基盤を配置する選択肢になる。",
+        "check": "エージェントサービスやガードレールは別のプレビュー。対象ハードウェアとモデルを確認し、切断環境ではモデル配布、更新、監視を誰が担うか決める。",
+        "sources": [{"label": "Azure Arc チームの主権クラウド発表", "url": "https://techcommunity.microsoft.com/blog/azurearcblog/whats-new-with-sovereign-private-cloud-at-microsoft-ignite-2026/4573886"}],
+        "sessions": ["BRK442"]
+      },
+      {
+        "title": "Azure Local の接続型から切断型への移行",
+        "status": "プレビュー",
+        "change": "対応する既存の Azure Local 環境で、VM・AKS・ストレージをその場に残し、Azure 接続型の管理からローカルの管理基盤へ移行できる。",
+        "use": "ネットワーク分離の要件が後から生じた場合、ワークロードを別の環境へ移し直さずに管理の境界を変えられるか検討できる。",
+        "check": "切断後もクラウド側と同じ機能が使えるとは限らない。ローカル ID、管理者のアクセス、更新、監視、障害時の復旧を事前にリハーサルする。",
+        "sources": [{"label": "Azure Arc チームの主権クラウド発表", "url": "https://techcommunity.microsoft.com/blog/azurearcblog/whats-new-with-sovereign-private-cloud-at-microsoft-ignite-2026/4573886"}],
+        "sessions": ["LTG1466", "BRK442"]
+      }
+    ],
+    "ops": [
+      {
+        "title": "Azure Monitor の health models",
+        "status": "GA",
+        "change": "メトリクスやログから各構成要素の健全性を判定し、依存関係に沿ってアプリ全体の状態に集約する。集約した状態に対してアラートも設定できる。",
+        "use": "注文 API とその DB が同時に警告を出したとき、業務フローへの影響と関連するシグナルを一か所で見て調査の優先順位を決められる。",
+        "check": "まず一つの重要な利用者フローを対象に、依存先と判定しきい値を決める。通知の数だけでなく見逃しと調査時間を測り、有効化するシグナルの課金も確認する。",
+        "sources": [
+          {"label": "Azure 運用の Ignite 発表", "url": "https://techcommunity.microsoft.com/blog/azureinfrastructureblog/advancing-agentic-operations-on-azure-at-ignite-2026/4573831"},
+          {"label": "健全性モデルの設定と課金", "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/health-models/overview"}
+        ],
+        "sessions": ["BRK416"]
+      },
+      {
+        "title": "Azure SRE Agent の Teams・マルチクラウド連携",
+        "status": "プレビュー",
+        "change": "Teams のインシデント会話に調査結果を共有できる。Microsoft Entra Agent ID、AWS・Google Cloud コネクター、エージェント間の連携も公開プレビュー。",
+        "use": "複数チームで障害を見るとき、最初に集めた証拠を同じスレッドで読み、調査を引き継げる。",
+        "check": "プレビューは今回の追加機能の状態。初期評価は調査だけに絞り、Azure RBAC と接続先 IAM、会話に共有してよいログの範囲、本番変更の承認者を決める。",
+        "sources": [{"label": "Azure SRE Agent の機能別提供状況", "url": "https://aka.ms/ignite2026/sreagent"}],
+        "sessions": ["BRK417", "BRK415"]
+      },
+      {
+        "title": "Azure Copilot の deployment agent",
+        "status": "GA",
+        "change": "自然言語で指定した要件から Azure の構成やデプロイ用コードを作成する。チーム固有の前提を保持する spaces やカスタムスキルは別の公開プレビュー。",
+        "use": "開発環境の再現や新規サービスの構成案づくりで、担当者が最初の定義を書く時間を短縮できる。",
+        "check": "生成されたコードが既存の構成管理や組織ポリシーに合うとは限らない。権限、公開範囲、SKU、費用をレビューしてから検証環境に適用する。",
+        "sources": [{"label": "Azure 運用の Ignite 発表", "url": "https://techcommunity.microsoft.com/blog/azureinfrastructureblog/advancing-agentic-operations-on-azure-at-ignite-2026/4573831"}],
+        "sessions": ["BRK415"]
+      }
+    ],
+    "data": [
+      {
+        "title": "Azure HorizonDB のゾーン冗長構成",
+        "status": "GA",
+        "change": "PostgreSQL 互換の Azure HorizonDB は複数の可用性ゾーンに複製する構成を既定とし、プライベートエンドポイントや顧客管理キーをサポートする。",
+        "use": "ピーク負荷やゾーン障害に備える業務 DB を設計するとき、既存の Azure Database for PostgreSQL Flexible Server と可用性・運用の違いを比較できる。",
+        "check": "Fabric HorizonDB は別製品で公開プレビュー。Azure HorizonDB への移行前に、拡張機能、対応リージョン、アプリの再接続時間、バックアップからの復元手順を確認する。",
+        "sources": [{"label": "Azure / Fabric HorizonDB の公式発表", "url": "https://techcommunity.microsoft.com/blog/adforpostgresql/horizondb-postgresql-for-enterprises-developers-and-agents-on-azure-and-fabric/4573498"}],
+        "sessions": ["BRK361", "THR884"]
+      },
+      {
+        "title": "Azure Database for PostgreSQL の不変バックアップ",
+        "status": "要確認",
+        "change": "ポイントインタイム復元用のバックアップを保持期間中の改変・削除から守る。Azure Backup のスナップショットを使った長期保持は、別機能でプレビュー。",
+        "use": "誤削除が起きたときに必要な復元点を守る設計と、監査向けにデータを長期間保持する設計を分けられる。",
+        "check": "ポイントインタイム復元の不変性は Book of News が GA、製品ブログがプレビューと記載。対象環境の提供状況を製品文書で確認し、復元先と復元後の整合性まで試す。",
+        "sources": [
+          {"label": "PostgreSQL 製品チームの発表", "url": "https://techcommunity.microsoft.com/blog/adforpostgresql/more-power-more-resilience-better-value-azure-database-for-postgresql-at-ignite-/4573613"},
+          {"label": "Book of News 1.3.8", "url": "https://news.microsoft.com/events/ignite/2026/book-of-news/#postgresql-on-azure-simplifies-migration-and-expands-modernization-options"}
+        ],
+        "sessions": ["LTG1258", "BRK368"]
+      },
+      {
+        "title": "Azure SQL Managed Instance の可用性と移行",
+        "status": "GA",
+        "change": "Next-gen General Purpose でゾーン冗長が GA。Managed Instance link は複数 DB を持つ SQL Server の Always On 可用性グループを一つのリンクで扱える。",
+        "use": "複数の業務 DB をまとめて移行する場合に、DB ごとのリンク管理を減らし、アプリと同じ単位で切り替えを計画できる。",
+        "check": "ゾーン冗長はリージョン災害への復旧と別。対象リージョン、ソースの SQL Server バージョン、レプリケーション遅延、複数 DB をまとめて切り替えたときのアプリ動作を確認する。",
+        "sources": [{"label": "Microsoft SQL の Ignite 発表", "url": "https://devblogs.microsoft.com/azure-sql/whats-new-across-microsoft-sql-at-microsoft-ignite-2026/"}],
+        "sessions": ["BRK371"]
+      }
+    ]
+  }
+}

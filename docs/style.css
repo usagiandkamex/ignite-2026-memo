@@ -205,6 +205,25 @@ dialog p { font-size: .84rem; }
 .update-sources { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; margin: 0 15px; padding: 8px 0 12px; border-top: 1px solid var(--line); color: var(--muted); font-size: .8rem; }
 .update-sources a { display: inline-flex; align-items: center; min-height: 32px; overflow-wrap: anywhere; }
 .video-links { font-size: .83rem; padding-left: 20px; }
+.infra-jump-links { display: flex; flex-wrap: wrap; gap: 8px; }
+.infra-jump-links a { display: inline-flex; align-items: center; min-height: 44px; padding: 6px 12px; border: 1px solid var(--green); border-radius: 7px; background: white; font-weight: 700; }
+.infra-updates { margin-bottom: 24px; }
+.infra-updates > p, .infra-catalog-intro { font-size: .86rem; max-width: 75ch; }
+#infra-updates-results { display: grid; gap: 8px; margin-bottom: 12px; }
+.infra-update-group { min-width: 0; border: 1px solid var(--line); border-radius: 9px; background: white; }
+.infra-update-group summary { min-height: 44px; padding: 10px 14px; color: var(--green); cursor: pointer; overflow-wrap: anywhere; }
+.infra-update-group summary:focus-visible { outline: 3px solid #d27d18; outline-offset: -3px; border-radius: 9px; }
+.infra-update-group summary span { margin-inline-start: .8em; font-size: .8rem; white-space: nowrap; }
+.infra-update-group .infra-grid { padding: 0 10px 10px; }
+.infra-update-card dl { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 6px 10px; margin: 10px 0; }
+.infra-update-card dt { color: var(--green); font-weight: 700; }
+.infra-update-card dd { margin: 0; }
+.infra-update-status { display: inline-block; padding: 1px 6px; border-radius: 4px; background: #edf0ed; color: var(--ink); font-size: .75rem; font-weight: 700; }
+.infra-update-status[data-status="GA"] { background: var(--priority); }
+.infra-update-status:is([data-status="プレビュー"], [data-status="限定プレビュー"]) { background: var(--alternate); }
+.infra-update-status[data-status="要確認"] { background: #faedce; }
+.infra-update-links { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 12px; padding-top: 4px; border-top: 1px solid var(--line); margin: 0; color: var(--muted); }
+.infra-update-links a { display: inline-flex; align-items: center; min-height: 32px; max-width: 100%; }
 .infra-filters:not([hidden]) { display: flex; flex-wrap: wrap; align-items: start; gap: 10px 18px; margin-bottom: 12px; }
 .infra-filters label { display: grid; gap: 3px; font-size: .82rem; max-width: 100%; }
 .infra-filters label:first-child { flex: 1 1 260px; }
@@ -235,6 +254,8 @@ dialog p { font-size: .84rem; }
   .reading-grid { grid-template-columns: 1fr; gap: 0; }
   .venue-grid { grid-template-columns: 1fr; }
   .infra-grid { grid-template-columns: 1fr; }
+  .infra-update-card dl { grid-template-columns: 1fr; gap: 0; }
+  .infra-update-card dd + dt { margin-top: 6px; }
   .track-label { width: 100%; }
   .track-label select { flex: 1; min-width: 0; }
   .event .event-title { font-size: .7rem; }
