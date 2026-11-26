@@ -102,6 +102,11 @@ test("reviewed availability keeps separately sourced preview and unresolved stat
   assert.deepEqual(detection.map(item => item.number), ["7.6.1"]);
   const responses = filterAnnouncements(announcements, {query: "Responses API", status: "プレビュー"});
   assert.deepEqual(responses.map(item => item.number), ["2.2.2"]);
+  const pitr = {query: "ポイントインタイム復元用バックアップ", source: "book"};
+  const immutable = filterAnnouncements(announcements, {...pitr, status: "要確認"});
+  assert.deepEqual(immutable.map(item => item.number), ["1.3.8"]);
+  assert.match(immutable[0].items[0][1], /Book of NewsではGA、PostgreSQL製品ブログではプレビュー/);
+  assert.deepEqual(filterAnnouncements(announcements, {...pitr, status: "GA"}), []);
 });
 
 test("a missing announcement source fails explicitly", () => {
