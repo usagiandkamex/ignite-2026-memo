@@ -9,15 +9,16 @@ const sources = await readJSON("updates-sources.json");
 const additional = await readJSON("updates-additional.json");
 const announcements = combineAnnouncements(editorial, sources, additional);
 
-test("visual overview examples point to announcements with the stated availability", async () => {
+test("overview and brief examples point to announcements with the stated availability", async () => {
   const page = await readFile(new URL("../docs/updates.html", import.meta.url), "utf8");
-  const flow = page.match(/<ol class="updates-flow"[^>]*>([\s\S]+?)<\/ol>/)?.[1] ?? "";
-  const steps = [...flow.matchAll(/<li>([\s\S]+?)<\/li>/g)];
-  assert.ok(steps.length > 0, "missing visual overview");
-  for (const [, step] of steps) {
-    const status = step.match(/data-status="([^"]+)"/)?.[1];
-    const number = step.match(/href="#news-([\d-]+)"/)?.[1].replaceAll("-", ".");
-    assert.ok(editorial[number]?.items.some(([itemStatus]) => itemStatus === status), `${number}: ${status}`);
+  const examples = [...page.matchAll(/<div class="(updates-example|brief-update-heading)">([\s\S]+?)<\/div>/g)];
+  assert.ok(examples.some(([, group]) => group === "updates-example"), "missing visual overview examples");
+  assert.ok(examples.some(([, group]) => group === "brief-update-heading"), "missing brief examples");
+  for (const [, , example] of examples) {
+    const status = example.match(/data-status="([^"]+)"/)?.[1];
+    const id = example.match(/href="#([^"]+)"/)?.[1];
+    const entry = announcements.find(item => item.id === id);
+    assert.ok(entry?.items.some(([itemStatus]) => itemStatus === status), `${id}: ${status}`);
   }
 });
 

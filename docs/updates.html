@@ -26,7 +26,7 @@
       <p class="updates-lead">代表的な4つの発表から、AIを動かし、監視し、改善するために何が変わるのかを見てみましょう。</p>
       <nav class="updates-jump-links" aria-label="このページの目次">
         <a href="#index-title">発表一覧を検索</a>
-        <a href="#brief-title">分野別の解説</a>
+        <a href="#brief-title">仕事別の要点</a>
         <a href="#additional-title">Book of News 以外の更新</a>
       </nav>
       <figure class="updates-diagram">
@@ -72,7 +72,7 @@
       </figure>
       <div class="updates-visual-sources">
         <strong>Microsoft公式の図・画面</strong>
-        <a href="https://learn.microsoft.com/en-us/azure/azure-monitor/health-models/overview#track-health">Azure Monitor の健全性グラフ</a>
+        <a href="https://learn.microsoft.com/en-us/azure/azure-monitor/health-models/overview#track-health">Azure Monitor の健全性グラフの画面例</a>
         <a href="https://azure.microsoft.com/en-us/blog/continuous-improvement-comes-to-microsoft-foundry/#how-continuous-improvement-works">Microsoft Foundry の継続改善ループ</a>
         <a href="https://community.fabric.microsoft.com/blog/fbc_fabricupdatesblogs/build-governed-data-apps-with-microsoft-fabric-apps-generally-available/5423011">Fabric apps の画面例</a>
       </div>
@@ -82,47 +82,98 @@
       <p>提供状態は発表時点のものです。GAは一般提供、「提供中」は利用できると案内されていますが、GAとは明記されていない機能です。Frontierは対象プログラムでの先行提供、「要確認」は資料間の記載差、「未確認」は提供状態を特定できない場合です。最新の利用条件は各公式出典をご確認ください。</p>
     </section>
     <section class="updates-reading" aria-labelledby="brief-title">
-      <p class="eyebrow">THE BRIEF / ABOUT 10 MINUTES</p>
-      <h2 id="brief-title" tabindex="-1">まず押さえたい、今回の変化</h2>
-      <p class="updates-lead">今回の共通テーマは、AIを試す段階から、既存システムの中で安全に動かし、運用し、改善し続ける段階への移行です。基盤、データ、従業員体験、セキュリティを別々に見るのではなく、エージェントの権限と業務への影響を含めて設計することが重要になります。</p>
+      <h2 id="brief-title" tabindex="-1">今回の発表で、どんな仕事が変わる？</h2>
+      <p class="updates-lead">障害対応や商談準備など、6つの場面で何が変わるかを紹介します。ラベルは発表時点の提供状況です。機能名を選ぶと、詳しい説明と公式情報を確認できます。</p>
       <div class="brief-grid">
         <article>
-          <h3>01 / Azure の基盤と運用</h3>
-          <p>Azure Cobalt 200 VMは一般提供となり、AIモデルそのものの推論だけでなく、その周辺で動くエージェントの処理にも向けたArm基盤が広がります。Azure Chaos Studio Workspacesは一般提供です。AKS拡張はBook of NewsではGAとされていますが、製品ドキュメントと公式ブログではプレビューと記載されています。<a href="#news-1-1-1">回復性</a>・<a href="#news-1-1-3">VM</a></p>
-          <p>Azure Monitor health modelsは、個々のアラートだけでなく、依存関係と業務影響を含めた健全性の把握を狙います。SRE AgentにはTeams、複数クラウド、エージェントIDや管理キーなどのプレビューが追加されます。自動化の可否と、調査・変更の承認境界は分けて検討しましょう。<a href="#news-1-2-1">運用の発表</a></p>
-          <p>AKSではAgent Sandboxによる実行分離とAzure外のサーバーを含むFlex nodesがプレビューです。Foundryから自組織のAKSへの展開は限定プレビューで、ホステッドエージェントのパブリックプレビューは12月上旬が目標です。<a href="#news-1-2-2">AI基盤</a></p>
-          <p>機密コンピューティングでは、複数GPUにまたがる処理を技術デモで紹介し、参加組織の生データを互いに開示しない共同分析を限定プレビューで提供します。保存時・転送時だけでなく処理中のどこを保護できるかが、構成を選ぶポイントです。<a href="#news-1-1-2">機密コンピューティング</a></p>
-        </article>
-        <article>
-          <h3>02 / サーバーとデータ</h3>
-          <p>Windows Server 2028はプレビューです。セキュリティ既定値、ストレージ、管理に加え、企業内でのAI推論を扱います。ただしハイブリッドAIは一部顧客向けの早期アクセスで、ハードウェア要件があります。既存のServer 2025環境から直ちに移行できるという意味ではありません。<a href="#news-1-2-4">Server</a></p>
-          <p>同じPostgreSQL互換のHorizonDBでも、配置先と使い方が異なります。</p>
-          <ul class="updates-compare" role="list">
-            <li><span class="update-badge" data-status="GA">GA</span><strong><a href="#news-1-3-3">Azure HorizonDB</a></strong>Azureで本番アプリの取引データを運用する。ベクトル検索や多ゾーン複製に対応。</li>
-            <li><span class="update-badge" data-status="プレビュー">プレビュー</span><strong><a href="#news-1-3-7">Fabric HorizonDB</a></strong>Fabric内でサーバーレスのDBを用意し、取引データとOneLakeの分析データを組み合わせる。</li>
+          <p class="eyebrow">インフラ運用</p>
+          <h3>障害の影響範囲を知る</h3>
+          <p class="brief-scenario">たとえば決済で障害が起きたとき、注文など、ほかに影響を受けるサービスを調べます。</p>
+          <ul class="brief-updates" role="list">
+            <li>
+              <div class="brief-update-heading"><span class="update-badge" data-status="GA">一般提供</span><a href="#news-1-2-1">Azure Monitor の健全性グラフ</a></div>
+              <p>システム同士のつながりが見えるので、業務への影響が大きい障害から調べられます。</p>
+            </li>
+            <li>
+              <div class="brief-update-heading"><span class="update-badge" data-status="プレビュー">プレビュー</span><a href="#news-1-2-1">Azure SRE Agent の調査支援</a></div>
+              <p>複数のクラウドにまたがる障害の調査状況を Teams で共有でき、担当者が引き継ぎやすくなります。</p>
+            </li>
           </ul>
-          <p>データベース運用ではFabricのDatabase Hubが一般提供、SQL・PostgreSQLのエージェントはプレビューです。まずはアクセス権の範囲内で性能や健全性の調査を支援し、提案の妥当性と変更手順を人が検証する運用から始められます。<a href="#news-1-3-6">Database Hub</a></p>
         </article>
         <article>
-          <h3>03 / Foundry と開発</h3>
-          <p>Foundryでは複数ターンの評価と、本番トレースから頻出する問題を見つけるInsightsが一般提供です。既に一般提供されたAgent Optimizerには、Insights連携などのプレビューが加わります。評価基準を先に定義し、変更案を本番に反映する前に人が確認する、という改善サイクルが中心です。<a href="#news-2-1-1">継続改善</a></p>
-          <p>Microsoft-Decision-1.1は分類やルーティングなど、選択肢が明確な判断向けのモデルとして一般提供です。コード、画像、安全性などのモデルは製品や提供先ごとに状態が異なります。Copilot SDK 2.0も一般提供となりましたが、モデル名が載っているだけで、すべての利用先でGAになったわけではありません。<a href="#news-2-2-1">モデル</a>・<a href="#news-3-1-1">SDK</a></p>
+          <p class="eyebrow">データとアプリ開発</p>
+          <h3>アプリに合うデータベースを選ぶ</h3>
+          <p class="brief-scenario">同じ HorizonDB でも、本番の注文アプリを支える場合と、分析データも使うアプリを作る場合では選び方が異なります。</p>
+          <ul class="brief-updates" role="list">
+            <li>
+              <div class="brief-update-heading"><span class="update-badge" data-status="GA">一般提供</span><a href="#news-1-3-3">Azure HorizonDB</a></div>
+              <p>Azure で本番の注文データを管理します。複数の拠点（可用性ゾーン）にデータのコピーを置き、一部の障害に備えられます。</p>
+            </li>
+            <li>
+              <div class="brief-update-heading"><span class="update-badge" data-status="プレビュー">プレビュー</span><a href="#news-1-3-7">Fabric HorizonDB</a></div>
+              <p>Fabric の中で、たとえば最新の注文と売上の集計結果を一つのアプリから参照できます。</p>
+            </li>
+          </ul>
         </article>
         <article>
-          <h3>04 / Copilot と業務アプリ</h3>
-          <p>Copilot Managed Runtimeは一般提供となり、対応アプリを管理対象の環境でホストできます。Fabricをアプリのバックエンドに使うオプションはFrontierのプレビューです。長時間動く個人向けAutopilot、共同作業のWorkspaces、アプリを作るCopilot Codeも、発表時点ではFrontierの対象です。<a href="#news-4-1-3">Runtime</a>・<a href="#news-4-1-2">Autopilot</a></p>
-          <p>Dynamics 365のSales・Customer Service・ERPプラグインは一般提供、Salesforce in Copilotはプレビューです。Agent 365では支出と価値を確認する機能も拡張されます。業務データに対する既存権限、操作の承認、利用量課金とライセンスを導入前に確認します。<a href="#news-4-1-5">Dynamics</a>・<a href="#news-4-1-9">Salesforce</a>・<a href="#news-4-1-1">FinOps</a></p>
+          <p class="eyebrow">AI 開発</p>
+          <h3>AI の受け答えを改善する</h3>
+          <p class="brief-scenario">AI が問い合わせの途中で同じ質問を繰り返すなど、一問一答では見つけにくい問題を調べます。</p>
+          <ul class="brief-updates" role="list">
+            <li>
+              <div class="brief-update-heading"><span class="update-badge" data-status="GA">一般提供</span><a href="#news-2-1-1">Foundry の会話評価と Insights</a></div>
+              <p>会話全体を評価し、実際のやり取りで繰り返し起きる問題から調べられます。</p>
+            </li>
+            <li>
+              <div class="brief-update-heading"><span class="update-badge" data-status="プレビュー">プレビュー</span><a href="#news-2-1-1">Agent Optimizer と Insights の連携</a></div>
+              <p>見つけた問題から改善案を作り、いまの版と比較できます。本番に反映するかは担当者が決めます。</p>
+            </li>
+          </ul>
         </article>
         <article>
-          <h3>05 / Microsoft IQ と Edge</h3>
-          <p>Microsoft IQは、仕事の文脈を扱うWork IQ、業務データの意味を扱うFabric IQ、非構造化データのFoundry IQ、Web情報のWeb IQと、継続改善をまとめる考え方です。元データの権限や意味付けを維持したまま、複数のアプリやエージェントで知識を再利用する方向です。<a href="#news-6-1-1">Microsoft IQ</a></p>
-          <p>Foundry IQのSharePoint索引は一般提供ですが、knowledge graphやRetriever-1はプレビューです。Edge for Businessではブラウザー操作のスキル化、エージェント専用の管理対象ブラウザー、拡張機能やネットワークの保護が追加されます。機能によって提供状態が異なる点に注意します。<a href="#news-6-3-1">Foundry IQ</a>・<a href="#news-5-1-1">Edge</a></p>
+          <p class="eyebrow">営業・日々の業務</p>
+          <h3>資料づくりと進捗確認の手間を減らす</h3>
+          <p class="brief-scenario">商談の前には顧客ごとの資料を用意し、会議が終わったら宿題の進み具合を確認します。</p>
+          <ul class="brief-updates" role="list">
+            <li>
+              <div class="brief-update-heading"><span class="update-badge" data-status="GA">一般提供</span><a href="#news-4-1-5">Dynamics 365 Sales プラグイン</a></div>
+              <p>案件の情報をまとめて PowerPoint の資料を準備でき、顧客ごとに一から作る手間が減ります。</p>
+            </li>
+            <li>
+              <div class="brief-update-heading"><span class="update-badge" data-status="Frontier">先行提供</span><a href="#news-4-1-2">個人向け Autopilot</a></div>
+              <p>定期的な確認やリマインドを毎回指示せずに任せられます。Frontier プログラムの参加者向けです。</p>
+            </li>
+          </ul>
         </article>
         <article>
-          <h3>06 / Security と Windows</h3>
-          <p>Agent 365、Entra、Defender、Intune、Purviewにまたがり、エージェントのID、アクセス、端末上の実行、機密情報を管理する発表が並びます。Dynamic Agent RiskやMCP Firewallはプレビュー。ローカルAIエージェントのDefender保護は対応製品とライセンスの条件付きで一般提供です。<a href="#news-7-1-1">Agent Risk</a>・<a href="#news-7-4-1">Entra</a>・<a href="#news-7-3-2">Defender</a></p>
-          <p>Microsoft PerceptionはBook of Newsと公式ブログで一般提供とされていますが、製品ドキュメントには限定プレビュー表記が残っています。shieldingなどはプレビューで、一時的な保護はパッチの代替ではありません。Windowsのエージェント分離やWindows 365 for Agentsの永続Cloud PCもプレビュー条件を確認します。<a href="#news-7-6-1">Perception</a>・<a href="#news-8-1-4">Cloud PC</a>・<a href="#news-8-1-6">分離</a></p>
-          <p>導入順序としては、まず実行主体を把握し、必要最小限のアクセスと監査を整え、その後に利用範囲を広げるのが現実的です。機密データや外部ツールへの接続がある場合は、利用者の権限を引き継ぐだけで安全と考えず、個別のポリシーと承認条件を確認します。</p>
+          <p class="eyebrow">社内情報の活用</p>
+          <h3>AI が社内資料を根拠に答える</h3>
+          <p class="brief-scenario">たとえば出張旅費の上限を聞いたとき、一般論ではなく、自社の規程を参照して答えられるようにします。</p>
+          <ul class="brief-updates" role="list">
+            <li>
+              <div class="brief-update-heading"><span class="update-badge" data-status="GA">一般提供</span><a href="#news-6-3-1">Foundry IQ の SharePoint 検索</a></div>
+              <p>利用者が閲覧できる文書を参照して回答を作れます。元の文書のアクセス権は変わりません。</p>
+            </li>
+            <li>
+              <div class="brief-update-heading"><span class="update-badge" data-status="プレビュー">プレビュー</span><a href="#news-6-3-1">Foundry IQ の文書間の関係検索</a></div>
+              <p>規程と例外条件など、別々の文書にある関連情報をまとめて探せるか試せます。</p>
+            </li>
+          </ul>
+        </article>
+        <article>
+          <p class="eyebrow">セキュリティ・端末管理</p>
+          <h3>社員の PC で動く AI を管理する</h3>
+          <p class="brief-scenario">社員が PC で AI ツールを使うとき、IT 担当者がどんな操作や通信を許可するか決めます。</p>
+          <ul class="brief-updates" role="list">
+            <li>
+              <div class="brief-update-heading"><span class="update-badge" data-status="GA">一般提供</span><a href="#news-7-3-2">Defender の Windows 上の AI 保護</a></div>
+              <p>対応する AI ツールの動作や通信を監査・ブロックできます。対象アプリとライセンスに条件があります。</p>
+            </li>
+            <li>
+              <div class="brief-update-heading"><span class="update-badge" data-status="プレビュー">プレビュー</span><a href="#news-7-4-1">Microsoft Entra のエージェント ID</a></div>
+              <p>対応する AI に専用の ID を付け、社員本人と AI の操作を区別して調べられます。</p>
+            </li>
+          </ul>
         </article>
       </div>
     </section>

@@ -22,7 +22,7 @@ GitHub Pagesで`main`ブランチの`docs`ディレクトリを公開します�
 
 [Azure インフラセッション一覧](https://usagiandkamex.github.io/ignite-2026-memo/infra.html)は参加案とは独立した一覧です。Ignite 2026 の公式公開カタログ全体から、コンピューティング・ネットワーク・ストレージ・移行・運用と、App Service、Functions、Container Apps、AKS などの実行基盤を分野別に探せます。
 
-[新発表ページ](https://usagiandkamex.github.io/ignite-2026-memo/updates.html)では、代表的な発表を図で眺め、個別の解説やMicrosoft公式の図・画面へ進めます。Book of News全59発表と、基調講演・製品公式ブログなどで確認した補足について、機能ごとの変更点・メリット・発表時点の提供状態を掲載します。キーワード、分野、提供状態、出典区分で絞り込めます。
+[新発表ページ](https://usagiandkamex.github.io/ignite-2026-memo/updates.html)では、代表的な発表を図や仕事別の具体例で把握し、個別の解説やMicrosoft公式の図・画面へ進めます。Book of News全59発表と、基調講演・製品公式ブログなどで確認した補足について、機能ごとの変更点・メリット・発表時点の提供状態を掲載します。キーワード、分野、提供状態、出典区分で絞り込めます。
 
 ## 情報の扱い
 
