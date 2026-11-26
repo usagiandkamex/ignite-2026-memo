@@ -5,26 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="referrer" content="no-referrer">
   <meta name="theme-color" content="#132c28">
-  <meta name="description" content="Microsoft Ignite 2026 の公式カタログから、Azure の基盤・運用・アプリ実行基盤のセッションを分野別に整理した非公式の一覧。">
-  <title>Azure インフラセッション | Ignite 2026</title>
+  <meta name="description" content="Microsoft Ignite 2026 の Azure インフラ発表を、変更点・活用例・導入前の確認事項と関連セッションで分野別に整理した非公式のガイド。">
+  <title>Azure インフラの新発表とセッション | Ignite 2026</title>
   <link rel="stylesheet" href="./style.css">
   <script type="module" src="./infra.js"></script>
 </head>
 <body>
   <header class="masthead">
     <div class="page">
-      <p class="eyebrow">MICROSOFT IGNITE 2026 / SESSION CATALOG</p>
-      <h1>Azure <span>インフラセッション</span></h1>
-      <p class="intro">VM・ネットワークから App Service・AKS まで、Azure の基盤をテーマで探す。</p>
+      <p class="eyebrow">MICROSOFT IGNITE 2026 / INFRASTRUCTURE</p>
+      <h1>Azure <span>インフラ</span></h1>
+      <p class="intro">VM・ネットワークから App Service・AKS まで、何が変わったかと、導入前に確かめることを分野別に読む。</p>
       <nav class="site-nav" aria-label="ページ"><a href="./">スケジュール</a><a href="./infra.html" aria-current="page">Azure インフラ</a><a href="./map.html">会場マップ</a><a href="./updates.html">新発表</a></nav>
     </div>
   </header>
   <main class="page">
     <section class="overview" aria-label="掲載範囲">
-      <p><strong>参加予定とは関係のない、Azure インフラのセッション一覧です。</strong> 公式公開カタログ全体を対象に、インフラの設計・移行・運用、アプリ実行基盤を主題とするセッションを選びました。DB・AI は基盤の設計や運用が主題の場合に掲載しています。</p>
+      <p><strong>まず主なアップデートを読み、関連セッションで掘り下げられます。</strong> 発表とセッションはどちらも参加予定とは独立しています。</p>
+      <nav class="infra-jump-links" aria-label="このページ内"><a href="#infra-updates-title">主なアップデート</a><a href="#infra-title">セッション一覧へ</a></nav>
+    </section>
+    <section class="infra-updates" aria-labelledby="infra-updates-title">
+      <div class="section-heading"><h2 id="infra-updates-title">主なアップデート</h2><span class="edition">IGNITE 2026</span></div>
+      <p>分野を開くと、<strong>何が変わるか、どんな場面に向くか、導入前に何を確認するか</strong>を読めます。提供状況は発表時点のもので、GA は一般提供を指します。資料の記載が異なる場合は両方を示しています。</p>
+      <p id="infra-updates-status" class="summary" role="status"></p>
+      <div id="infra-updates-results"></div>
+      <noscript><p class="error">解説の表示には JavaScript が必要です。<a href="https://news.microsoft.com/events/ignite/2026/book-of-news/">公式 Book of News</a>をご覧ください。</p></noscript>
+      <p class="muted">インフラ以外の発表も含む全体像は<a href="./updates.html">新発表ページ</a>へ。</p>
     </section>
     <section aria-labelledby="infra-title">
       <div class="section-heading"><h2 id="infra-title">セッション一覧</h2><span class="edition">AZURE INFRASTRUCTURE</span></div>
+      <p class="infra-catalog-intro muted">公式公開カタログ全体から、インフラの設計・移行・運用やアプリ実行基盤が主題のセッションを選びました。DB・AI は基盤の設計や運用が主題の場合に掲載しています。</p>
       <div id="infra-filters" class="infra-filters" hidden>
         <label for="infra-query">キーワード
           <input id="infra-query" type="search" placeholder="例：App Service" aria-describedby="infra-query-help">

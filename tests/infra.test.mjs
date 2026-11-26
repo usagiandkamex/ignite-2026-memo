@@ -43,6 +43,29 @@ test("filters by normalized product, code and Japanese text, optionally within a
   assert.deepEqual(findCodes("", "not-a-real-session"), []);
 });
 
+test("infra updates cover each catalog area with decision guidance and official references", async () => {
+  const {checked, groups} = JSON.parse(await read("infra-updates.json"));
+  assert.match(checked, /^\d{4}-\d{2}-\d{2}$/);
+  assert.deepEqual(Object.keys(groups).sort(), categories.map(({id}) => id).sort());
+  const statuses = new Set(["GA", "プレビュー", "限定プレビュー", "要確認", "対応拡大"]);
+  const officialHosts = new Set(["aka.ms", "azure.microsoft.com", "learn.microsoft.com", "news.microsoft.com", "techcommunity.microsoft.com", "devblogs.microsoft.com"]);
+  const sessionCodes = new Set(sessions.map(({code}) => code));
+  for (const [category, updates] of Object.entries(groups)) {
+    assert.ok(updates.length > 0, category);
+    for (const {title, status, change, use, check, sources, sessions: relatedCodes} of updates) {
+      for (const text of [title, change, use, check]) assert.ok(text.trim(), `${category}: ${title}`);
+      assert.ok(statuses.has(status), title);
+      assert.ok(sources.length > 0, title);
+      for (const {label, url} of sources) {
+        const {protocol, hostname} = new URL(url);
+        assert.ok(label.trim() && protocol === "https:" && officialHosts.has(hostname), `${title}: ${url}`);
+      }
+      assert.ok(relatedCodes.length > 0, title);
+      for (const code of relatedCodes) assert.ok(sessionCodes.has(code), `${title}: unknown ${code}`);
+    }
+  }
+});
+
 test("planner and map link to the independent catalog", async () => {
   const [index, map, infra] = await Promise.all(["index.html", "map.html", "infra.html"].map(read));
   assert.match(index, /href="\.\/infra\.html"/);

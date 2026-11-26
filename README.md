@@ -20,7 +20,7 @@ GitHub Pagesで`main`ブランチの`docs`ディレクトリを公開します�
 
 別ページの[会場マップ](https://usagiandkamex.github.io/ignite-2026-memo/map.html)には主要会場・周辺施設・道路・駅の簡略地図と、Ignite公式インタラクティブMapや会場公式フロア図へのリンクがあります。地図は入口や徒歩経路を示しません。
 
-[Azure インフラセッション一覧](https://usagiandkamex.github.io/ignite-2026-memo/infra.html)は参加案とは独立した一覧です。Ignite 2026 の公式公開カタログ全体から、コンピューティング・ネットワーク・ストレージ・移行・運用と、App Service、Functions、Container Apps、AKS などの実行基盤を分野別に探せます。
+[Azure インフラ](https://usagiandkamex.github.io/ignite-2026-memo/infra.html)では、Ignite 2026 の主なアップデートを分野別に読み、発表時点の提供状況、活用場面、導入前の確認事項を公式出典とともに確認できます。参加案とは独立したセッション一覧から、コンピューティング・ネットワーク・ストレージ・移行・運用と、App Service、Functions、Container Apps、AKS などの実行基盤も探せます。
 
 [新発表ページ](https://usagiandkamex.github.io/ignite-2026-memo/updates.html)では、代表的な発表を図や仕事別の具体例で把握し、個別の解説やMicrosoft公式の図・画面へ進めます。Book of News全59発表と、基調講演・製品公式ブログなどで確認した補足について、機能ごとの変更点・メリット・発表時点の提供状態を掲載します。キーワード、分野、提供状態、出典区分で絞り込めます。
 
@@ -39,6 +39,8 @@ GitHub Pagesで`main`ブランチの`docs`ディレクトリを公開します�
 `docs/sessions.json`を編集し、各カードの公式URLで日付・時刻・会場を照合してください。`checked`に確認日、`note`に公開情報だけに基づく選定理由を記入します。公式説明文の全文転載は避け、短い要約にします。
 
 インフラ一覧は `docs/infra-sessions.json` を更新します。[公式公開カタログ](https://ignite.microsoft.com/en-US/sessions)のタイトル・概要・トピック・タグを照合し、同一セッションの開催枠はまとめます。DB・AI はインフラの設計や運用が主題の場合だけ掲載します。出典の確認日とカタログ全体の件数を記録し、公式のセッションコード・詳細ページ ID に独自の短い日本語要約を添えます。参加ステータスは記録しません。
+
+インフラのアップデートは `docs/infra-updates.json` で管理します。`checked` は公式資料の確認日、`groups` のキーはセッション一覧と同じ分野 ID、`sessions` は一覧の関連セッションコードです。`status` は掲載した機能の発表時点の提供状況とし、製品本体との違いや公式資料間の不一致は `check` で説明します。`sources` には公式発表・製品文書を記録し、活用場面や検証手順は編集上の提案として区別します。
 
 YouTubeの録画を追加する際は、同じセッションコードが別年にも存在するため、公式ページのタイトル・動画の開催年・Microsoft Eventsのチャンネルを確認し、`youtubeUrl`に動画URLを設定します。
 
