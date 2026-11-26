@@ -12,7 +12,7 @@
     "topic": "Azure",
     "anchor": "azure-expands-confidential-computing-for-protecting-highly-sensitive-data",
     "links": [
-      "https://aka.ms/acc-ignite2026"
+      "https://techcommunity.microsoft.com/blog/AzureConfidentialComputingBlog/what%E2%80%99s-new-in-azure-confidential-computing-%E2%80%94-ignite-2026/4573909"
     ]
   },
   "1.1.3": {
@@ -33,7 +33,9 @@
     "topic": "Azure",
     "anchor": "azure-infrastructure-foundation-for-production-ai-applications-and-agents",
     "links": [
-      "https://aka.ms/ai-infra-ignite26"
+      "https://aka.ms/ai-infra-ignite26",
+      "https://techcommunity.microsoft.com/blog/appsonazureblog/run-models-and-agents-on-your-own-kubernetes-clusters-aks-at-microsoft-ignite-20/4573912",
+      "https://devblogs.microsoft.com/foundry/whats-new-in-foundry-agent-service-at-ignite-2026/"
     ]
   },
   "1.2.3": {
@@ -54,7 +56,7 @@
     "topic": "Azure",
     "anchor": "azure-cosmos-db-improves-development-retrieval-and-data-protection",
     "links": [
-      "https://aka.ms/ignite26/cosmosdb"
+      "https://devblogs.microsoft.com/cosmosdb/whats-new-azure-cosmos-db-ignite-2026/"
     ]
   },
   "1.3.2": {
@@ -96,7 +98,7 @@
     "topic": "Azure",
     "anchor": "microsoft-fabric-horizondb-brings-postgresql-to-fabric-in-preview",
     "links": [
-      "https://aka.ms/AAncdv4"
+      "https://community.fabric.microsoft.com/blog/fbc_fabricupdatesblogs/build-and-operate-intelligent-apps-with-microsoft-fabric-new-capabilities-at-ign/5423020"
     ]
   },
   "1.3.8": {
@@ -124,14 +126,16 @@
     "topic": "Microsoft Foundry",
     "anchor": "turning-production-experience-into-better-agents",
     "links": [
-      "https://aka.ms/miq-ignitelaunchblog"
+      "https://azure.microsoft.com/en-us/blog/continuous-improvement-comes-to-microsoft-foundry/",
+      "https://devblogs.microsoft.com/foundry/whats-new-in-microsoft-foundry-ignite-2026/"
     ]
   },
   "2.2.1": {
     "topic": "Microsoft Foundry",
     "anchor": "microsoft-decision-1-1-now-generally-available",
     "links": [
-      "https://aka.ms/decision-model-ga"
+      "https://aka.ms/decision-model-ga",
+      "https://learn.microsoft.com/en-us/azure/foundry/foundry-models/how-to/use-foundry-models-microsoft-decision"
     ]
   },
   "2.2.2": {
@@ -139,8 +143,10 @@
     "anchor": "microsoft-foundry-adds-new-ai-models-for-coding-images-security",
     "links": [
       "https://aka.ms/foundrymodelsignite2026",
+      "https://aka.ms/ignite26/modelrouter",
       "https://learn.microsoft.com/en-us/azure/foundry/openai/how-to/model-router-ai-gateway",
-      "https://learn.microsoft.com/en-us/azure/foundry/foundry-models/whats-new-model-router"
+      "https://devblogs.microsoft.com/foundry/whats-new-in-microsoft-foundry-ignite-2026/",
+      "https://devblogs.microsoft.com/foundry/managed-compute-ga/"
     ]
   },
   "3.1.1": {
@@ -154,8 +160,7 @@
     "topic": "Microsoft Copilot",
     "anchor": "agent-365-turns-ai-spend-into-business-value-with-finops-for-ai",
     "links": [
-      "https://aka.ms/microsoftadmincenter",
-      "https://aka.ms/a365analytics",
+      "https://techcommunity.microsoft.com/blog/agent-365-blog/whats-new-in-microsoft-agent-365-ignite-2026/4571753",
       "https://techcommunity.microsoft.com/blog/ai-finops-blog/introducing-microsoft-agent-365-business-analytics-turn-ai-investment-into-busin/4574149"
     ]
   },
@@ -163,7 +168,6 @@
     "topic": "Microsoft Copilot",
     "anchor": "autopilot-is-rolling-out-to-frontier-customers",
     "links": [
-      "https://aka.ms/MicrosoftIgnite26Blog",
       "https://aka.ms/MicrosoftIgnite26Blog"
     ]
   },
@@ -186,7 +190,8 @@
     "topic": "Microsoft Copilot",
     "anchor": "dynamics-365-crm-and-erp-plugins-now-available-in-copilot",
     "links": [
-      "https://aka.ms/A365AnalyticsLearn"
+      "https://aka.ms/D365Ignite2026",
+      "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/use-copilot-cowork-service-skills"
     ]
   },
   "4.1.6": {
@@ -229,7 +234,6 @@
     "topic": "Microsoft Edge",
     "anchor": "edge-for-business-adds-governed-ai-workflows-stronger-security",
     "links": [
-      "https://news.microsoft.com/events/ignite/2026/book-of-news/#Footnote1",
       "https://aka.ms/EdgeIgnite26"
     ]
   },
@@ -251,14 +255,16 @@
     "topic": "Microsoft IQ",
     "anchor": "foundry-iq-brings-unstructured-data-to-applications-and-agents",
     "links": [
-      "https://aka.ms/miq-ignitelaunchblog"
+      "https://aka.ms/miq-ignitelaunchblog",
+      "https://aka.ms/Ignite26FIQ"
     ]
   },
   "6.4.1": {
     "topic": "Microsoft IQ",
     "anchor": "bring-trusted-business-context-to-more-experiences-with-fabric-iq",
     "links": [
-      "https://aka.ms/miq-ignitelaunchblog"
+      "https://aka.ms/miq-ignitelaunchblog",
+      "https://community.fabric.microsoft.com/blog/fbc_fabricupdatesblogs/bringing-trusted-fabric-iq-context-to-wherever-people-and-agents-work/5423049"
     ]
   },
   "6.5.1": {
@@ -272,21 +278,23 @@
     "topic": "Microsoft IQ",
     "anchor": "work-iq-expands-context-actions-and-controls-for-copilot-and-agents",
     "links": [
-      "https://aka.ms/miq-ignitelaunchblog"
+      "https://aka.ms/miq-ignitelaunchblog",
+      "https://techcommunity.microsoft.com/blog/microsoft_365blog/whats-new-in-work-iq-at-ignite-2026-agents-that-get-work-done/4572219"
     ]
   },
   "6.7.1": {
     "topic": "Microsoft IQ",
     "anchor": "continuous-improvement-helps-agents-and-models-learn-in-production",
     "links": [
-      "https://aka.ms/miq-ignitelaunchblog"
+      "https://aka.ms/miq-ignitelaunchblog",
+      "https://devblogs.microsoft.com/foundry/whats-new-in-microsoft-foundry-ignite-2026/"
     ]
   },
   "7.1.1": {
     "topic": "Security",
     "anchor": "dynamic-agent-risk-within-agent-365-in-preview",
     "links": [
-      "https://aka.ms/secureAIannounce"
+      "https://techcommunity.microsoft.com/blog/agent-365-blog/whats-new-in-microsoft-agent-365-ignite-2026/4571753"
     ]
   },
   "7.1.2": {
@@ -342,7 +350,6 @@
     "topic": "Security",
     "anchor": "new-investments-to-reduce-on-premises-security-risk",
     "links": [
-      "https://aka.ms/OnpremSecInitiativeBlog",
       "https://techcommunity.microsoft.com/blog/microsoft-security-blog/new-investments-to-reduce-on-premises-security-risk/4570381"
     ]
   },
@@ -373,7 +380,10 @@
     "links": [
       "https://aka.ms/perceptionignite",
       "https://techcommunity.microsoft.com/blog/perception-blog/more-signals-stronger-defense-microsoft-perception-expands-to-third-party-data/4573037",
+      "https://www.microsoft.com/de-de/techwiese/news/offiziell-verfuegbar-microsoft-perception-steuert-security-agenten-im-geschlossenen-kreislauf.aspx",
       "https://learn.microsoft.com/en-us/security/agentic-security/triage-agent",
+      "https://learn.microsoft.com/en-us/security/agentic-security/attack-investigation-agent",
+      "https://learn.microsoft.com/en-us/security/agentic-security/threat-intelligence-agent",
       "https://learn.microsoft.com/en-us/security/agentic-security/detection-authoring-agent",
       "https://learn.microsoft.com/en-us/security/agentic-security/posture-prioritization-agent",
       "https://learn.microsoft.com/en-us/security/agentic-security/agentic-security-mcp"
@@ -383,7 +393,8 @@
     "topic": "Security",
     "anchor": "microsoft-purview-helps-accelerate-copilot-deployment-and-secure-agent-interactions",
     "links": [
-      "https://aka.ms/SecureData/Blog"
+      "https://techcommunity.microsoft.com/blog/microsoft-security-blog/secure-the-data-that-fuels-ai-with-microsoft-purview/4573266",
+      "https://www.microsoft.com/en-us/security/blog/2026/11/17/security-for-the-agentic-era-powered-by-microsoft-perception/"
     ]
   },
   "8.1.1": {

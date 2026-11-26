@@ -1,49 +1,90 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import {readFile} from "node:fs/promises";
-import {filterAnnouncements} from "../docs/updates.js";
+import {combineAnnouncements, filterAnnouncements} from "../docs/updates.js";
 
 const readJSON = async name => JSON.parse(await readFile(new URL(`../docs/${name}`, import.meta.url), "utf8"));
 const editorial = await readJSON("updates-editorial.json");
 const sources = await readJSON("updates-sources.json");
+const additional = await readJSON("updates-additional.json");
+const announcements = combineAnnouncements(editorial, sources, additional);
 
-test("each Book of News announcement has a source and individually labeled items", () => {
+test("visual overview examples point to announcements with the stated availability", async () => {
+  const page = await readFile(new URL("../docs/updates.html", import.meta.url), "utf8");
+  const flow = page.match(/<ol class="updates-flow"[^>]*>([\s\S]+?)<\/ol>/)?.[1] ?? "";
+  const steps = [...flow.matchAll(/<li>([\s\S]+?)<\/li>/g)];
+  assert.ok(steps.length > 0, "missing visual overview");
+  for (const [, step] of steps) {
+    const status = step.match(/data-status="([^"]+)"/)?.[1];
+    const number = step.match(/href="#news-([\d-]+)"/)?.[1].replaceAll("-", ".");
+    assert.ok(editorial[number]?.items.some(([itemStatus]) => itemStatus === status), `${number}: ${status}`);
+  }
+});
+
+test("the 59 Book of News announcements retain distinct direct links and matched editorial records", () => {
   assert.equal(Object.keys(editorial).length, 59);
   assert.deepEqual(Object.keys(editorial).sort(), Object.keys(sources).sort());
-  const statuses = new Set(["GA", "提供中", "プレビュー", "限定プレビュー", "パイロット", "Frontier", "今後", "未確認", "要確認"]);
   const anchors = new Set();
-  for (const [number, entry] of Object.entries(editorial)) {
-    const source = sources[number];
-    assert.ok(entry.title && entry.items.length);
-    assert.ok(source.topic && /^[a-z0-9-]+$/.test(source.anchor));
-    assert.ok(!anchors.has(source.anchor));
-    anchors.add(source.anchor);
-    assert.ok(source.links.length);
-    for (const link of source.links) {
+  for (const {id, number, links} of filterAnnouncements(announcements, {source: "book"})) {
+    assert.equal(id, `news-${number.replaceAll(".", "-")}`);
+    const url = new URL(links[0][1]);
+    assert.equal(url.host, "news.microsoft.com");
+    assert.match(url.hash, /^#[a-z0-9-]+$/);
+    assert.ok(!anchors.has(url.hash), `${number}: duplicate Book of News anchor`);
+    anchors.add(url.hash);
+  }
+});
+
+test("both source groups have official references and a change and benefit for each feature", () => {
+  const statuses = new Set(["GA", "提供中", "プレビュー", "限定プレビュー", "パイロット", "Frontier", "今後", "未確認", "要確認"]);
+  const topics = new Set(Object.values(sources).map(source => source.topic));
+  assert.ok(Object.hasOwn(additional, "mai-licensed-weights"));
+  for (const {id, title, source, topic, links, items} of announcements) {
+    assert.match(id, /^(news|additional)-[a-z0-9-]+$/);
+    assert.ok(title.trim() && items.length && topics.has(topic), id);
+    assert.ok(links.length >= (source === "book" ? 2 : 1), id);
+    for (const [, link] of links) {
       const url = new URL(link);
       assert.equal(url.protocol, "https:");
       assert.ok(!url.hostname.endsWith(".sharepoint.com"));
     }
-    for (const [status, description] of entry.items) {
-      assert.ok(statuses.has(status), `${number}: ${status}`);
-      assert.ok(description.trim());
+    for (const item of items) {
+      assert.equal(item.length, 3, id);
+      const [status, change, benefit] = item;
+      assert.ok(statuses.has(status), `${id}: ${status}`);
+      assert.ok(change.trim() && benefit.trim(), id);
+      assert.notEqual(change, benefit, id);
     }
   }
 });
 
 test("filters combine category, availability and all search terms at feature level", () => {
-  const found = filterAnnouncements(editorial, sources, {
-    topic: "Azure", status: "プレビュー", query: "AKS Sandbox"
+  const found = filterAnnouncements(announcements, {
+    source: "book", topic: "Azure", status: "プレビュー", query: "ＡＫＳ Sandbox"
   });
   assert.deepEqual(found.map(item => item.number), ["1.2.2"]);
   assert.equal(found[0].items.length, 1);
   assert.match(found[0].items[0][1], /Agent Sandbox/);
-  assert.deepEqual(filterAnnouncements(editorial, sources, {query: "not-an-announcement"}), []);
+  assert.deepEqual(filterAnnouncements(announcements, {query: "not-an-announcement"}), []);
+});
+
+test("search includes benefits and returns supplements independently of Book of News", () => {
+  const selection = {topic: "Microsoft Foundry", status: "今後", query: "MAI バージョン更新"};
+  const found = filterAnnouncements(announcements, {...selection, source: "additional"});
+  assert.deepEqual(found.map(item => item.id), ["additional-mai-licensed-weights"]);
+  const [[, change, benefit]] = found[0].items;
+  assert.doesNotMatch(change, /バージョン更新/);
+  assert.match(benefit, /バージョン更新/);
+  assert.deepEqual(filterAnnouncements(announcements, {...selection, source: "book"}), []);
+
+  const aks = {topic: "Azure", query: "AKS", status: "プレビュー"};
+  assert.ok(filterAnnouncements(announcements, {...aks, source: "book"}).some(item => item.id === "news-1-2-2"));
+  assert.ok(filterAnnouncements(announcements, {...aks, source: "additional"}).some(item => item.id === "additional-aks-compute"));
 });
 
 test("conflicting availability is documented without conflating Workspaces and the AKS extension", () => {
-  const workspace = filterAnnouncements(editorial, sources, {query: "Workspaces", status: "GA"});
-  const extension = filterAnnouncements(editorial, sources, {query: "AKS拡張", status: "プレビュー"});
+  const workspace = filterAnnouncements(announcements, {query: "Workspaces", status: "GA"});
+  const extension = filterAnnouncements(announcements, {query: "AKS拡張", status: "プレビュー"});
   assert.deepEqual(workspace.map(item => item.number), ["1.1.1"]);
   assert.deepEqual(extension.map(item => item.number), ["1.1.1"]);
   assert.match(extension[0].items[0][1], /Book of NewsはGA/);
@@ -51,15 +92,17 @@ test("conflicting availability is documented without conflating Workspaces and t
 });
 
 test("reviewed availability keeps separately sourced preview and unresolved states", () => {
-  const cli = filterAnnouncements(editorial, sources, {query: "CLI", topic: "Microsoft Copilot", status: "プレビュー"});
+  const cli = filterAnnouncements(announcements, {query: "CLI", topic: "Microsoft Copilot", status: "プレビュー"});
   assert.ok(cli.some(item => item.number === "4.1.3"));
-  const perception = filterAnnouncements(editorial, sources, {query: "Perception", status: "要確認"});
+  const perception = filterAnnouncements(announcements, {query: "Perception", status: "要確認"});
   assert.deepEqual(perception.map(item => item.number), ["7.6.1"]);
   assert.ok(perception[0].items.some(([, text]) => text.includes("限定プレビュー")));
-  const detection = filterAnnouncements(editorial, sources, {query: "Detection Authoring", status: "未確認"});
+  const detection = filterAnnouncements(announcements, {query: "Detection Authoring", status: "要確認"});
   assert.deepEqual(detection.map(item => item.number), ["7.6.1"]);
+  const responses = filterAnnouncements(announcements, {query: "Responses API", status: "プレビュー"});
+  assert.deepEqual(responses.map(item => item.number), ["2.2.2"]);
 });
 
 test("a missing announcement source fails explicitly", () => {
-  assert.throws(() => filterAnnouncements({"1.0": {title: "Example", items: [["GA", "text"]]}}, {}), /Missing source/);
+  assert.throws(() => combineAnnouncements({"1.0": {title: "Example", items: [["GA", "change", "benefit"]]}}, {}, {}), /Missing source for 1.0/);
 });
