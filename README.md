@@ -48,6 +48,8 @@ Book of Newsの発表は`docs/updates-editorial.json`で独自の日本語要約
 
 冒頭の図解は本サイト独自の整理です。アイコンは[Microsoft Fluent UI System Icons](https://github.com/microsoft/fluentui-system-icons/tree/a3de63245b4fa49c30e20d9838593a105affe774/assets)の24px Regularを同梱しています（[MITライセンス](docs/assets/fluent-icons/LICENSE.txt)）。公式記事の図や製品画面は転載せず、掲載元へリンクします。
 
+新発表ページのレイアウトは `docs/updates-layout.20261126.css` で更新します。変更時はCSSのファイル名と `docs/updates.html` の参照先を揃えて更新し、キャッシュに残る旧CSSと区別します。`style.css` 内の発表ページ用ルールは、旧版のHTMLとの互換性のために残しています。
+
 Microsoft Release Communications MCPはAzure Updatesの調査に利用しましたが、取得データの再配布に関する利用条件があるため、APIの出力一覧はこのリポジトリに含めません。
 
 ```powershell
