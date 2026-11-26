@@ -1,0 +1,299 @@
+{
+  "aks-compute": {"title":"AKS の GPU、実行分離、ノード管理","topic":"Azure","links":[
+    "https://techcommunity.microsoft.com/blog/appsonazureblog/run-models-and-agents-on-your-own-kubernetes-clusters-aks-at-microsoft-ignite-20/4573912"
+  ],"items":[
+    ["GA","AKSのマネージドGPUノードプールでGPUドライバーや関連コンポーネントを管理する。","基盤担当がGPUソフトウェアの組み合わせをノードごとに揃える作業を減らせる。"],
+    ["プレビュー","対応するNVIDIA GB200・GB300構成と、異なるGPU分割サイズを混在させるMIGを試せる。","大きいモデルの実行と小規模な推論へのGPU配分を、用途ごとに検証できる。"],
+    ["プレビュー","Pod Snapshot拡張で対応するPodのメモリとプロセス状態をAzure Blob Storageに保存し、復元する。","中断のたびに処理や起動時の初期化を最初から行う負担を減らせる。"],
+    ["プレビュー","事前初期化したKataのランタイムクラスで、VM分離コンテナーの起動を短縮する。","短い処理を何度も起動する場合、分離を保ったまま実行開始までの待ち時間を抑えられる。"],
+    ["GA","Azure Container Linuxの機密AKSノードプールにIntel TDXを追加する。","処理中のデータを保護するノードの選択肢が増える。Podごとの分離ではなくワーカーノード単位の境界。"],
+    ["プレビュー","Ubuntu 26.04のAKSワーカーノードでもIntel TDXを使う。","Ubuntuを標準にしているチームも、ノード単位のハードウェア保護を検証できる。"],
+    ["プレビュー","ノードの強化設定と、異常なノードを検出して修復する機能を拡張する。","運用担当が標準構成を維持し、個々の異常ノードの調査・交換に要する手作業を減らせる。"],
+    ["GA","Node Auto Provisioningの設定項目と、フリーズ検知時のPod退避を拡張する。","ノードを自動で用意しつつ配置条件を調整し、応答しないノードから処理を移しやすくなる。"],
+    ["GA","対象の新規クラスターでStandardV2 NAT Gatewayをサポートする。","外向き通信の出口を統一し、ネットワーク側の高可用性要件に合わせた構成を選べる。"]
+  ]},
+  "aks-fleet": {"title":"Azure Kubernetes Fleet Manager と調査ツール","topic":"Azure","links":[
+    "https://techcommunity.microsoft.com/blog/appsonazureblog/run-models-and-agents-on-your-own-kubernetes-clusters-aks-at-microsoft-ignite-20/4573912"
+  ],"items":[
+    ["GA","Fleet Managerによるクラスター間ネットワークと、パッチ更新チャネルを提供する。","複数のクラスターをまたぐサービス接続やパッチ適用を共通の仕組みで管理できる。"],
+    ["GA","段階的な更新にスケジュール、グループとゲートを適用できる。","最初のグループで影響を確認してから残りへ進めるなど、更新の影響を局所化できる。"],
+    ["プレビュー","FleetでワークロードのIDバインディングを設定する。","複数クラスターへの配置時に、IDとアプリの対応関係を揃えやすくなる。"],
+    ["プレビュー","AKS desktopでの管理と、切断環境でも読み取り専用で調査できるAKS Investigatorを追加する。","管理画面へ常時接続できないときにも、取得済みの情報から問題の切り分けを進められる。"]
+  ]},
+  "azure-context-cache": {"title":"Azure の AI コンテキストキャッシュ","topic":"Azure","links":[
+    "https://aka.ms/ai-infra-ignite26",
+    "https://ignite.microsoft.com/en-US/sessions/1787856658187001Etji-1789751959279001dn4k"
+  ],"items":[
+    ["未確認","処理済みプロンプトの状態をテナント内に保持し、後で再利用するContext Cacheを紹介。発表資料に一般提供やプレビューの明記はない。","長い調査や複数ターンの処理で、同じ前提をGPUで何度も計算する時間やコストを抑える狙い。"]
+  ]},
+  "azure-resource-manager-mcp": {"title":"Azure Resource Manager MCP の読み取りと変更","topic":"Azure","links":[
+    "https://aka.ms/ignite2026/agenticops",
+    "https://techcommunity.microsoft.com/blog/AzureGovernanceandManagementBlog/what%E2%80%99s-new-in-the-azure-resource-manager-mcp-server-at-ignite-2026/4571824",
+    "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/azure-resource-manager-mcp-overview"
+  ],"items":[
+    ["提供中","ARM MCPからリソースを個別に読み取り、既存の権限の範囲で作成・更新や再起動などの操作を実行できる。テンプレート展開では変更の事前確認と進捗確認、取り消しに対応。Azure Policyによる制約も適用される。","運用担当が調査結果と展開の差分を同じ作業で確認し、承認された構成に沿って変更を進められる。"],
+    ["提供中","AzureやAKSの費用の集計、公開価格と契約価格表の取得に対応する。請求情報へのアクセスには別途権限が必要。","サービスやリソースグループごとの支出を切り分け、変更案を検討するときに費用を比較できる。"],
+    ["プレビュー","ARM MCPサーバーから作業手順のスキルを取得する実験的機能を案内。既定では無効。","チームが同じ調査・変更手順をクライアント間で試せる。利用可否や内容はプレビュー中に変わりうる。"]
+  ]},
+  "azure-confidential-operations": {"title":"Azure 機密 VM の選択肢、移行と復旧","topic":"Azure","links":[
+    "https://techcommunity.microsoft.com/blog/AzureConfidentialComputingBlog/what%E2%80%99s-new-in-azure-confidential-computing-%E2%80%94-ignite-2026/4573909"
+  ],"items":[
+    ["限定プレビュー","第5世代AMD EPYCのv7機密VMを汎用・大容量メモリ型など6シリーズで公開。","アプリのCPU・メモリ・ローカルディスク要件を満たす機密VMを選びやすくなる。"],
+    ["未確認","Intel TDX ConnectとAzure Boost Confidential Deviceで、機密VMからI/Oデバイスまで保護する技術デモを実施。提供開始の発表ではない。","CPUメモリ以外へのデータ転送も保護したい用途で、将来の設計を検討する手がかりになる。"],
+    ["GA","Azure Migrateで対応ワークロードを機密VMへ移行でき、127 GBを超えるOSディスクも暗号化できる。","大きなOSディスクや顧客管理キーを使う既存サーバーも、対応条件に合えば移行候補にできる。"],
+    ["プレビュー","OSディスクを暗号化した対応v6機密VMをAzure Backupで保護し、復元できる。","処理中の保護と、運用ミスや障害からの復旧を一緒に計画できる。"],
+    ["限定プレビュー","Confidential Data Disk Encryptionで機密VMのゲスト内からデータディスクを暗号化する。","OSだけでなくアプリの作業データも、ホスト側に渡る前に保護できる。"]
+  ]},
+  "sovereign-private-cloud": {"title":"Azure Local と Sovereign Private Cloud","topic":"Azure","links":[
+    "https://techcommunity.microsoft.com/blog/azurearcblog/whats-new-with-sovereign-private-cloud-at-microsoft-ignite-2026/4573886"
+  ],"items":[
+    ["GA","Azure LocalのFoundry LocalでAIモデルを実行する。","データを自組織の設備に残す制約がある場合も、ローカル推論を業務に組み込める。"],
+    ["プレビュー","Sovereign Private CloudでエージェントサービスとAIガードレールを試せる。","モデル実行に加え、エージェントの運用や入出力の保護も現場の境界内で検証できる。"],
+    ["GA","Azure Localの対応AMDサーバーでSEV-SNPによる機密VMを提供する。","機密データを扱うアプリで、管理場所に加えて処理中のメモリ保護も設計に含められる。"],
+    ["プレビュー","Azure Localの対応するIntelサーバーでTDXによる機密VMを試せる。","Intelを標準にしている組織も、処理中のデータをハードウェアで保護する構成を現場で検証できる。"],
+    ["GA","Azure Localの切断環境でSQL ServerとGitHub Enterprise Localを提供する。","クラウドへの常時接続が難しい環境でも、DBやソース管理を自組織の設備で運用できる。CopilotアプリのGHES接続とは別の発表。"],
+    ["プレビュー","接続管理から切断管理への切り替えと、切断環境向けBlob Storageを拡張する。","ネットワーク制約が変わった後も管理を続ける手段や、現場のデータを保持する選択肢が増える。"],
+    ["GA","Trusted Launchを維持したまま対応するVMをAzure Localへ移行できる。","移行のためにセキュアブートなどの保護を外す必要を抑えられる。"],
+    ["今後","Azure LocalのNVIDIA HGX B300対応と、GPUのマルチテナント運用を計画。","大きなモデルを施設内で動かしたり、計算資源を複数チームで分けたりする選択肢になる。"],
+    ["今後","プライベートエンドポイントと、VMware移行の新しいデータプレーンを計画。","閉域接続と既存仮想環境の移行を検証する際、今後対応する範囲の目安になる。"]
+  ]},
+  "azure-app-service": {"title":"Azure App Service のリージョン冗長化と Windows 移行","topic":"Azure","links":[
+    "https://techcommunity.microsoft.com/blog/AppsonAzureBlog/introducing-geo-redundancy-in-azure-app-service-simplify-multi-region-applicatio/4573896",
+    "https://techcommunity.microsoft.com/blog/AppsonAzureBlog/modernize-more-windows-applications-with-managed-instance-on-azure-app-service/4573885"
+  ],"items":[
+    ["プレビュー","対応するWindows Webアプリを複数リージョンへ複製し、対応するコンテンツ・設定の同期と、正常性に応じたルーティングをApp Serviceで管理する。","リージョンごとのアプリとTraffic Managerを個別に運用する負担を減らせる。DBやストレージの復旧は別に設計する。"],
+    ["提供中","Azure Catalystの依存関係評価でManaged Instance on Azure App Serviceを移行候補に含める。","通常のApp Serviceには移しにくいWindows固有の依存関係を持つアプリも、適合するか見直せる。"],
+    ["提供中","Managed InstanceのホスティングにPremium v3系と、App Service Environment v3のIsolated v4を追加する。対応はプラン・リージョンごとに異なる。","対応する既存アプリを、容量要件や専有環境の必要性に合わせたプランへ移行しやすくなる。"]
+  ]},
+  "azure-container-apps": {"title":"Azure Container Apps の Sandboxes、Express と移行","topic":"Azure","links":[
+    "https://techcommunity.microsoft.com/blog/appsonazureblog/whats-new-in-azure-container-apps-at-ignite26/4573042"
+  ],"items":[
+    ["GA","Container Apps Sandboxesで作業をmicroVMに分離し、メモリやディスクの状態を保存して再開する。外向き通信の方針や監視も設定できる。","エージェントの処理を利用者やタスクごとに分け、処理をすべてやり直さずに待機状態から戻せる。"],
+    ["GA","Container Apps Expressにコンテナーイメージを渡すと、環境作成とゼロへのスケーリングをサービスが管理する。","アクセスが断続的なAPIなどを、ネットワークやスケールルールを最初から組み立てずに展開できる。"],
+    ["プレビュー","Container AppsのAzure portalから対話型のAzure SRE Agent調査を開始する。","運用担当が別の調査環境を展開せず、ログなどの証拠と原因候補をまとめて確認できる。"],
+    ["提供中","Azure MigrateでContainer Appsを移行先として選び、Container Apps Jobs用に既存のワークフロー製品との統合ひな型を利用する。","既存サービスの移行と、スケジューラーを維持したバッチ処理の実行を別々に検討できる。"]
+  ]},
+  "azure-functions": {"title":"Azure Functions の実行環境、接続と開発","topic":"Azure","links":[
+    "https://techcommunity.microsoft.com/blog/AppsonAzureBlog/whats-new-in-azure-functions-and-durable-task-scheduler-at-microsoft-ignite-2026/4573933"
+  ],"items":[
+    ["GA","Managed Connectorsで外部サービスのイベントをポーリングし、対応する接続でマネージドIDを使う。","イベントを受け取るための公開コールバックや、アプリで管理する認証情報を減らせる。"],
+    ["プレビュー","Flex Consumptionで言語ワーカーを含むLinuxコンテナーと、展開の検証・監査ログを追加する。","アプリの依存関係を自分で選びつつ、展開を許可した条件や拒否理由を追える。"],
+    ["GA","Flex ConsumptionでGo 1.24以降のネイティブワーカーを利用できる。","独自のHTTPハンドラーで橋渡しせず、Goからイベントトリガーや監視を利用しやすくなる。"],
+    ["GA",".NET 11の分離ワーカーに対応し、新しいビルドSDKと非rootの小型コンテナーイメージを提供する。","新規開発やバージョン移行時にプロジェクト設定を減らし、コンテナーのサイズも抑えられる。"],
+    ["プレビュー","LinuxプランにPython 3.15とNode.js 26を追加。Pythonの新ワーカーはホストとの通信をアプリ依存関係から分ける。","将来の移行に備えて互換性を確認でき、PythonではgRPC関連パッケージの競合を避けやすくなる。"],
+    ["プレビュー","PythonのHosted Skillとエージェント用バインディングが初期化やセッションを管理する。","トリガーや入力検証を既存の関数に残し、要約や分類が必要な箇所だけにAIを取り入れられる。"],
+    ["プレビュー","Functions Canvasと開発用スキルで、ひな型、テスト、展開や旧構成からの移行を扱う。","開発者がツールを行き来せず、テンプレートからの作成とサポート期限を確認できる。"],
+    ["プレビュー","Functions CLI v5で必要なランタイムだけを取得し、対象プランのバージョンをローカルに揃える。","インストールを軽くし、手元で動くコードが展開先の構成で動かない問題を減らせる。"],
+    ["プレビュー","Network Troubleshooter v2でFunctionsアプリのネットワーク診断を拡張する。","担当者が接続障害を再現する調査環境を別途用意せず、接続先や構成の問題を切り分けやすくなる。"]
+  ]},
+  "durable-task": {"title":"Durable Task Scheduler の長時間実行と復旧","topic":"Azure","links":[
+    "https://techcommunity.microsoft.com/blog/AppsonAzureBlog/whats-new-in-azure-functions-and-durable-task-scheduler-at-microsoft-ignite-2026/4573933",
+    "https://aka.ms/dts-ignite-2026"
+  ],"items":[
+    ["GA","Microsoft Agent FrameworkのDurable Extensionで処理の状態を保持し、中断から再開する。","長いエージェント処理で、既に完了した工程を障害のたびにやり直す必要を減らせる。"],
+    ["GA","Dedicatedで顧客管理キーを、ConsumptionとDedicatedでプライベートエンドポイントを使える。","処理履歴などの暗号化キーとネットワークの境界を、組織の方針に揃えられる。"],
+    ["プレビュー","LangGraphやPydantic AIのワークフローを耐久実行できる。","現在のPythonフレームワークを維持しながら、長時間処理を復旧できるか試せる。"],
+    ["プレビュー","リージョン間の災害復旧を追加する。","単一リージョンが利用できなくなる場合の復旧計画に、処理の状態も組み込める。"],
+    ["プレビュー","タスクキューごとに処理を分け、負荷を管理できる。","バッチの急増で応答時間が重要な処理や、接続先のAPIが圧迫されにくくなる。"],
+    ["プレビュー","Go向けDurable Task SDKで並列実行、再試行、外部イベントの待機などを記述する。","Goのサービスでスケジューリングと再開の仕組みを自作する手間を減らせる。"]
+  ]},
+  "azure-logic-apps": {"title":"Azure Logic Apps の接続、監視と意思決定","topic":"Azure","links":[
+    "https://techcommunity.microsoft.com/blog/IntegrationsonAzureBlog/whats-new-in-azure-logic-apps-at-microsoft-ignite-2026/4574191"
+  ],"items":[
+    ["GA","医療のメッセージ形式を扱うHL7コネクターを一般提供する。","既存システムとの医療メッセージ連携を構成する際、形式ごとの処理を専用コードで持つ負担を減らせる。"],
+    ["プレビュー","MLLPとMSMQのコネクターで医療・レガシーアプリとの接続を広げる。","移行時にも既存のメッセージの送り先やキューを利用できるか確認できる。"],
+    ["プレビュー","個別のLogic Appでワークフローの実行状況を統合ダッシュボードに表示する。","運用担当が失敗したワークフローをまとめて見つけ、調査の起点を揃えられる。"],
+    ["プレビュー","Logic Apps Automationで刷新したデザイナー、運用テンプレート、GitHubなどの組み込み接続、VNet統合を利用できる。実行履歴からひな型を作ることもできる。","既存環境に接続する処理を再利用しやすくなり、別プロジェクトで同じ作業を一から作る手間を減らせる。"],
+    ["プレビュー","Microsoft-Decision-1によるDecision actionsが、Yes/No、選択肢、スコアを構造化して返す。","チケットの分類など決まった判断だけをAIに任せ、後続の分岐は既存ワークフローで制御できる。"],
+    ["プレビュー","Logic Apps AutomationのManaged AI Modelsでモデルを個別に展開せずAI処理を使う。","モデル環境を用意する前に、ワークフロー内で必要な処理を検証できる。"]
+  ]},
+  "cosmos-db": {"title":"Azure Cosmos DB の自動埋め込み、MCP と容量管理","topic":"Azure","links":[
+    "https://devblogs.microsoft.com/cosmosdb/whats-new-azure-cosmos-db-ignite-2026/"
+  ],"items":[
+    ["プレビュー","Azure Cosmos DB for NoSQLのManaged MCP Serverで、データとメタデータを対応クライアントから扱う。","開発者が接続の仲介サービスを自分で運用せず、権限の範囲内でデータを確認できる。"],
+    ["プレビュー","Automatic Embeddingsで文書から検索用のベクトルを生成し、元データの変更に追随する。","独自のバッチやイベント処理で、文書とベクトルの同期を保つ手間を減らせる。"],
+    ["提供中","Cosmos DBの埋め込み生成サービスからマルチモーダルのMicrosoft.Embedding-1を使う。DB本体を利用しない構成にも対応。","文字に加えてページの見た目が重要な文書にも、検索用の表現を作って精度を評価できる。"],
+    ["GA","Throughput Bucketsで同じコンテナーにアクセスするワークロードごとに消費できる容量を制限する。","バッチやチェック処理が共有容量を使い切り、オンライン処理を圧迫するリスクを抑えられる。"],
+    ["今後","管理とデータアクセスの権限を扱う統合Azure RBACは、公式ブログでは12月中旬にプレビュー予定。","管理者が別々の権限割り当てを照合する作業を減らせるか評価できる。"]
+  ]},
+  "foundry-hosted-agents": {"title":"Foundry Agent Service の音声、配置と実行制御","topic":"Microsoft Foundry","links":[
+    "https://devblogs.microsoft.com/foundry/whats-new-in-foundry-agent-service-at-ignite-2026/",
+    "https://aka.ms/azure-speech-ignite-26-blog"
+  ],"items":[
+    ["GA","Foundry Agent Serviceの音声エージェント基盤を提供する。新しい個別の音声モデルやアバターのプレビューとは別。","開発者が音声対応のアプリで、会話と外部ツールへの接続を共通の実行基盤で扱える。"],
+    ["プレビュー","Azure Speechの音声対話やアバターの選択肢を拡張する。","用途に応じた話し方や表現を比較できる。モデルとアバターの提供条件はそれぞれ異なる。"],
+    ["GA","ホステッドエージェントにサブネットIP共有、アイドル時間の設定、外向き通信の制御を追加する。","基盤担当が必要なアドレス数や使っていない実行環境を抑え、接続先を管理しやすくなる。"],
+    ["プレビュー","ホステッドエージェントでプライベートCAの信頼、Azure Policy、通信の変換ルールを設定する。","社内の証明書やポリシーを適用し、既存のネットワーク要件に合わせて展開できるか検証できる。"],
+    ["プレビュー","ホステッドエージェントの初期化済みメモリのスナップショットをバージョン単位で保存する。休止期間をまたぐ作業データは外部ストレージに保持する。","起動するたびに同じライブラリやデータを読み直さず、最初の応答までの時間を短縮しやすくなる。"],
+    ["GA","外部で動くエージェントをFoundryに登録して観測する。登録だけでFoundryが実行やホスティングを引き受けるわけではない。","開発・運用担当がホスティング先の異なるエージェントの稼働状況を一か所から比較できる。"],
+    ["プレビュー","自律実行するエージェントにMicrosoft 365の対象リソースを結び付ける。","業務情報の共有範囲を、利用者の操作を伴うエージェントと分けて設計できる。"]
+  ]},
+  "foundry-tools": {"title":"Foundry Agent Service のブラウザー、ツールと連携","topic":"Microsoft Foundry","links":[
+    "https://devblogs.microsoft.com/foundry/whats-new-in-foundry-agent-service-at-ignite-2026/",
+    "https://aka.ms/Ignite26agentstoolsdevblog"
+  ],"items":[
+    ["GA","Browser Automationで処理中の画面表示、利用者への操作引き継ぎ、操作の一括処理や記録を追加する。","失敗した場所を画面で確認し、判断が必要な操作だけを人が引き継げる。"],
+    ["プレビュー","Browser Automationでプライベートネットワーク、プロキシ、Azure Key Vaultを利用する。","内部の業務アプリへ接続するケースで、ネットワークの境界や認証情報の管理方法を検証できる。"],
+    ["GA","Agent-to-Agent（A2A）ツールと、プロンプトエージェントのA2Aエンドポイントを一般提供する。","別の対応エージェントに業務を引き継いだり、作成したエージェントを他のチームから利用したりするための個別実装を減らせる。"],
+    ["今後","コードで作るホステッドエージェントのA2Aエンドポイントは、パブリックプレビュー予定。","マネージドなプロンプトエージェントに書き換えなくても、他の対応エージェントに業務機能を提供できるようになる。"],
+    ["プレビュー","Toolboxでツール呼び出しのポリシーやシェル用スキルを登録できる。","開発者が共有ツールの利用条件と作業手順を揃えやすくなる。"],
+    ["今後","スキルの登録・更新・削除を扱うAPIの一般提供と、ToolboxからのMCP Skills拡張による共有を予定。","作業手順を一元管理し、対応する複数の実行環境に同じ版を配布しやすくなる。"],
+    ["提供中","VS CodeのGitHub CopilotにToolboxを追加でき、Toolboxのダッシュボードで利用率、成功率、エラーや消費量を確認する。","共通のツールを開発チームに配布し、利用状況から障害や見直しが必要な箇所を見つけられる。"],
+    ["GA","プロンプトエージェントでWeb IQによる検索を提供する。","外部情報を根拠に含むエージェントに、対応する検索機能を組み込みやすくなる。"],
+    ["今後","Web IQの検索をFoundry Toolboxでも利用できるようにする予定。","複数のエージェントで使う検索ツールを、個々のエージェントと分けて管理しやすくなる。"],
+    ["プレビュー","FoundryのFabric IQツールから60種類を超えるFabric項目を発見できる。セマンティックモデルやデータエージェントとの連携で遅延とトレースも改善する。","開発者が既存のデータ定義を探しやすくなり、回答が遅いときに検索側の処理を切り分けられる。"],
+    ["提供中","FoundryのツールカタログにSnowflake、MongoDB、Databricksとの接続を追加する。","既存のデータ基盤や権限を活かしながら、エージェントが必要とする情報源を選べる。"],
+    ["プレビュー","Work IQ APIからWeb IQやFoundry IQも参照する。Fabric IQとの連携は今後。","業務の文脈と外部情報、登録した社内知識を組み合わせる際、接続設定を個別に作る箇所を減らせる。"]
+  ]},
+  "foundry-platform": {"title":"Foundry の開発環境、専用 GPU と追加の評価機能","topic":"Microsoft Foundry","links":[
+    "https://devblogs.microsoft.com/foundry/the-foundry-dev-pack-is-here-build-foundry-agents-your-way/",
+    "https://devblogs.microsoft.com/foundry/managed-compute-ga/",
+    "https://devblogs.microsoft.com/foundry/whats-new-in-microsoft-foundry-ignite-2026/",
+    "https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/audio-evaluation-for-voice-agents/4573373"
+  ],"items":[
+    ["GA","Foundry Dev Packがエージェント向けのVS Code拡張、CLI、スキルや作成・展開の手順をまとめる。","開発者が環境構築に必要なツールを探し回らず、手元のコードをサービス上の検証につなげられる。"],
+    ["GA","Foundry Managed Computeで対応モデルを専用GPUへ配置し、時間ベースで利用する。","サーバーレスの呼び出し課金や自社AKSと別に、利用するGPU容量を専用で確保する構成を選べる。"],
+    ["プレビュー","Microsoft-Decision-1を評価側のモデルに利用できる。モデルとして一般提供されるMicrosoft-Decision-1.1とは別。","担当者が評価に使うモデルの応答速度や判断結果を比較できる。"],
+    ["提供中","音声の録音全体を対象に、タスク達成、根拠との整合、利用者の満足度、会話の一貫性を評価できる。対応する音声モデルを評価に使う。","文字起こしで失われる情報も検証に含め、通話の途中で起きた問題や解決までの体験を見直せる。"]
+  ]},
+  "mai-licensed-weights": {"title":"MAI Licensed Weights","topic":"Microsoft Foundry","links":[
+    "https://microsoft.ai/news/introducing-mai-licensed-weights/",
+    "https://blogs.microsoft.com/blog/2026/11/17/ignite-2026-building-the-frontier-ecosystem/"
+  ],"items":[
+    ["今後","Frontier Companyを通じて、ライセンスされたMicrosoft AIモデルを自組織のAzure環境で展開・調整する。誰でも取得できるオープンウェイトの公開ではない。","機密データを使うモデルのアクセス、展開先、バージョン更新の時期を自社の運用に合わせて制御しやすくなる。"]
+  ]},
+  "mai-speech": {"title":"MAI Realtime 1 と Dragon Copilot Transcribe","topic":"Microsoft Foundry","links":[
+    "https://microsoft.ai/news/introducing-mai-realtime-1/",
+    "https://microsoft.ai/news/microsoft-ignite-2026/"
+  ],"items":[
+    ["限定プレビュー","MAI Realtime 1で音声から音声へ応答し、話の途中での割り込みや外部ツールへの接続を扱う。Foundryは登録制で、MAI Labsにデモがある。","問い合わせや予約を音声で扱う開発者が、発話の順番や短い相づちを含む会話体験を検証できる。"],
+    ["提供中","Dragon Copilotの診察会話の文字起こしにMAI Transcribe 2を採用する。モデル自体の初発表とは別。","医療者が複数言語の会話記録を確認・修正する際、下書き作成の手間を減らせる。"]
+  ]},
+  "foundry-iq-sources": {"title":"Foundry IQ のデータソースと権限","topic":"Microsoft IQ","links":[
+    "https://aka.ms/Ignite26FIQ",
+    "https://community.fabric.microsoft.com/blog/fbc_fabricupdatesblogs/onelake-the-unified-foundation-for-data-context-governance-and-ai/5423035"
+  ],"items":[
+    ["GA","Azure SQLとファイルをFoundry IQの知識ソースとして使う。","文書や既存DBをエージェントの根拠にするための取り込み処理を自前で組む手間を減らせる。"],
+    ["GA","文書を意味のまとまりで区切り、画像を説明するテキストも索引付けする。","質問に関係する記述を探しやすくなり、図や画像にしかない情報も検索の対象にできる。"],
+    ["プレビュー","OneLakeのショートカットやミラー、Power BIセマンティックモデルを知識ソースに追加し、対応するOneLake権限も適用する。","元データを別の保管先へコピーせず、分析データや業務指標をユーザーの読み取り範囲内で参照できる。"],
+    ["プレビュー","対応する情報源のMicrosoft Purview機密ラベルを検索時の制御に利用する。","アクセス権だけでなくデータ分類も、回答の根拠を選ぶ条件に組み込める。"]
+  ]},
+  "fabric-iq": {"title":"Fabric IQ の指標、オントロジーとデータエージェント","topic":"Microsoft IQ","links":[
+    "https://community.fabric.microsoft.com/blog/fbc_fabricupdatesblogs/bringing-trusted-fabric-iq-context-to-wherever-people-and-agents-work/5423049"
+  ],"items":[
+    ["プレビュー","Apache Ossieに基づくセマンティックビューで、売上や利益などの指標をOneLakeのデータに定義する。","分析ツールごとに同じ計算を作り直さず、レポートとエージェントで共通の指標を参照できる。"],
+    ["GA","Fabric IQ MCPが対応するエージェントやアプリから既存の権限でFabric IQに接続する。","別のエージェントを採用しても、データの意味や権限を作り直さずに利用できる。"],
+    ["プレビュー","Fabric IQ MCPとSkills for Fabricでデータエージェントやオントロジーを扱う。","ビジネス指標だけでなく専門エージェントや用語間の関係も、開発者が対応クライアントから利用できる。"],
+    ["プレビュー","オントロジーの生成・モデリングで名前空間、継承、再利用できるプロパティや自然言語ルールを追加する。","複数部門が共通概念を定義し、部門ごとの違いだけをモデルに足せる。"],
+    ["今後","Ontology Healthのプレビューで構造の問題や不足設定を重大度別に表示する予定。","モデル担当者が手作業で全ての定義を点検する代わりに、影響の大きい箇所を見直せる。"],
+    ["GA","データエージェントの応答を高速化し、25行を超える結果と利用者のタイムゾーンを使った期間解釈に対応する。","現地時間の「昨日」といった質問を扱い、件数の多い結果も途中で分割せず確認できる。"],
+    ["プレビュー","データエージェントにSQL・セマンティックモデルのクエリテンプレートと長い指示を追加する。","定型の業務質問に、組織が決めた同じ検索・集計手順を適用しやすくなる。"],
+    ["プレビュー","Monitor HubとFoundryで、Fabricのデータ・運用エージェントのメトリクスやトレースを調べる。","回答に時間がかかる理由や問題の起きた工程を他のエージェントと合わせて調べられる。"]
+  ]},
+  "fabric-onelake": {"title":"OneLake の外部データ、認証と企業間共有","topic":"Microsoft IQ","links":[
+    "https://community.fabric.microsoft.com/blog/fbc_fabricupdatesblogs/onelake-the-unified-foundation-for-data-context-governance-and-ai/5423035",
+    "https://community.fabric.microsoft.com/blog/fbc_fabricupdatesblogs/bringing-trusted-fabric-iq-context-to-wherever-people-and-agents-work/5423049"
+  ],"items":[
+    ["GA","OneLakeカタログでデータの探索、ガバナンスの状態確認とセキュリティ設定をまとめる。外部データ資産を補完するAtlanとの提携も発表。","データを使う人と管理する人が、同じカタログでデータの定義と保護状態を確認できる。"],
+    ["GA","OneLake Table APIが読み書きに必要な一時的な認証情報を払い出す。","接続するツールに永続的な広いストレージ権限を配らず、利用するテーブルにアクセスさせられる。"],
+    ["GA","カタログフェデレーションと、Azure Databricksのネイティブストレージ連携を提供する。","既存カタログや計算環境にデータを残しながら、Fabric側から発見・利用できる。"],
+    ["プレビュー","IQ sharingでデータだけでなく、業務の定義や指示も組織間で共有する。Fabric IQオントロジー対応の展開時期は別途案内。","顧客やパートナーが共有データを受け取った後、指標や用語の意味を一から調べずに済む。"]
+  ]},
+  "github-copilot-app": {"title":"GitHub Copilot アプリの Azure DevOps、GHES とブラウザー","topic":"GitHub","links":[
+    "https://github.blog/changelog/2026-11-17-github-copilot-app-microsoft-ignite-releases/"
+  ],"items":[
+    ["プレビュー","Azure DevOpsのリポジトリ、ブランチ、PRおよびレビュー対応をGitHub Copilotアプリに接続する。クラウドセッションは対象外。","Azure Reposにコードを保持したまま、手元のエージェントとPRの進行状況を同じアプリで扱える。"],
+    ["GA","GitHub Enterprise Server（GHES）アカウントをアプリの1.2.0以降に追加できる。クラウドセッションは対象外。","既存のサーバーのリポジトリ、Issue、PRにアクセスするためにGitHub.comへ移す必要がなくなる。"],
+    ["プレビュー","ChromeやEdgeの既存セッションで、分離されたタブグループをCopilotから使う。既定では無効。","開発者が検証環境で画面の再現やフォームの動作確認を行い、ブラウザー画面で結果を追える。"]
+  ]},
+  "github-copilot-review": {"title":"Copilot コードレビューの深さ、文脈とシークレット検知","topic":"GitHub","links":[
+    "https://github.blog/changelog/2026-11-17-copilot-code-review-adaptive-effort-secret-detection-and-more/"
+  ],"items":[
+    ["プレビュー","AdaptiveがPRの複雑さやリスクからレビューの深さを選ぶ。管理者が定めた最大レベルは超えない。","チームがPRごとに同じ判断を繰り返さず、複雑な差分には詳しいレビューを割り当てやすくなる。"],
+    ["プレビュー","公開リポジトリのレビューで、関連する公開リポジトリも参照する。","呼び出し元や共有設定が別リポジトリにある変更でも、依存先に与える影響を指摘しやすくなる。"],
+    ["プレビュー","レビューのコメントに、差分に含まれる可能性のある認証情報を知らせる。","レビュー担当がマージ前に漏えいの恐れを調査し、必要なら認証情報を無効化できる。"],
+    ["提供中","Repo Insightsにリポジトリ別のコードレビューの結果や利用状況を表示する。","チームが指摘がどのように対応されたかを調べ、レビュー設定の見直しに使える。"],
+    ["GA","Azure ReposのCopilotコードレビューを正式提供する。GitHub CopilotアプリのAzure DevOps統合は別途プレビュー。","Azure DevOps側のブランチポリシーや指示に合わせてレビューを依頼できる。"]
+  ]},
+  "github-copilot-models-evals": {"title":"GitHub Copilot Fusion と Copilot Evals","topic":"GitHub","links":[
+    "https://github.blog/changelog/2026-11-17-github-copilot-fusion-updates-more-availability-benchmarks-and-models/",
+    "https://github.blog/changelog/2026-11-17-github-copilot-evals-is-now-in-public-preview/"
+  ],"items":[
+    ["提供中","Copilot Fusionの利用先にGitHub.com、Visual Studio、GitHub Mobileのベータ版を追加し、各レベルのルーティング候補を拡張する。モバイル正式版は今後。","手動でモデルを切り替える代わりに、利用者が作業の複雑さに合わせてレベルを選べる。"],
+    ["プレビュー","Copilot Evalsで、スキル、カスタムエージェント、MCP連携を変更前後で比較する。","開発チームが自分たちの課題で変更の効果を測り、本番利用に広げる前に品質の低下を発見できる。"]
+  ]},
+  "github-copilot-clients": {"title":"GitHub Copilot の JetBrains、Entra サインインと監査","topic":"GitHub","links":[
+    "https://github.blog/changelog/2026-11-17-github-copilot-in-jetbrains-ignite-releases/",
+    "https://github.blog/changelog/2026-11-17-github-copilot-cli-adds-microsoft-entra-sign-in-as-a-preview/",
+    "https://github.blog/changelog/2026-11-17-monitor-github-copilot-activity-through-microsoft-agent-365/"
+  ],"items":[
+    ["プレビュー","JetBrains IDEにクラウドサンドボックス、リモートセッション、Chrome連携とローカル音声入力を追加する。","IDEを離れずに作業を別環境へ渡したり、動作をブラウザーで確認したりできる。各機能の要件は別。"],
+    ["提供中","JetBrainsでCopilotの分割表示と、会話や作業を切り替えるUIを改善する。","変更対象のコードや別の作業も見ながら、一つの画面でエージェントの結果を確認できる。"],
+    ["プレビュー","Windows・macOSのCopilot CLIがMicrosoft Entraサインインに対応。OIDC連携済みEnterprise Managed Usersまたは対象のMicrosoft 365 Frontierで利用条件が異なる。","組織が利用するIDや利用量課金の方式に合わせ、CLIへのアクセスを評価できる。"],
+    ["提供中","対象のGitHub Enterprise Cloud Enterprise Managed UsersのCopilotアクティビティをMicrosoft Agent 365で監査できる。","管理者が対応クライアントの利用状況を確認し、入力やツール操作を含む監査データの保持・閲覧範囲を設計できる。"]
+  ]},
+  "copilot-studio": {"title":"Copilot Studio、Code Agents と Contact Center","topic":"Microsoft Copilot","links":[
+    "https://aka.ms/D365Ignite2026",
+    "https://aka.ms/CopilotManagedRuntime-Ignite-Blog",
+    "https://www.microsoft.com/en-us/dynamics-365/blog/it-professional/2026/11/18/microsoft-contact-center-intelligence-now-generally-available-transform-customer-interactions/"
+  ],"items":[
+    ["GA","Copilot StudioでMicrosoft Copilot harnessを使うエージェントを作成できる。Foundryの同系機能の提供状態とは別。","複数のツールやファイルを扱う作業で、標準の実行基盤とは別の選択肢を比較できる。"],
+    ["今後","共有業務のAgent Accountsは12月にパブリックプレビュー予定。","担当者個人のセッションだけに依存せず、チームの業務として長期間動くエージェントを検討できる。"],
+    ["今後","Copilot Managed RuntimeのCode Agentsは早期アクセスを予定。CLIによる編集のプレビューとは別。","コードで作ったエージェントを業務チームに提供する際、テナントでの配布と運用を共通化する選択肢になる。"],
+    ["GA","Microsoft Contact Center Intelligenceを一般提供し、既存のコンタクトセンター基盤から音声・チャットの専門エージェントを利用する。","既存の電話・ルーティング基盤全体を入れ替えず、一部の問い合わせから段階的に試せる。"]
+  ]},
+  "sharepoint-onedrive": {"title":"SharePoint・OneDrive でのコンテンツ作業","topic":"Microsoft Copilot","links":[
+    "https://techcommunity.microsoft.com/blog/spblog/sharepoint-and-onedrive-at-microsoft-ignite-2026-putting-ai-powered-content-to-w/4535416",
+    "https://techcommunity.microsoft.com/blog/onedriveblog/onedrive-just-got-a-major-upgrade-new-copilot-capabilities-simpler-sharing-and-s/4565995"
+  ],"items":[
+    ["プレビュー","Work IQのSharePointアクションからサイト、リストやページでの操作を行う。","ファイルを探すだけでなく、権限のある業務データを更新する作業を同じ流れに入れられる。"],
+    ["今後","文書やフォルダーのより詳しいコンテキストは、公式ブログでは11月末までにプレビュー予定。","文書の場所や所属するフォルダーを手がかりとして、同名の文書を取り違えにくくなる。"],
+    ["GA","10月に一般提供されたCopilot in OneDriveを使い、複数ファイルの分析やフォルダーの整理をデモで紹介。","複数ファイルを一つずつ開かず、必要な情報のある文書を選びやすくなる。"],
+    ["未確認","10月に紹介されたHTMLの画面・ソース両方での編集とプレビュー、Markdownの共同編集や自動保存を再掲。個別の展開状態は明記されていない。","ファイルを別形式に変換せず、AIが作ったレポートや作業手順をチームで修正できる。"],
+    ["提供中","共有ライブラリを探すビューと、OneDriveのショートカット専用フォルダーを10月とIgniteのブログで紹介。","サイトやフォルダーを数多く共有されている利用者が、必要なライブラリを探しやすくなる。"],
+    ["未確認","Windows・macOSで最大100万項目を同期する機能を10月とIgniteのブログで紹介。展開条件は同期クライアントの製品文書を確認。","大きなファイル資産を同期の設計に含められるか、組織ごとの要件で評価できる。"],
+    ["提供中","10月に展開が始まったHero Linksは、ファイル・フォルダーの共有リンクを一つにし、権限の変更をそのURLに反映する。","権限を変更するたびに別のリンクを送り直さず、受け手が同じ場所を開ける。"]
+  ]},
+  "sharepoint-governance": {"title":"SharePoint のエージェント向けガバナンス","topic":"Security","links":[
+    "https://aka.ms/Ignite2026/Blog/M365CopilotAgentGovernance"
+  ],"items":[
+    ["GA","SharePoint Admin Agentが管理・ガバナンスのタスクに対応し、サイト単位の制限と権限レポートを拡張する。","管理者が共有過多なサイトを見つけ、Copilotに参照させる範囲を絞れる。"],
+    ["今後","SharePoint Governance HubとAgent Access Heatmapは12月に一般提供予定。","管理担当がエージェントからアクセスできるコンテンツを一覧で把握し、設定の見直しを優先付けられる。"],
+    ["プレビュー","サイト所有者向けのガバナンスダッシュボードを提供する。","全社管理者だけでなく、データの実際の管理者が共有先やアクセスの問題を確認できる。"],
+    ["限定プレビュー","Agent Rewindでエージェントが変更したコンテンツを調べ、対応する変更を元に戻す。","意図しない変更の調査と復旧を、通常の作業と分けて行いやすくなる。"]
+  ]},
+  "edge-cowork": {"title":"Edge の Cowork、文章支援と管理機能","topic":"Microsoft Edge","links":[
+    "https://aka.ms/EdgeIgnite26"
+  ],"items":[
+    ["GA","EdgeでCoworkがブラウザーを使う作業を支援する。Microsoft 365 Copilotと対応する利用量課金が必要。","業務サイトから情報を集める複数手順をまとめて依頼できる。実行範囲や費用は事前確認が必要。"],
+    ["GA","Remixで読んでいるページを別の形式に再構成する。","長いページの情報を、短い要点や比較しやすい形で確認できる。"],
+    ["今後","対話型のブリーフを年内にプレビュー予定。","ページを読みながら不明な点を掘り下げ、重要な情報を探す時間を短縮できる。"],
+    ["プレビュー","書き方の支援、JourneysとAI insightsを拡張する。","書き直し、以前調べた話題の再開、組織内の利用状況の把握をそれぞれ支援できる。"],
+    ["GA","MSPのinforcerからEdge for Businessの構成ベースラインを扱う。","複数顧客テナントを管理する事業者が、標準設定の差分を確認しやすくなる。"]
+  ]},
+  "entra-lifecycle": {"title":"Microsoft Entra のライフサイクル、保護と複数テナント管理","topic":"Security","links":[
+    "https://aka.ms/ignite/entra"
+  ],"items":[
+    ["GA","ゲストの招待状況・スポンサー・非アクティブ期間に基づいてライフサイクルを管理する。","不要になった外部ユーザーのアクセスを手作業だけに頼らず見直せる。"],
+    ["GA","エージェントIDのスポンサーや稼働状況を定期評価し、組織の方針に従い通知・無効化する。","所有者が不明なまま使われなくなったエージェントの権限を残さずに済む。"],
+    ["プレビュー","Entraの完全削除保護をAgent IDなどの重要オブジェクトに適用する。","誤操作による運用停止や重要なIDを失うリスクを抑えられる。"],
+    ["プレビュー","複数テナントの構成とMicrosoft Agent 365・Copilotの管理をEntra Tenant Governanceへ広げる。","中央ITがテナントごとの設定差分をまとめて確認し、管理の抜けを発見しやすくなる。"],
+    ["GA","Windows 365 for AgentsのCloud PCにも条件付きアクセスを適用できる。","エージェントが使うリモート環境へのアクセスを、一般利用者の端末と別の条件で保護できる。"]
+  ]},
+  "windows-ai-controls": {"title":"Windows の管理者保護、ローカル分離とモデル選択","topic":"Windows","links":[
+    "https://blogs.windows.com/windowsexperience/2026/11/17/microsoft-ignite-2026-building-windows-for-the-next-era-of-work/"
+  ],"items":[
+    ["GA","Administrator protectionで管理者権限を必要な操作のときだけ昇格する。","通常の作業で昇格済みの権限を保持せず、意図しないシステム変更のリスクを減らせる。"],
+    ["未確認","Local Micro VMsをエージェント作業の分離に使う実験的機能を紹介する。一般提供やパブリックプレビューとはされていない。","ローカルの作業をホスト環境から分ける際、クラウドに実行環境を用意しない構成も検討できる。"],
+    ["プレビュー","対応するWindows端末のローカルモデルをCopilot Fusionのルーティング先に追加する。","対応する処理は端末内のモデルへ任せる設計を試し、クラウド利用や待ち時間とのバランスを比較できる。"]
+  ]},
+  "windows-365-operations": {"title":"Windows 365 の監視、接続の保護と修復","topic":"Windows","links":[
+    "https://aka.ms/W365Ignite26Blog"
+  ],"items":[
+    ["GA","IntuneでCloud PCの監視とレポートを拡張し、状態や接続の問題を管理者が確認できる。","問い合わせを受けてから個別の端末を調べるだけでなく、影響範囲をまとめて切り分けられる。"],
+    ["GA","Output ProtectionでWindows 365やAzure Virtual Desktopの画面出力を保護する。","接続元の端末にある画面キャプチャ型の脅威から、表示中の機密情報を保護しやすくなる。"],
+    ["プレビュー","Windows 365やAzure Virtual Desktopのキーボード・マウス入力も保護する。","接続元での入力監視によって機密情報が漏れるリスクを減らせるか試せる。"],
+    ["今後","起動できないCloud PCを修復するStartup Repairを2027年初めにプレビュー予定。","再プロビジョニングの前に復旧を試し、利用者の中断時間を減らせる可能性がある。"],
+    ["今後","Windows 365 Reserveのライセンスを一人に複数割り当てる機能を12月の限定プレビューで提供予定。","物理デバイスの復旧が長引く場合に、一時的なCloud PCを利用できる期間を延ばせる。"]
+  ]}
+}

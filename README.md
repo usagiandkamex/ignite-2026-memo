@@ -22,7 +22,7 @@ GitHub Pagesで`main`ブランチの`docs`ディレクトリを公開します�
 
 [Azure インフラセッション一覧](https://usagiandkamex.github.io/ignite-2026-memo/infra.html)は参加案とは独立した一覧です。Ignite 2026 の公式公開カタログ全体から、コンピューティング・ネットワーク・ストレージ・移行・運用と、App Service、Functions、Container Apps、AKS などの実行基盤を分野別に探せます。
 
-[新発表ページ](https://usagiandkamex.github.io/ignite-2026-memo/updates.html)は調査途中です。Book of Newsの見出しごとの日本語整理、状態別フィルターと公式出典を掲載しますが、個別機能とBook of News以外の追加発表の網羅性は未確認です。
+[新発表ページ](https://usagiandkamex.github.io/ignite-2026-memo/updates.html)では、代表的な発表を図や仕事別の具体例で把握し、個別の解説やMicrosoft公式の図・画面へ進めます。Book of News全59発表と、基調講演・製品公式ブログなどで確認した補足について、機能ごとの変更点・メリット・発表時点の提供状態を掲載します。キーワード、分野、提供状態、出典区分で絞り込めます。
 
 ## 情報の扱い
 
@@ -42,7 +42,9 @@ GitHub Pagesで`main`ブランチの`docs`ディレクトリを公開します�
 
 YouTubeの録画を追加する際は、同じセッションコードが別年にも存在するため、公式ページのタイトル・動画の開催年・Microsoft Eventsのチャンネルを確認し、`youtubeUrl`に動画URLを設定します。
 
-新発表は`docs/updates-editorial.json`で独自の日本語要約と機能ごとの状態を、`docs/updates-sources.json`でBook of Newsアンカーと公式出典を管理します。各機能の状態を一次資料と照合し、資料間の矛盾は「要確認」として両方にリンクします。収録範囲と確認日は`docs/updates.html`で明示します。提供地域、料金、ライセンス条件は推測しません。
+Book of Newsの発表は`docs/updates-editorial.json`で独自の日本語要約を、`docs/updates-sources.json`で分野・公式アンカー・追加の公式出典を管理します。Bookにない発表や製品別発表の補足は`docs/updates-additional.json`に、安定した英小文字のスラッグとタイトル・分野・公式出典を記録します。どちらも`items`は`[提供状態, 変更点, メリット]`です。資料間の記載差は本文で説明して両方にリンクします。調査対象の媒体・期間は`docs/updates.html`に記載し、最新の提供地域、料金、ライセンス条件は推測しません。
+
+冒頭の図解は本サイト独自の整理です。アイコンは[Microsoft Fluent UI System Icons](https://github.com/microsoft/fluentui-system-icons/tree/a3de63245b4fa49c30e20d9838593a105affe774/assets)の24px Regularを同梱しています（[MITライセンス](docs/assets/fluent-icons/LICENSE.txt)）。公式記事の図や製品画面は転載せず、掲載元へリンクします。
 
 Microsoft Release Communications MCPはAzure Updatesの調査に利用しましたが、取得データの再配布に関する利用条件があるため、APIの出力一覧はこのリポジトリに含めません。
 

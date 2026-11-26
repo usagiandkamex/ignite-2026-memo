@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Microsoft Ignite 2026の公開発表を日本語で整理した非公式メモ。">
+  <meta name="description" content="Microsoft Ignite 2026の公開発表。Book of News全59件と公式ブログの補足から、機能ごとの変更点・メリット・提供状態を日本語で整理。">
   <meta name="referrer" content="no-referrer">
   <meta name="theme-color" content="#132c28">
   <title>新発表 | Ignite 2026</title>
@@ -15,91 +15,192 @@
     <div class="page">
       <p class="eyebrow">IGNITE 2026 / PUBLIC ANNOUNCEMENTS</p>
       <h1>新発表を<span>読み解く</span></h1>
-      <p class="intro">サービスと機能の変化を、全分野から。</p>
+      <p class="intro">何が変わり、誰のどんな仕事に役立つのか。</p>
       <nav class="site-nav" aria-label="ページ"><a href="./">スケジュール</a><a href="./infra.html">Azure インフラ</a><a href="./map.html">会場マップ</a><a href="./updates.html" aria-current="page">新発表</a></nav>
     </div>
   </header>
   <main class="page updates-page">
+    <section class="updates-overview" aria-labelledby="overview-title">
+      <p class="eyebrow">IGNITE 2026 / AT A GLANCE</p>
+      <h2 id="overview-title">図で見る、AIの基盤から運用まで</h2>
+      <p class="updates-lead">代表的な4つの発表から、AIを動かし、監視し、改善するために何が変わるのかを見てみましょう。</p>
+      <nav class="updates-jump-links" aria-label="このページの目次">
+        <a href="#index-title">発表一覧を検索</a>
+        <a href="#brief-title">仕事別の要点</a>
+        <a href="#additional-title">Book of News 以外の更新</a>
+      </nav>
+      <figure class="updates-diagram">
+        <ol class="updates-flow" role="list">
+          <li>
+            <div class="updates-step" aria-hidden="true"><img src="./assets/fluent-icons/server.svg" alt="" width="24" height="24"><span>01</span></div>
+            <h3>基盤を選ぶ</h3>
+            <p>検索やツール実行など、AIモデルの周辺処理をArmベースの仮想マシンで支えます。</p>
+            <div class="updates-example">
+              <span class="update-badge" data-status="GA">GA</span>
+              <a href="#news-1-1-3">Azure Cobalt 200 VM</a>
+            </div>
+          </li>
+          <li>
+            <div class="updates-step" aria-hidden="true"><img src="./assets/fluent-icons/box.svg" alt="" width="24" height="24"><span>02</span></div>
+            <h3>実行を分離する</h3>
+            <p>AIが生成したコードを、アプリ本体とは別の環境で実行します。</p>
+            <div class="updates-example">
+              <span class="update-badge" data-status="プレビュー">プレビュー</span>
+              <a href="#news-1-2-2">AKS Agent Sandbox 拡張</a>
+            </div>
+          </li>
+          <li>
+            <div class="updates-step" aria-hidden="true"><img src="./assets/fluent-icons/pulse.svg" alt="" width="24" height="24"><span>03</span></div>
+            <h3>障害の影響を知る</h3>
+            <p>システムの依存関係をグラフにして、障害の影響がどこまで及ぶかを把握します。</p>
+            <div class="updates-example">
+              <span class="update-badge" data-status="GA">GA</span>
+              <a href="#news-1-2-1">Azure Monitor health models</a>
+            </div>
+          </li>
+          <li>
+            <div class="updates-step" aria-hidden="true"><img src="./assets/fluent-icons/arrow-sync.svg" alt="" width="24" height="24"><span>04</span></div>
+            <h3>会話の品質を見直す</h3>
+            <p>一問一答ではなく、複数のやり取りを含む会話全体を評価し、次の改善につなげます。</p>
+            <div class="updates-example">
+              <span class="update-badge" data-status="GA">GA</span>
+              <a href="#news-2-1-1">Microsoft Foundry の複数ターン評価</a>
+            </div>
+          </li>
+        </ol>
+        <figcaption>公開発表をもとにした概念図です。製品の接続構成や導入手順ではありません。GAは一般提供を表します。</figcaption>
+      </figure>
+      <div class="updates-visual-sources">
+        <strong>Microsoft公式の図・画面</strong>
+        <a href="https://learn.microsoft.com/en-us/azure/azure-monitor/health-models/overview#track-health">Azure Monitor の健全性グラフの画面例</a>
+        <a href="https://azure.microsoft.com/en-us/blog/continuous-improvement-comes-to-microsoft-foundry/#how-continuous-improvement-works">Microsoft Foundry の継続改善ループ</a>
+        <a href="https://community.fabric.microsoft.com/blog/fbc_fabricupdatesblogs/build-governed-data-apps-with-microsoft-fabric-apps-generally-available/5423011">Fabric apps の画面例</a>
+      </div>
+    </section>
     <section class="updates-intro">
-      <p><strong>調査途中の非公式メモです。</strong>Book of Newsの全59発表を見出し単位で整理しましたが、各発表の全機能とBook of News以外の追加発表は照合中です。これが全更新の完全な一覧ではありません。</p>
-      <p>2026年11月24日確認。状態は発表時点の記載であり、最新の提供地域、料金、ライセンス、利用条件を保証しません。特にプレビューは利用前に公式情報を確認してください。</p>
+      <p><strong>Book of News の全59発表を、機能ごとに解説しています。</strong> 基調講演や、2026年11月16〜24日を中心に公開されたAzure、Foundry、Fabric、Microsoft 365、Security、Windows、GitHubの製品別発表から、Book of Newsにない更新も補足しています。全セッションやパートナー各社の発表を網羅した一覧ではありません。</p>
+      <p>提供状態は発表時点のものです。GAは一般提供、「提供中」は利用できると案内されていますが、GAとは明記されていない機能です。Frontierは対象プログラムでの先行提供、「要確認」は資料間の記載差、「未確認」は提供状態を特定できない場合です。最新の利用条件は各公式出典をご確認ください。</p>
     </section>
     <section class="updates-reading" aria-labelledby="brief-title">
-      <p class="eyebrow">THE BRIEF / ABOUT 10 MINUTES</p>
-      <h2 id="brief-title">まず押さえたい、今回の変化</h2>
-      <p class="updates-lead">今回の共通テーマは、AIを試す段階から、既存システムの中で安全に動かし、運用し、改善し続ける段階への移行です。基盤、データ、従業員体験、セキュリティを別々に見るのではなく、エージェントの権限と業務への影響を含めて設計することが重要になります。</p>
+      <h2 id="brief-title" tabindex="-1">今回の発表で、どんな仕事が変わる？</h2>
+      <p class="updates-lead">障害対応や商談準備など、6つの場面で何が変わるかを紹介します。ラベルは発表時点の提供状況です。機能名を選ぶと、詳しい説明と公式情報を確認できます。</p>
       <div class="brief-grid">
         <article>
-          <h3>01 / Azure の基盤と運用</h3>
-          <p>Azure Cobalt 200 VMは一般提供となり、AIモデルそのものの推論だけでなく、その周辺で動くエージェントの処理にも向けたArm基盤が広がります。Azure Chaos Studio Workspacesは一般提供です。AKS拡張はBook of NewsではGAとされていますが、製品ドキュメントと公式ブログではプレビューと記載されています。<a href="#news-1-1-1">回復性</a>・<a href="#news-1-1-3">VM</a></p>
-          <p>Azure Monitor health modelsは、個々のアラートだけでなく、依存関係と業務影響を含めた健全性の把握を狙います。SRE AgentにはTeams、複数クラウド、エージェントIDや管理キーなどのプレビューが追加されます。自動化の可否と、調査・変更の承認境界は分けて検討しましょう。<a href="#news-1-2-1">運用の発表</a></p>
-          <p>AKSではAgent Sandboxによる実行分離、Azure外のサーバーを含むFlex nodes、Foundryから自組織のAKSへの展開がプレビューです。いずれも既存のネットワーク、ID、データ所在地、コストの要件と一緒に評価する必要があります。<a href="#news-1-2-2">AI基盤</a></p>
-          <p>機密コンピューティングでは、複数GPUにまたがる処理や、データを共有する複数組織間の分析を対象としたプレビューも発表されました。暗号化の対象が保存時・転送時だけでなく処理中にも及ぶか、利用できるハードウェアや運用条件を確認することが出発点です。<a href="#news-1-1-2">機密コンピューティング</a></p>
+          <p class="eyebrow">インフラ運用</p>
+          <h3>障害の影響範囲を知る</h3>
+          <p class="brief-scenario">たとえば決済で障害が起きたとき、注文など、ほかに影響を受けるサービスを調べます。</p>
+          <ul class="brief-updates" role="list">
+            <li>
+              <div class="brief-update-heading"><span class="update-badge" data-status="GA">一般提供</span><a href="#news-1-2-1">Azure Monitor の健全性グラフ</a></div>
+              <p>システム同士のつながりが見えるので、業務への影響が大きい障害から調べられます。</p>
+            </li>
+            <li>
+              <div class="brief-update-heading"><span class="update-badge" data-status="プレビュー">プレビュー</span><a href="#news-1-2-1">Azure SRE Agent の調査支援</a></div>
+              <p>複数のクラウドにまたがる障害の調査状況を Teams で共有でき、担当者が引き継ぎやすくなります。</p>
+            </li>
+          </ul>
         </article>
         <article>
-          <h3>02 / サーバーとデータ</h3>
-          <p>Windows Server 2028はプレビューです。セキュリティ既定値、ストレージ、管理に加え、企業内でのAI推論を扱います。ただしハイブリッドAIは一部顧客向けの早期アクセスで、ハードウェア要件があります。既存のServer 2025環境から直ちに移行できるという意味ではありません。<a href="#news-1-2-4">Server</a></p>
-          <p>PostgreSQL互換のAzure HorizonDBは一般提供、Fabric HorizonDBはプレビューです。両者は別の提供形態であり、アプリの配置、サーバーレスの要否、運用と分析の連携から選びます。Cosmos DB、DocumentDB、Azure SQL、Redisも、開発体験・復旧・検索・移行をそれぞれ拡張しています。<a href="#news-1-3-3">Azure HorizonDB</a>・<a href="#news-1-3-7">Fabric HorizonDB</a></p>
-          <p>データベース運用ではFabricのDatabase Hubが一般提供、SQL・PostgreSQLのエージェントはプレビューです。まずはアクセス権の範囲内で性能や健全性の調査を支援し、提案の妥当性と変更手順を人が検証する運用から始められます。<a href="#news-1-3-6">Database Hub</a></p>
+          <p class="eyebrow">データとアプリ開発</p>
+          <h3>アプリに合うデータベースを選ぶ</h3>
+          <p class="brief-scenario">同じ HorizonDB でも、本番の注文アプリを支える場合と、分析データも使うアプリを作る場合では選び方が異なります。</p>
+          <ul class="brief-updates" role="list">
+            <li>
+              <div class="brief-update-heading"><span class="update-badge" data-status="GA">一般提供</span><a href="#news-1-3-3">Azure HorizonDB</a></div>
+              <p>Azure で本番の注文データを管理します。複数の拠点（可用性ゾーン）にデータのコピーを置き、一部の障害に備えられます。</p>
+            </li>
+            <li>
+              <div class="brief-update-heading"><span class="update-badge" data-status="プレビュー">プレビュー</span><a href="#news-1-3-7">Fabric HorizonDB</a></div>
+              <p>Fabric の中で、たとえば最新の注文と売上の集計結果を一つのアプリから参照できます。</p>
+            </li>
+          </ul>
         </article>
         <article>
-          <h3>03 / Foundry と開発</h3>
-          <p>Foundryでは、複数ターンの評価、本番トレースからのinsights、Agent optimizerが一般提供です。人手の注釈やモデルの追加学習はプレビュー。評価基準を先に定義し、提案された変更を本番に反映する前に人が確認する、という改善サイクルが中心になります。<a href="#news-2-1-1">継続改善</a></p>
-          <p>Microsoft-Decision-1.1は分類やルーティングなど、選択肢が明確な判断向けのモデルとして一般提供です。コード、画像、安全性などのモデルは製品や提供先ごとに状態が異なります。Copilot SDK 2.0も一般提供となりましたが、モデル名が載っているだけで、すべての利用先でGAになったわけではありません。<a href="#news-2-2-1">モデル</a>・<a href="#news-3-1-1">SDK</a></p>
+          <p class="eyebrow">AI 開発</p>
+          <h3>AI の受け答えを改善する</h3>
+          <p class="brief-scenario">AI が問い合わせの途中で同じ質問を繰り返すなど、一問一答では見つけにくい問題を調べます。</p>
+          <ul class="brief-updates" role="list">
+            <li>
+              <div class="brief-update-heading"><span class="update-badge" data-status="GA">一般提供</span><a href="#news-2-1-1">Foundry の会話評価と Insights</a></div>
+              <p>会話全体を評価し、実際のやり取りで繰り返し起きる問題から調べられます。</p>
+            </li>
+            <li>
+              <div class="brief-update-heading"><span class="update-badge" data-status="プレビュー">プレビュー</span><a href="#news-2-1-1">Agent Optimizer と Insights の連携</a></div>
+              <p>見つけた問題から改善案を作り、いまの版と比較できます。本番に反映するかは担当者が決めます。</p>
+            </li>
+          </ul>
         </article>
         <article>
-          <h3>04 / Copilot と業務アプリ</h3>
-          <p>Copilot Managed Runtimeは一般提供となり、対応アプリを管理対象の環境でホストし、必要ならFabricのデータ基盤を使えます。一方、長時間動く個人向けAutopilot、共同作業のWorkspaces、自然言語でアプリを作るCopilot CodeはFrontierでの提供が中心です。一般提供済みの機能と混同しないことが重要です。<a href="#news-4-1-3">Runtime</a>・<a href="#news-4-1-2">Autopilot</a></p>
-          <p>Dynamics 365のSales・ERPプラグインは一般提供、Salesforce in Copilotはプレビューです。Agent 365では支出と価値を確認する機能も拡張されます。業務データに対する既存権限、アクションの承認、利用量課金とライセンスを導入前に確認します。<a href="#news-4-1-5">Dynamics</a>・<a href="#news-4-1-9">Salesforce</a>・<a href="#news-4-1-1">FinOps</a></p>
+          <p class="eyebrow">営業・日々の業務</p>
+          <h3>資料づくりと進捗確認の手間を減らす</h3>
+          <p class="brief-scenario">商談の前には顧客ごとの資料を用意し、会議が終わったら宿題の進み具合を確認します。</p>
+          <ul class="brief-updates" role="list">
+            <li>
+              <div class="brief-update-heading"><span class="update-badge" data-status="GA">一般提供</span><a href="#news-4-1-5">Dynamics 365 Sales プラグイン</a></div>
+              <p>案件の情報をまとめて PowerPoint の資料を準備でき、顧客ごとに一から作る手間が減ります。</p>
+            </li>
+            <li>
+              <div class="brief-update-heading"><span class="update-badge" data-status="Frontier">先行提供</span><a href="#news-4-1-2">個人向け Autopilot</a></div>
+              <p>定期的な確認やリマインドを毎回指示せずに任せられます。Frontier プログラムの参加者向けです。</p>
+            </li>
+          </ul>
         </article>
         <article>
-          <h3>05 / Microsoft IQ と Edge</h3>
-          <p>Microsoft IQは、仕事の文脈を扱うWork IQ、業務データの意味を扱うFabric IQ、非構造化データのFoundry IQ、Web情報のWeb IQと、継続改善をまとめる考え方です。元データの権限や意味付けを維持したまま、複数のアプリやエージェントで知識を再利用する方向です。<a href="#news-6-1-1">Microsoft IQ</a></p>
-          <p>Foundry IQのSharePoint索引は一般提供ですが、knowledge graphやRetriever-1はプレビューです。Edge for Businessではブラウザー操作のスキル化、エージェント専用の管理対象ブラウザー、拡張機能やネットワークの保護が追加されます。機能によって提供状態が異なる点に注意します。<a href="#news-6-3-1">Foundry IQ</a>・<a href="#news-5-1-1">Edge</a></p>
+          <p class="eyebrow">社内情報の活用</p>
+          <h3>AI が社内資料を根拠に答える</h3>
+          <p class="brief-scenario">たとえば出張旅費の上限を聞いたとき、一般論ではなく、自社の規程を参照して答えられるようにします。</p>
+          <ul class="brief-updates" role="list">
+            <li>
+              <div class="brief-update-heading"><span class="update-badge" data-status="GA">一般提供</span><a href="#news-6-3-1">Foundry IQ の SharePoint 検索</a></div>
+              <p>利用者が閲覧できる文書を参照して回答を作れます。元の文書のアクセス権は変わりません。</p>
+            </li>
+            <li>
+              <div class="brief-update-heading"><span class="update-badge" data-status="プレビュー">プレビュー</span><a href="#news-6-3-1">Foundry IQ の文書間の関係検索</a></div>
+              <p>規程と例外条件など、別々の文書にある関連情報をまとめて探せるか試せます。</p>
+            </li>
+          </ul>
         </article>
         <article>
-          <h3>06 / Security と Windows</h3>
-          <p>Agent 365、Entra、Defender、Intune、Purviewにまたがり、エージェントのID、アクセス、端末上の実行、機密情報を管理する発表が並びます。Dynamic Agent RiskやMCP Firewallはプレビュー。ローカルAIエージェントのDefender保護は対応製品とライセンスの条件付きで一般提供です。<a href="#news-7-1-1">Agent Risk</a>・<a href="#news-7-4-1">Entra</a>・<a href="#news-7-3-2">Defender</a></p>
-          <p>Microsoft PerceptionはBook of Newsと公式ブログで一般提供とされていますが、製品ドキュメントには限定プレビュー表記が残っています。shieldingなどはプレビューで、一時的な保護はパッチの代替ではありません。Windowsのエージェント分離やWindows 365 for Agentsの永続Cloud PCもプレビュー条件を確認します。<a href="#news-7-6-1">Perception</a>・<a href="#news-8-1-4">Cloud PC</a>・<a href="#news-8-1-6">分離</a></p>
-          <p>導入順序としては、まず実行主体を把握し、必要最小限のアクセスと監査を整え、その後に利用範囲を広げるのが現実的です。機密データや外部ツールへの接続がある場合は、利用者の権限を引き継ぐだけで安全と考えず、個別のポリシーと承認条件を確認します。</p>
+          <p class="eyebrow">セキュリティ・端末管理</p>
+          <h3>社員の PC で動く AI を管理する</h3>
+          <p class="brief-scenario">社員が PC で AI ツールを使うとき、IT 担当者がどんな操作や通信を許可するか決めます。</p>
+          <ul class="brief-updates" role="list">
+            <li>
+              <div class="brief-update-heading"><span class="update-badge" data-status="GA">一般提供</span><a href="#news-7-3-2">Defender の Windows 上の AI 保護</a></div>
+              <p>対応する AI ツールの動作や通信を監査・ブロックできます。対象アプリとライセンスに条件があります。</p>
+            </li>
+            <li>
+              <div class="brief-update-heading"><span class="update-badge" data-status="プレビュー">プレビュー</span><a href="#news-7-4-1">Microsoft Entra のエージェント ID</a></div>
+              <p>対応する AI に専用の ID を付け、社員本人と AI の操作を区別して調べられます。</p>
+            </li>
+          </ul>
         </article>
       </div>
-      <figure class="updates-diagram">
-        <svg viewBox="0 0 760 180" role="img" aria-labelledby="loop-title loop-desc" xmlns="http://www.w3.org/2000/svg">
-          <title id="loop-title">AIを本番運用する際の考え方</title>
-          <desc id="loop-desc">基盤とデータ、エージェントの実行、監視と評価、人による判断と改善を循環させる概念図。実際の製品画面やサービス間の接続構成を示すものではない。</desc>
-          <rect x="10" y="30" width="160" height="100" rx="14" fill="#e1eddf"/><rect x="205" y="30" width="160" height="100" rx="14" fill="#e5edf8"/><rect x="400" y="30" width="160" height="100" rx="14" fill="#f3edda"/><rect x="595" y="30" width="155" height="100" rx="14" fill="#e9e3f1"/>
-          <g fill="#20342e" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="700"><text x="90" y="72">基盤・データ</text><text x="285" y="72">安全な実行</text><text x="480" y="72">監視・評価</text><text x="673" y="72">人の判断・改善</text></g>
-          <g fill="#596c63" text-anchor="middle" font-family="sans-serif" font-size="12"><text x="90" y="100">権限 / 回復性</text><text x="285" y="100">ID / 分離</text><text x="480" y="100">品質 / 支出</text><text x="673" y="100">承認 / 見直し</text></g>
-          <g fill="#526b5b" font-family="sans-serif" font-size="24"><text x="176" y="88">→</text><text x="371" y="88">→</text><text x="566" y="88">→</text></g>
-          <path d="M673 142v14H90v-14" fill="none" stroke="#718276" stroke-width="2"/><text x="380" y="174" text-anchor="middle" fill="#596c63" font-family="sans-serif" font-size="12">継続的に見直す</text>
-        </svg>
-        <figcaption>公開発表を整理した自作の概念図。製品画面や実際の接続構成ではありません。</figcaption>
-      </figure>
     </section>
     <section class="update-index" aria-labelledby="index-title">
-      <div class="section-heading"><h2 id="index-title">発表の一覧</h2><span class="edition">BOOK OF NEWS</span></div>
-      <p>Book of Newsの発表ごとに、確認できた主な機能と発表時点の状態を整理しています。同じ機能が複数の発表に登場する場合があります。見出しはすべて収録していますが、機能単位の照合は継続中です。</p>
-      <div class="update-filters">
+      <h2 id="index-title" tabindex="-1">発表の一覧</h2>
+      <p>見出しを開くと、機能ごとの変更点・メリット・公式出典が読めます。検索は一致した項目に絞り込み、資料間で同じ機能に触れている場合は関連する見出しにも表示します。</p>
+      <form class="update-filters" id="update-filters" aria-label="発表の絞り込み" hidden>
         <label>キーワード<input id="update-search" type="search" placeholder="製品名・機能名など" autocomplete="off"></label>
         <label>分野<select id="update-topic"><option value="">すべての分野</option></select></label>
         <label>提供状態<select id="update-status"><option value="">すべての状態</option><option>GA</option><option>提供中</option><option>プレビュー</option><option>限定プレビュー</option><option>パイロット</option><option>Frontier</option><option>今後</option><option>未確認</option><option>要確認</option></select></label>
+        <label>出典区分<select id="update-source"><option value="">すべての出典</option><option value="book">Book of News</option><option value="additional">補足（公式）</option></select></label>
+        <button id="update-clear" type="button">絞り込みをクリア</button>
+      </form>
+      <p id="update-count" role="status" hidden>発表一覧を読み込んでいます。</p>
+      <p id="update-error" class="error" role="alert" hidden></p>
+      <div id="update-results">
+        <section class="update-group" aria-labelledby="book-title" data-announcement-source="book" hidden>
+          <div class="update-group-heading"><h3 id="book-title">Book of News</h3><span class="update-group-count"></span></div>
+          <div class="update-group-results"></div>
+        </section>
+        <section class="update-group" aria-labelledby="additional-title" data-announcement-source="additional" hidden>
+          <div class="update-group-heading"><h3 id="additional-title" tabindex="-1">公式ブログ・講演の補足</h3><span class="update-group-count"></span></div>
+          <p>Book of Newsにない発表や、製品別の発表で明らかになった追加機能を掲載しています。<a href="#index-title">絞り込みに戻る</a></p>
+          <div class="update-group-results"></div>
+        </section>
       </div>
-      <p id="update-count" role="status" aria-live="polite">発表一覧を読み込んでいます。</p>
-      <p id="update-error" class="error" hidden></p>
-      <div id="update-results"></div>
       <noscript><p class="error">発表一覧の表示にはJavaScriptが必要です。<a href="https://news.microsoft.com/events/ignite/2026/book-of-news/">公式Book of News</a>をご覧ください。</p></noscript>
-    </section>
-    <section class="update-index" aria-labelledby="additional-title">
-      <h2 id="additional-title">Book of News 以外の公式発表</h2>
-      <article class="update-card additional-update">
-        <p class="update-card-label">Microsoft AI / 追加で確認</p>
-        <h3>MAI Licensed Weights</h3>
-        <p><span class="update-badge">今後</span> Microsoft AIモデルを自組織のAzure環境で展開・カスタマイズできる取り組み。Frontier Companyを通じて提供予定で、対象や条件は担当チームへの確認が必要です。</p>
-        <p><a href="https://microsoft.ai/news/introducing-mai-licensed-weights/">Microsoft AIの公式発表</a> · <a href="https://www.youtube.com/watch?v=-JSecnudwvY&amp;t=1204s">基調講演 20:04付近</a></p>
-      </article>
-      <p>追加発表の調査は継続中です。この1件がBook of News以外の全発表を意味するものではありません。</p>
-      <p>Azure Updatesの調査には<a href="https://learn.microsoft.com/ja-jp/microsoft-365/admin/manage/mrc-mcp?view=o365-worldwide">Microsoft Release Communications MCP</a>も利用しました。API利用条件に再配布の制限があるため、取得結果の一覧は掲載していません。</p>
     </section>
     <section class="update-index" aria-labelledby="videos-title">
       <h2 id="videos-title">関連する公式動画</h2>
@@ -114,6 +215,8 @@
     </section>
     <footer>
       <p>出典：<a href="https://news.microsoft.com/events/ignite/2026/book-of-news/">Microsoft Ignite 2026 Book of News</a>。個別の発表と関連する公式情報には一覧から移動できます。</p>
+      <p>Azure Updatesの調査には<a href="https://learn.microsoft.com/ja-jp/microsoft-365/admin/manage/mrc-mcp?view=o365-worldwide">Microsoft Release Communications MCP</a>も利用しました。取得結果の一覧は再配布条件に従い掲載していません。</p>
+      <p>アイコン：<a href="https://github.com/microsoft/fluentui-system-icons">Microsoft Fluent UI System Icons</a>（<a href="./assets/fluent-icons/LICENSE.txt">MITライセンス</a>）。</p>
       <p>公開資料に基づく個人の非公式な整理です。Microsoftの公式案内ではありません。利用可能性や条件は各公式ページでご確認ください。</p>
     </footer>
   </main>
